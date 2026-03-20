@@ -1,0 +1,39 @@
+# Project exclude paths
+.vscode
+__pycache__
+.venv
+
+# model file
+*.pt
+
+*.jpg
+
+/logs/*
+/fig/*
+
+# third party libraries
+/executor/POD-XIAO-Python
+/speech/*
+/model/*
+
+# dataset
+/dataset-chatbot/*.csv
+/dataset-chatbot/public_datasets/*
+
+# output file
+*.jpg
+*.png
+*.pdf
+*.csv
+*.json
+!/dataset/*.json
+*.txt
+!/timelyllm/rtengine/prompt/*.txt
+*.log
+*.err
+*.out
+*.err
+*.out
+*.wav
+*.onnx
+CLAUDE.md

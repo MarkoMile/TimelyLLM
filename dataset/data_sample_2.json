@@ -1,0 +1,7351 @@
+[
+    {
+        "job_id": 0,
+        "trigger time": 35.36046967883034,
+        "agent_id": 0,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 1,
+        "trigger time": 35.36146967883034,
+        "agent_id": 1,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 2,
+        "trigger time": 35.36246967883034,
+        "agent_id": 2,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 3,
+        "trigger time": 35.363469678830334,
+        "agent_id": 3,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 4,
+        "trigger time": 35.36446967883033,
+        "agent_id": 4,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 5,
+        "trigger time": 35.36546967883033,
+        "agent_id": 5,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 6,
+        "trigger time": 35.44723667102644,
+        "agent_id": 6,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 7,
+        "trigger time": 35.448236671026436,
+        "agent_id": 7,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 8,
+        "trigger time": 35.44923667102643,
+        "agent_id": 8,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 9,
+        "trigger time": 35.45023667102643,
+        "agent_id": 9,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 10,
+        "trigger time": 35.45123667102643,
+        "agent_id": 10,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 11,
+        "trigger time": 35.45223667102643,
+        "agent_id": 11,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 12,
+        "trigger time": 35.453236671026424,
+        "agent_id": 12,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 13,
+        "trigger time": 35.45423667102642,
+        "agent_id": 13,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 14,
+        "trigger time": 37.55288298823167,
+        "agent_id": 4,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 15,
+        "trigger time": 37.55388298823167,
+        "agent_id": 8,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 16,
+        "trigger time": 37.55488298823167,
+        "agent_id": 14,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 17,
+        "trigger time": 37.555882988231666,
+        "agent_id": 15,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 18,
+        "trigger time": 37.55688298823166,
+        "agent_id": 16,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 19,
+        "trigger time": 37.55788298823166,
+        "agent_id": 17,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 20,
+        "trigger time": 37.55888298823166,
+        "agent_id": 18,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 21,
+        "trigger time": 38.10132117103255,
+        "agent_id": 19,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 22,
+        "trigger time": 38.10232117103255,
+        "agent_id": 20,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 23,
+        "trigger time": 38.10332117103255,
+        "agent_id": 21,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 24,
+        "trigger time": 38.104321171032545,
+        "agent_id": 22,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 25,
+        "trigger time": 38.10532117103254,
+        "agent_id": 23,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 26,
+        "trigger time": 38.10632117103254,
+        "agent_id": 24,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 27,
+        "trigger time": 50.095823870134154,
+        "agent_id": 15,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 28,
+        "trigger time": 52.655264629979584,
+        "agent_id": 0,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 29,
+        "trigger time": 52.65626462997958,
+        "agent_id": 5,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 30,
+        "trigger time": 52.65726462997958,
+        "agent_id": 6,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 31,
+        "trigger time": 58.92380444410683,
+        "agent_id": 21,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 32,
+        "trigger time": 58.924804444106826,
+        "agent_id": 10,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 33,
+        "trigger time": 59.38868477958997,
+        "agent_id": 3,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 34,
+        "trigger time": 59.38968477958997,
+        "agent_id": 2,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 35,
+        "trigger time": 59.39068477958997,
+        "agent_id": 13,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 36,
+        "trigger time": 59.391684779589966,
+        "agent_id": 7,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 37,
+        "trigger time": 59.39268477958996,
+        "agent_id": 18,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 38,
+        "trigger time": 64.61130745164616,
+        "agent_id": 9,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 39,
+        "trigger time": 64.61230745164616,
+        "agent_id": 19,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 40,
+        "trigger time": 64.61330745164616,
+        "agent_id": 16,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 41,
+        "trigger time": 64.61430745164617,
+        "agent_id": 4,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 42,
+        "trigger time": 64.61530745164617,
+        "agent_id": 14,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 43,
+        "trigger time": 64.61630745164618,
+        "agent_id": 8,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 44,
+        "trigger time": 65.41252340891924,
+        "agent_id": 17,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 45,
+        "trigger time": 65.41352340891925,
+        "agent_id": 1,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 46,
+        "trigger time": 65.41452340891925,
+        "agent_id": 11,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 47,
+        "trigger time": 65.41552340891926,
+        "agent_id": 12,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 48,
+        "trigger time": 65.41652340891926,
+        "agent_id": 20,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 49,
+        "trigger time": 71.06372488493713,
+        "agent_id": 22,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 50,
+        "trigger time": 71.06472488493714,
+        "agent_id": 23,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 51,
+        "trigger time": 71.68921285898118,
+        "agent_id": 24,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 52,
+        "trigger time": 76.40589779587238,
+        "agent_id": 6,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 53,
+        "trigger time": 76.40689779587238,
+        "agent_id": 15,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 54,
+        "trigger time": 76.40789779587239,
+        "agent_id": 5,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 55,
+        "trigger time": 76.40889779587239,
+        "agent_id": 0,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 56,
+        "trigger time": 76.43542793309929,
+        "agent_id": 13,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 57,
+        "trigger time": 76.4364279330993,
+        "agent_id": 7,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 58,
+        "trigger time": 76.4374279330993,
+        "agent_id": 21,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 59,
+        "trigger time": 76.4384279330993,
+        "agent_id": 10,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 60,
+        "trigger time": 76.43942793309931,
+        "agent_id": 2,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 61,
+        "trigger time": 76.44042793309931,
+        "agent_id": 18,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 62,
+        "trigger time": 76.44142793309932,
+        "agent_id": 3,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 63,
+        "trigger time": 76.44242793309932,
+        "agent_id": 1,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 64,
+        "trigger time": 85.43546703469684,
+        "agent_id": 9,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 65,
+        "trigger time": 85.43646703469685,
+        "agent_id": 19,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 66,
+        "trigger time": 85.43746703469685,
+        "agent_id": 14,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 67,
+        "trigger time": 85.43846703469686,
+        "agent_id": 8,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 68,
+        "trigger time": 85.43946703469686,
+        "agent_id": 17,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 69,
+        "trigger time": 85.44046703469687,
+        "agent_id": 16,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 70,
+        "trigger time": 88.31370693200907,
+        "agent_id": 12,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 71,
+        "trigger time": 88.31470693200907,
+        "agent_id": 4,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 72,
+        "trigger time": 88.31570693200908,
+        "agent_id": 11,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 73,
+        "trigger time": 88.31670693200908,
+        "agent_id": 20,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 74,
+        "trigger time": 88.31770693200909,
+        "agent_id": 22,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 75,
+        "trigger time": 88.31870693200909,
+        "agent_id": 23,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 76,
+        "trigger time": 93.37753296126333,
+        "agent_id": 24,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 77,
+        "trigger time": 93.37853296126333,
+        "agent_id": 6,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 78,
+        "trigger time": 93.37953296126334,
+        "agent_id": 7,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 79,
+        "trigger time": 93.38053296126334,
+        "agent_id": 18,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 80,
+        "trigger time": 93.38153296126335,
+        "agent_id": 5,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 81,
+        "trigger time": 93.38253296126335,
+        "agent_id": 21,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 82,
+        "trigger time": 93.38353296126336,
+        "agent_id": 10,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 83,
+        "trigger time": 93.38453296126336,
+        "agent_id": 3,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 84,
+        "trigger time": 94.24929190024065,
+        "agent_id": 0,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 85,
+        "trigger time": 94.25029190024065,
+        "agent_id": 2,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 86,
+        "trigger time": 94.25129190024066,
+        "agent_id": 1,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 87,
+        "trigger time": 94.25229190024066,
+        "agent_id": 13,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 88,
+        "trigger time": 94.25329190024067,
+        "agent_id": 15,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 89,
+        "trigger time": 94.25429190024067,
+        "agent_id": 19,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 90,
+        "trigger time": 96.0017201230073,
+        "agent_id": 14,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 91,
+        "trigger time": 96.00272012300731,
+        "agent_id": 8,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 92,
+        "trigger time": 96.00372012300731,
+        "agent_id": 17,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 93,
+        "trigger time": 96.00472012300732,
+        "agent_id": 20,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 94,
+        "trigger time": 96.00572012300732,
+        "agent_id": 22,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 95,
+        "trigger time": 96.00672012300733,
+        "agent_id": 9,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 96,
+        "trigger time": 96.00772012300733,
+        "agent_id": 16,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 97,
+        "trigger time": 97.09606760052664,
+        "agent_id": 12,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 98,
+        "trigger time": 99.4837249853685,
+        "agent_id": 23,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 99,
+        "trigger time": 99.4847249853685,
+        "agent_id": 4,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 100,
+        "trigger time": 99.4857249853685,
+        "agent_id": 11,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 101,
+        "trigger time": 99.48672498536851,
+        "agent_id": 10,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 102,
+        "trigger time": 99.48772498536852,
+        "agent_id": 15,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 103,
+        "trigger time": 99.48872498536852,
+        "agent_id": 24,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 104,
+        "trigger time": 102.62846730567317,
+        "agent_id": 5,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 105,
+        "trigger time": 102.62946730567317,
+        "agent_id": 6,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 106,
+        "trigger time": 102.63046730567318,
+        "agent_id": 21,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 107,
+        "trigger time": 102.63146730567318,
+        "agent_id": 3,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 108,
+        "trigger time": 102.63246730567319,
+        "agent_id": 7,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 109,
+        "trigger time": 102.6334673056732,
+        "agent_id": 2,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 110,
+        "trigger time": 103.55172480399614,
+        "agent_id": 1,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 111,
+        "trigger time": 103.55272480399614,
+        "agent_id": 13,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 112,
+        "trigger time": 103.55372480399615,
+        "agent_id": 9,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 113,
+        "trigger time": 103.55472480399615,
+        "agent_id": 0,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 114,
+        "trigger time": 103.55572480399616,
+        "agent_id": 19,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 115,
+        "trigger time": 117.1340796812061,
+        "agent_id": 23,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 116,
+        "trigger time": 117.25066312827792,
+        "agent_id": 12,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 117,
+        "trigger time": 117.25166312827793,
+        "agent_id": 14,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 118,
+        "trigger time": 117.25266312827793,
+        "agent_id": 18,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 119,
+        "trigger time": 117.25366312827794,
+        "agent_id": 17,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 120,
+        "trigger time": 118.24762934811142,
+        "agent_id": 8,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 121,
+        "trigger time": 118.24862934811142,
+        "agent_id": 20,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 122,
+        "trigger time": 118.24962934811143,
+        "agent_id": 16,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 123,
+        "trigger time": 118.25062934811143,
+        "agent_id": 22,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 124,
+        "trigger time": 118.25162934811144,
+        "agent_id": 9,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 125,
+        "trigger time": 118.25262934811144,
+        "agent_id": 0,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 126,
+        "trigger time": 118.25362934811145,
+        "agent_id": 10,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 127,
+        "trigger time": 118.66404323529905,
+        "agent_id": 24,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 128,
+        "trigger time": 118.66504323529905,
+        "agent_id": 4,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 129,
+        "trigger time": 118.66604323529906,
+        "agent_id": 11,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 130,
+        "trigger time": 118.66704323529906,
+        "agent_id": 15,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 131,
+        "trigger time": 118.66804323529907,
+        "agent_id": 3,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 132,
+        "trigger time": 118.66904323529907,
+        "agent_id": 7,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 133,
+        "trigger time": 118.67004323529908,
+        "agent_id": 5,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 134,
+        "trigger time": 118.67104323529908,
+        "agent_id": 21,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 135,
+        "trigger time": 120.96454876581618,
+        "agent_id": 2,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 136,
+        "trigger time": 120.96554876581618,
+        "agent_id": 6,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 137,
+        "trigger time": 130.56103578533026,
+        "agent_id": 1,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 138,
+        "trigger time": 130.56203578533027,
+        "agent_id": 13,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 139,
+        "trigger time": 130.56303578533027,
+        "agent_id": 19,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 140,
+        "trigger time": 132.36007716109108,
+        "agent_id": 16,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 141,
+        "trigger time": 132.3610771610911,
+        "agent_id": 21,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 142,
+        "trigger time": 132.3620771610911,
+        "agent_id": 10,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 143,
+        "trigger time": 132.3630771610911,
+        "agent_id": 14,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 144,
+        "trigger time": 132.3640771610911,
+        "agent_id": 18,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 145,
+        "trigger time": 132.3650771610911,
+        "agent_id": 17,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 146,
+        "trigger time": 134.2898819572233,
+        "agent_id": 12,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 147,
+        "trigger time": 134.2908819572233,
+        "agent_id": 22,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 148,
+        "trigger time": 134.2918819572233,
+        "agent_id": 4,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 149,
+        "trigger time": 134.2928819572233,
+        "agent_id": 11,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 150,
+        "trigger time": 134.2938819572233,
+        "agent_id": 7,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 151,
+        "trigger time": 134.2948819572233,
+        "agent_id": 20,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 152,
+        "trigger time": 140.55512958909188,
+        "agent_id": 9,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 153,
+        "trigger time": 140.55612958909188,
+        "agent_id": 0,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 154,
+        "trigger time": 140.5571295890919,
+        "agent_id": 3,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 155,
+        "trigger time": 140.5581295890919,
+        "agent_id": 24,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 156,
+        "trigger time": 140.59358403907618,
+        "agent_id": 15,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 157,
+        "trigger time": 145.7717638492376,
+        "agent_id": 5,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 158,
+        "trigger time": 145.7727638492376,
+        "agent_id": 23,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 159,
+        "trigger time": 145.7737638492376,
+        "agent_id": 2,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 160,
+        "trigger time": 145.77476384923762,
+        "agent_id": 8,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 161,
+        "trigger time": 145.77576384923762,
+        "agent_id": 6,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 162,
+        "trigger time": 145.77676384923762,
+        "agent_id": 1,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 163,
+        "trigger time": 149.22134469946747,
+        "agent_id": 19,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 164,
+        "trigger time": 149.22234469946747,
+        "agent_id": 13,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 165,
+        "trigger time": 149.22334469946748,
+        "agent_id": 11,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 166,
+        "trigger time": 149.22434469946748,
+        "agent_id": 21,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 167,
+        "trigger time": 149.22534469946748,
+        "agent_id": 14,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 168,
+        "trigger time": 149.2263446994675,
+        "agent_id": 18,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 169,
+        "trigger time": 149.2273446994675,
+        "agent_id": 12,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 170,
+        "trigger time": 149.66361693389746,
+        "agent_id": 10,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 171,
+        "trigger time": 149.66461693389746,
+        "agent_id": 17,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 172,
+        "trigger time": 151.52739756396682,
+        "agent_id": 4,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 173,
+        "trigger time": 151.52839756396682,
+        "agent_id": 22,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 174,
+        "trigger time": 151.52939756396682,
+        "agent_id": 7,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 175,
+        "trigger time": 151.53039756396683,
+        "agent_id": 20,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 176,
+        "trigger time": 151.53139756396683,
+        "agent_id": 16,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 177,
+        "trigger time": 162.55072928798862,
+        "agent_id": 15,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 178,
+        "trigger time": 162.55172928798862,
+        "agent_id": 24,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 179,
+        "trigger time": 162.55272928798863,
+        "agent_id": 3,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 180,
+        "trigger time": 162.55372928798863,
+        "agent_id": 0,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 181,
+        "trigger time": 162.55472928798864,
+        "agent_id": 9,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 182,
+        "trigger time": 164.48953028973148,
+        "agent_id": 6,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 183,
+        "trigger time": 166.4216254836687,
+        "agent_id": 5,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 184,
+        "trigger time": 166.4226254836687,
+        "agent_id": 2,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 185,
+        "trigger time": 166.4236254836687,
+        "agent_id": 8,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 186,
+        "trigger time": 166.4246254836687,
+        "agent_id": 1,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 187,
+        "trigger time": 166.4256254836687,
+        "agent_id": 14,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 188,
+        "trigger time": 166.42662548366872,
+        "agent_id": 23,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 189,
+        "trigger time": 166.42762548366872,
+        "agent_id": 21,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 190,
+        "trigger time": 166.42862548366872,
+        "agent_id": 10,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 191,
+        "trigger time": 170.55264478089103,
+        "agent_id": 19,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 192,
+        "trigger time": 170.55364478089103,
+        "agent_id": 18,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 193,
+        "trigger time": 170.55464478089104,
+        "agent_id": 12,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 194,
+        "trigger time": 170.55564478089104,
+        "agent_id": 20,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 195,
+        "trigger time": 170.55664478089105,
+        "agent_id": 17,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 196,
+        "trigger time": 170.55764478089105,
+        "agent_id": 4,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 197,
+        "trigger time": 174.61854317589152,
+        "agent_id": 7,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 198,
+        "trigger time": 174.61954317589152,
+        "agent_id": 13,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 199,
+        "trigger time": 174.62054317589153,
+        "agent_id": 11,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 200,
+        "trigger time": 174.62154317589153,
+        "agent_id": 22,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 201,
+        "trigger time": 174.62254317589154,
+        "agent_id": 16,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 202,
+        "trigger time": 176.12137982734623,
+        "agent_id": 0,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 203,
+        "trigger time": 176.12237982734624,
+        "agent_id": 24,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 204,
+        "trigger time": 176.12337982734624,
+        "agent_id": 15,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 205,
+        "trigger time": 176.2057679168766,
+        "agent_id": 9,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 206,
+        "trigger time": 176.2067679168766,
+        "agent_id": 6,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 207,
+        "trigger time": 193.74530761141793,
+        "agent_id": 5,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 208,
+        "trigger time": 193.74630761141793,
+        "agent_id": 14,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 209,
+        "trigger time": 193.74730761141794,
+        "agent_id": 3,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 210,
+        "trigger time": 194.7190160180974,
+        "agent_id": 8,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 211,
+        "trigger time": 194.7200160180974,
+        "agent_id": 23,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 212,
+        "trigger time": 194.7210160180974,
+        "agent_id": 2,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 213,
+        "trigger time": 194.7220160180974,
+        "agent_id": 10,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 214,
+        "trigger time": 194.7230160180974,
+        "agent_id": 18,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 215,
+        "trigger time": 205.98954932898977,
+        "agent_id": 20,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 216,
+        "trigger time": 205.99054932898977,
+        "agent_id": 1,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 217,
+        "trigger time": 205.99154932898978,
+        "agent_id": 21,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 218,
+        "trigger time": 205.99254932898978,
+        "agent_id": 17,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 219,
+        "trigger time": 205.9935493289898,
+        "agent_id": 12,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 220,
+        "trigger time": 206.30806892726358,
+        "agent_id": 4,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 221,
+        "trigger time": 206.30906892726358,
+        "agent_id": 19,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 222,
+        "trigger time": 206.3100689272636,
+        "agent_id": 24,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 223,
+        "trigger time": 206.3110689272636,
+        "agent_id": 13,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 224,
+        "trigger time": 206.3120689272636,
+        "agent_id": 16,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 225,
+        "trigger time": 206.3130689272636,
+        "agent_id": 15,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 226,
+        "trigger time": 207.9207194871768,
+        "agent_id": 9,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 227,
+        "trigger time": 207.9217194871768,
+        "agent_id": 22,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 228,
+        "trigger time": 207.9227194871768,
+        "agent_id": 7,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 229,
+        "trigger time": 207.9237194871768,
+        "agent_id": 0,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 230,
+        "trigger time": 207.92471948717682,
+        "agent_id": 11,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 231,
+        "trigger time": 219.5494027323675,
+        "agent_id": 6,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 232,
+        "trigger time": 222.21058140012352,
+        "agent_id": 18,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 233,
+        "trigger time": 222.21158140012352,
+        "agent_id": 14,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 234,
+        "trigger time": 222.21258140012353,
+        "agent_id": 3,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 235,
+        "trigger time": 222.21358140012353,
+        "agent_id": 2,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 236,
+        "trigger time": 222.21458140012354,
+        "agent_id": 23,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 237,
+        "trigger time": 222.21558140012354,
+        "agent_id": 8,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 238,
+        "trigger time": 222.21658140012354,
+        "agent_id": 10,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 239,
+        "trigger time": 222.21758140012355,
+        "agent_id": 5,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 240,
+        "trigger time": 222.9299646068369,
+        "agent_id": 17,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 241,
+        "trigger time": 222.9309646068369,
+        "agent_id": 16,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 242,
+        "trigger time": 222.9319646068369,
+        "agent_id": 24,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 243,
+        "trigger time": 222.93296460683692,
+        "agent_id": 13,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 244,
+        "trigger time": 222.93396460683692,
+        "agent_id": 9,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 245,
+        "trigger time": 229.38480721352784,
+        "agent_id": 7,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 246,
+        "trigger time": 229.38580721352784,
+        "agent_id": 0,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 247,
+        "trigger time": 229.38680721352785,
+        "agent_id": 11,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 248,
+        "trigger time": 229.38780721352785,
+        "agent_id": 1,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 249,
+        "trigger time": 229.38880721352785,
+        "agent_id": 20,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 250,
+        "trigger time": 229.38980721352786,
+        "agent_id": 12,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 251,
+        "trigger time": 229.39080721352786,
+        "agent_id": 19,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 252,
+        "trigger time": 230.6910009572746,
+        "agent_id": 4,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 253,
+        "trigger time": 230.69200095727462,
+        "agent_id": 15,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 254,
+        "trigger time": 230.69300095727462,
+        "agent_id": 22,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 255,
+        "trigger time": 233.5952470605678,
+        "agent_id": 21,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 256,
+        "trigger time": 233.5962470605678,
+        "agent_id": 6,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 257,
+        "trigger time": 233.5972470605678,
+        "agent_id": 18,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 258,
+        "trigger time": 233.59824706056781,
+        "agent_id": 8,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 259,
+        "trigger time": 237.70920588694256,
+        "agent_id": 13,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 260,
+        "trigger time": 237.71020588694256,
+        "agent_id": 5,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 261,
+        "trigger time": 237.71120588694257,
+        "agent_id": 23,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 262,
+        "trigger time": 237.71220588694257,
+        "agent_id": 14,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 263,
+        "trigger time": 237.71320588694257,
+        "agent_id": 3,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 264,
+        "trigger time": 237.71420588694258,
+        "agent_id": 10,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 265,
+        "trigger time": 239.92273366633634,
+        "agent_id": 17,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 266,
+        "trigger time": 239.92373366633635,
+        "agent_id": 9,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 267,
+        "trigger time": 240.36897098261613,
+        "agent_id": 2,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 268,
+        "trigger time": 240.36997098261614,
+        "agent_id": 24,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 269,
+        "trigger time": 240.37097098261614,
+        "agent_id": 16,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 270,
+        "trigger time": 240.37197098261615,
+        "agent_id": 11,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 271,
+        "trigger time": 240.37297098261615,
+        "agent_id": 22,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 272,
+        "trigger time": 240.37397098261616,
+        "agent_id": 12,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 273,
+        "trigger time": 240.37497098261616,
+        "agent_id": 19,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 274,
+        "trigger time": 241.34323066384954,
+        "agent_id": 7,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 275,
+        "trigger time": 241.34423066384954,
+        "agent_id": 0,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 276,
+        "trigger time": 241.34523066384955,
+        "agent_id": 1,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 277,
+        "trigger time": 241.34623066384955,
+        "agent_id": 4,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 278,
+        "trigger time": 241.62947139853273,
+        "agent_id": 15,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 279,
+        "trigger time": 241.63047139853273,
+        "agent_id": 18,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 280,
+        "trigger time": 241.63147139853274,
+        "agent_id": 8,
+        "trace_id": 6,
+        "task_input": "Scene: [dog x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan ml,100, but I encountered a failure because a dog is attempting to catch me. Execution history: ml(50)",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.5866
+            ],
+            [
+                "ml",
+                2.192
+            ]
+        ],
+        "task_exe_time": 4.7786,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 281,
+        "trigger time": 252.95831096058063,
+        "agent_id": 20,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 282,
+        "trigger time": 252.95931096058064,
+        "agent_id": 6,
+        "trace_id": 4,
+        "task_input": "Scene: [table_1 x:0.28 y:0.15 width:0.2 height:0.19], Task: [A] Can you find scissors for cutting paper on the table?",
+        "exe_time_detail": [
+            [
+                "s(",
+                1.5563
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 4.0176,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 283,
+        "trigger time": 252.96031096058064,
+        "agent_id": 21,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 284,
+        "trigger time": 252.96131096058065,
+        "agent_id": 23,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 285,
+        "trigger time": 252.96231096058065,
+        "agent_id": 14,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 286,
+        "trigger time": 253.23717050716547,
+        "agent_id": 3,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 287,
+        "trigger time": 253.23817050716548,
+        "agent_id": 9,
+        "trace_id": 0,
+        "task_input": "Scene: [] Task: [A] Could you find the cat? If so, go to it.",
+        "exe_time_detail": [
+            [
+                "s(",
+                3.7132
+            ],
+            [
+                "g(",
+                2.4613
+            ]
+        ],
+        "task_exe_time": 6.1745,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 288,
+        "trigger time": 253.23917050716548,
+        "agent_id": 10,
+        "trace_id": 5,
+        "task_input": "Scene: [aerial_robot x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a aerial robot is approaching me. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "mr",
+                2.1086
+            ],
+            [
+                "mf",
+                2.3891
+            ]
+        ],
+        "task_exe_time": 4.4977,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 289,
+        "trigger time": 253.2401705071655,
+        "agent_id": 4,
+        "trace_id": 2,
+        "task_input": "Scene: [cabinet_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move up and then check the top of the cabinet, if you see a book, take a picture of it.",
+        "exe_time_detail": [
+            [
+                "mu",
+                2.4995
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "tp",
+                0.001
+            ]
+        ],
+        "task_exe_time": 2.5014999999999996,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 290,
+        "trigger time": 257.3183712009166,
+        "agent_id": 18,
+        "trace_id": 7,
+        "task_input": "Scene: [boy x:0.48 y:0.51 width:0.2 height:0.4] Task: [E] You provided me with plan mf,100, but I encountered a failure because a boy is passing by. Execution history: mf(50)",
+        "exe_time_detail": [
+            [
+                "d",
+                3
+            ],
+            [
+                "mf",
+                1.9777
+            ]
+        ],
+        "task_exe_time": 4.9777000000000005,
+        "tuf": [
+            2,
+            0.2,
+            0.5
+        ]
+    },
+    {
+        "job_id": 291,
+        "trigger time": 257.3983255073757,
+        "agent_id": 17,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 292,
+        "trigger time": 257.3993255073757,
+        "agent_id": 13,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 293,
+        "trigger time": 257.40032550737567,
+        "agent_id": 5,
+        "trace_id": 3,
+        "task_input": "Scene: [bed_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [A] Move down and try to find the toy under the bed.",
+        "exe_time_detail": [
+            [
+                "md",
+                2.5944
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "g(",
+                2.7066
+            ]
+        ],
+        "task_exe_time": 5.302,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    },
+    {
+        "job_id": 294,
+        "trigger time": 257.40132550737565,
+        "agent_id": 12,
+        "trace_id": 1,
+        "task_input": "Scene: [countertop_1 x:0.48 y:0.55 width:0.49 height:0.91] Task: [Q] Are there keys and a wallet on the countertop?",
+        "exe_time_detail": [
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "iv",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ],
+            [
+                "l",
+                0.001
+            ]
+        ],
+        "task_exe_time": 0.004,
+        "tuf": [
+            1,
+            1,
+            1.5
+        ]
+    }
+]

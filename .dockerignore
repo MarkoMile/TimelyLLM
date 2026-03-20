@@ -1,0 +1,15 @@
+.git
+.venv
+__pycache__
+*.pyc
+model/
+speech/
+*.log
+*.wav
+*.onnx
+*.jpg
+*.png
+*.pdf
+*.pt
+.vscode
+CLAUDE.md
