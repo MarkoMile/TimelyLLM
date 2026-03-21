@@ -13,9 +13,9 @@
 
 One-click setup and execution — environment setup, experiments, and result processing are all included.
 
-> **Choose either Local or Docker below.**
+> **Choose either Direct environment setup or Docker below.**
 
-**Local:**
+**Direct environment setup:**
 ```bash
 uv sync --extra notebook
 uv run python -m ipykernel install --user --name timelyllm --display-name "Python (timelyllm)"
