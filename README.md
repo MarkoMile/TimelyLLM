@@ -1,54 +1,5 @@
 # TimelyLLM: Time-sensitive LLM Serving System for Physical-I/O Limited Agents
 
-## Code Structure
-```
-timelyllm/
-├── rtllm.py                      # Main entry point for launching the system
-├── config.py                     # Experiment configuration and presets
-├── resdata.py                    # Summarize results from log files
-│
-├── rtengine/                     # Real-time LLM scheduling engine
-│   ├── vllm_llm_scheduler.py     # Main scheduler based on vLLM (multiple scheduling policies)
-│   ├── vllm_llm_engine_usage.py  # Custom vLLM engine with stop checker
-│   ├── stop_rule.py              # MiniSpec-based stop rule for segmented generation
-│   ├── minispec_interpreter.py   # MiniSpec language interpreter
-│   ├── exe_worst_case.py         # Worst-case execution time estimation
-│   ├── skillset.py               # Robot skill definitions
-│   ├── skill_item.py             # Skill item data structure
-│   └── prompt/                   # Prompt templates for different robot systems
-│       ├── prompt_drone_typefly.txt
-│       ├── prompt_robot_arm.txt
-│       ├── prompt_baseline_fltrnn.txt
-│       ├── prompt_chatbot.txt
-│       └── ...
-│
-├── request/                      # Request generation
-│   └── read_request.py           # Read task datasets and generate requests
-│
-├── executor/                     # Task execution
-│   ├── virtual_wrapper.py        # Virtual executor (replay from traces)
-│   ├── realworld_wrapper.py      # Real-world robot executor
-│   ├── speech_wrapper.py         # TTS wrapper (piper/espeak-ng/flite)
-│   ├── speech_output.py          # Speech output with Piper TTS
-│   └── minispec_executor/        # MiniSpec plan executor
-│
-├── util/                         # Utilities
-│   ├── util.py                   # Task data structure
-│   ├── log_config.py             # Thread-safe lazy logger
-│   └── memory_monitor.py         # GPU/CPU memory monitoring
-│
-└── logs/                         # Experiment log output
-
-dataset/                          # Dataset
-├── trace_set_*.json              # Trace files
-└── data_sample_*.json            # Workload files
-
-fig_plot/                         # Result visualization
-├── performance_compare_vllm.py   # TimeLyLLM vs vLLM comparison plots
-├── ablation_study_sched.py       # Scheduling algorithm ablation study
-└── robot_arm_res_fltrnn.py       # Robot arm (FLTRNN) result plots
-```
-
 ## Quick Start
 
 ### Prerequisites
@@ -67,9 +18,9 @@ One-click setup and execution — environment setup, experiments, and result pro
 **Local:**
 ```bash
 uv sync --extra notebook
-source .venv/bin/activate
+uv run python -m ipykernel install --user --name timelyllm --display-name "Python (timelyllm)"
 ```
-**Open `run_experiments.ipynb`, select the `.venv` kernel, and run all cells.**
+**Open `run_experiments.ipynb`, select the "Python (timelyllm)" kernel, and run all cells.**
 
 **Docker:**
 ```bash
@@ -196,5 +147,60 @@ Key CLI options:
 - `--agent-num`: Number of agents
 - `--run-mode`: Scheduling mode (`rtllm`, `vllm`, etc.)
 - `--model-path`: Path to LLM model
+
+</details>
+
+## Code Structure
+
+<details>
+<summary>Click to expand</summary>
+
+```
+timelyllm/
+├── rtllm.py                      # Main entry point for launching the system
+├── config.py                     # Experiment configuration and presets
+├── resdata.py                    # Summarize results from log files
+│
+├── rtengine/                     # Real-time LLM scheduling engine
+│   ├── vllm_llm_scheduler.py     # Main scheduler based on vLLM (multiple scheduling policies)
+│   ├── vllm_llm_engine_usage.py  # Custom vLLM engine with stop checker
+│   ├── stop_rule.py              # MiniSpec-based stop rule for segmented generation
+│   ├── minispec_interpreter.py   # MiniSpec language interpreter
+│   ├── exe_worst_case.py         # Worst-case execution time estimation
+│   ├── skillset.py               # Robot skill definitions
+│   ├── skill_item.py             # Skill item data structure
+│   └── prompt/                   # Prompt templates for different robot systems
+│       ├── prompt_drone_typefly.txt
+│       ├── prompt_robot_arm.txt
+│       ├── prompt_baseline_fltrnn.txt
+│       ├── prompt_chatbot.txt
+│       └── ...
+│
+├── request/                      # Request generation
+│   └── read_request.py           # Read task datasets and generate requests
+│
+├── executor/                     # Task execution
+│   ├── virtual_wrapper.py        # Virtual executor (replay from traces)
+│   ├── realworld_wrapper.py      # Real-world robot executor
+│   ├── speech_wrapper.py         # TTS wrapper (piper/espeak-ng/flite)
+│   ├── speech_output.py          # Speech output with Piper TTS
+│   └── minispec_executor/        # MiniSpec plan executor
+│
+├── util/                         # Utilities
+│   ├── util.py                   # Task data structure
+│   ├── log_config.py             # Thread-safe lazy logger
+│   └── memory_monitor.py         # GPU/CPU memory monitoring
+│
+└── logs/                         # Experiment log output
+
+dataset/                          # Dataset
+├── trace_set_*.json              # Trace files
+└── data_sample_*.json            # Workload files
+
+fig_plot/                         # Result visualization
+├── performance_compare_vllm.py   # TimeLyLLM vs vLLM comparison plots
+├── ablation_study_sched.py       # Scheduling algorithm ablation study
+└── robot_arm_res_fltrnn.py       # Robot arm (FLTRNN) result plots
+```
 
 </details>
