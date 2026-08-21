@@ -6,12 +6,10 @@ import os
 import asyncio
 from queue import Empty
 # from vllm_lib_usage import RTAsyncLLMEngine
-from vllm.engine.llm_engine import EngineArgs
-from rtengine.vllm_llm_engine_usage import RTLLMEngine
+from vllm.engine.arg_utils import EngineArgs
+from rtengine.backend import make_backend
 # torch.multiprocessing.set_start_method('spawn')
-from vllm.engine.arg_utils import AsyncEngineArgs
 from vllm.sampling_params import SamplingParams
-from vllm.utils import random_uuid
 from vllm import SamplingParams
 # from executor.virtual_wrapper import ActionDelay
 from rtengine.exe_worst_case import ExeWorstEst
@@ -150,9 +148,13 @@ class RequestScheduler:
             enable_prefix_caching=True
             # disable_sliding_window=True
         )
-        self.llm_engine = RTLLMEngine.from_engine_args(engine_args)
+        self.backend = make_backend(
+            engine_args,
+            robot_system=robot_system,
+            segment_stop=("rtllm" in run_mode),
+        )
+        self.llm_engine = self.backend.engine
         if "rtllm" in run_mode:
-            self.llm_engine.initialize_stop_checker(robot_system)
             print("initilize stop checker")
         
         self.sampling_params = SamplingParams(temperature=0,skip_special_tokens=True,
@@ -275,9 +277,24 @@ class RequestScheduler:
         return 
     
 
+    def _admit_memory_ok(self):
+        '''
+        Memory-side admission gate.
+
+        Upstream compared free KV blocks against a threshold of 0, or 1376 for
+        "sequential" mode. On the RTX 4090 it was tuned for, 1376 is close to the
+        total block count, so that test meant "the cache is empty", i.e. run one
+        request at a time. Both branches are restated here in terms that do not
+        depend on GPU size, so they carry over to the GH200 unchanged.
+        See PORT_PLAN.md D1.
+        '''
+        if self.run_mode == "sequential":
+            return self.backend.num_running() == 0
+        return self.backend.kv_has_free()
+
     def get_task(self):
         '''
-        Get task from task queue 
+        Get task from task queue
         For methods schedule_timely, schedule_timely_fixed_batch
         '''
         time1 = time.time()
@@ -446,18 +463,8 @@ class RequestScheduler:
                     # waiting_num = self.llm_engine.get_num_unfinished_requests()
                     # print(f"current batch size: {batch_cur_size} unifinished request number: {waiting_num} ")
                     if not wait_flag:
-                        num_free_gpu = sum(
-                                scheduler.block_manager.get_num_free_gpu_blocks()
-                                for scheduler in self.llm_engine.scheduler)
-                        # print(f"when have task {task_id}, the free gpu is {num_free_gpu}")
-
                         # memory constraint
-                        # set util threshold as 100 here, overall is 1376
-                        gpu_free_threhold = 1376 if self.run_mode == "sequential" else 0
-                        # gpu_occupy = kvcache_token * lmax * (running_num+1)
-                        # free_gpu_memory_in_bytes = num_free_gpu * block_size_in_bytes
-                        # token_budget = num_free_gpu * block_size_in_bytes # the maximum number of tokens that can be served on the current configuration
-                        if num_free_gpu > gpu_free_threhold:
+                        if self._admit_memory_ok():
                         # if token_budget > lmax:
                             # print("pass memory constraint")
                             # latency constraint
@@ -634,18 +641,8 @@ class RequestScheduler:
 
                 # decide add more request or not
                 if not wait_flag:
-                    num_free_gpu = sum(
-                            scheduler.block_manager.get_num_free_gpu_blocks()
-                            for scheduler in self.llm_engine.scheduler)
-                    # print(f"when have task {task_id}, the free gpu is {num_free_gpu}")
-
                     # memory constraint
-                    # set util threshold as 100 here, overall is 1376
-                    gpu_free_threhold = 1376 if self.run_mode == "sequential" else 0
-                    # gpu_occupy = kvcache_token * lmax * (running_num+1)
-                    # free_gpu_memory_in_bytes = num_free_gpu * block_size_in_bytes
-                    # token_budget = num_free_gpu * block_size_in_bytes # the maximum number of tokens that can be served on the current configuration
-                    if num_free_gpu > gpu_free_threhold:
+                    if self._admit_memory_ok():
                     # if token_budget > lmax:
                         # print("pass memory constraint")
                         # latency constraint
@@ -874,13 +871,8 @@ class RequestScheduler:
 
                 # decide add more request or not
                 if not wait_flag:
-                    num_free_gpu = sum(
-                            scheduler.block_manager.get_num_free_gpu_blocks()
-                            for scheduler in self.llm_engine.scheduler)
-
                     # memory constraint
-                    gpu_free_threhold = 1376 if self.run_mode == "sequential" else 0
-                    if num_free_gpu > gpu_free_threhold:
+                    if self._admit_memory_ok():
                         # latency constraint
                         exe_end_pre = self.taskData._read_para(id_urgent, 'exe_end_pre')
                         slack_time = -(time.time()+self.comm_time-exe_end_pre)
