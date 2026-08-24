@@ -109,6 +109,16 @@ otherwise. TimelyLLM does not set `disable_log_stats`, so the default satisfies 
 constraint**. Leave them commented; uncommenting silently changes what those
 experimental arms measure.
 
+**`num_running()` must NOT come from `SchedulerStats`.** Found by the smoke test.
+`num_running_reqs` is `len(scheduler.running)` sampled inside EngineCore's step,
+but a segment stop is decided in the frontend *afterwards*: `step()` flushes the
+abort only after `update_scheduler_stats` has already run
+(`llm_engine.py:313-320`). So the final snapshot still counts a segment-stopped
+request as running — and because no further step happens once the frontend has no
+unfinished requests, it stays that way permanently. `sequential` mode would then
+never admit. `engine.get_num_unfinished_requests()` has no such lag and is the
+same source `has_unfinished_requests()` reads, so the backend uses that.
+
 ---
 
 ## C. Semantics that must survive exactly
@@ -146,6 +156,24 @@ ends at the first `)`. Evaluating the same rule once on the nine-character
 prefix `mf(100);t` returns **False**: the boundary at 7 is invisible and
 generation runs past it with no error. That is exactly the failure the assertion
 prevents.
+
+### C1b. Segment boundaries are token-quantized [V, measured]
+
+The rule is consulted once per token, so a boundary *interior* to a token is
+invisible to it. Measured on Llama-3-8B: the first segment of a real plan is
+`?s('scissors')==True{`. At character granularity the rule fires at position 14,
+on `?s('scissors')` — but the tokenizer bundles the `)` with the characters after
+it, so the earliest boundary the engine can act on is position 21, seven tokens in.
+
+This is faithful, not a porting artefact: V0 consulted its checker once per token
+too. But it means **where a plan breaks into segments is partly a property of the
+tokenizer**, and therefore moves if the model does. That bears directly on the
+pending Qwen-vs-Llama substitution, and on `lmax`, which is denominated in tokens
+(10 for TypeFly; the measured segments were 7 and 5 tokens).
+
+Practical consequence for tooling: a validator that replays the rule at character
+granularity will disagree with the engine and look like a port bug.
+`scripts/smoke-test.py` replays at token boundaries for exactly this reason.
 
 ### C2. `MiniSpecProgram` is safe to make per-request [V]
 
@@ -196,6 +224,13 @@ Sites: `:456, 644, 882` — `gpu_free_threhold = 1376 if run_mode == "sequential
 essentially empty", i.e. the intent of `sequential` mode is **run one request at a
 time**. Confirm by printing the actual block count at startup on both machines.
 
+Partly confirmed: the GH200 reports **44,652 KV blocks** at
+`gpu_memory_utilization=0.10` with a 0.5B model — 32x upstream's 1376 while using
+a *tenth* of the memory fraction. Whatever 1376 meant on a 4090, it is
+meaningless here, and a rescaled constant would have left `sequential` mode
+silently batching. Still worth printing the count on the 4090-equivalent config to
+close out the arithmetic.
+
 Do **not** rescale the constant. Express the intent directly:
 
 - sequential → `num_running_reqs == 0`  [V] available in `SchedulerStats`
@@ -225,6 +260,17 @@ on shell history.
 gives a far larger KV cache than the paper's regime, so the memory constraint may
 never bind and that path goes untested. Make both configurable so the cache can be
 dialed to 4090-equivalent size and the admission logic actually exercised.
+
+Confirmed: with 44,652 blocks, a short request registers
+`kv_cache_usage = 2.24e-05`. `kv_has_free()` will be true essentially always, so
+the memory constraint is inert at this scale — it has to be dialed down before
+that path means anything.
+
+Separately, this GPU is **heavily shared**: 76.9 of 97.9 GB was already resident
+in other processes during the smoke run, leaving ~20 GB. `gpu_memory_utilization`
+is a fraction of *total* memory, so the 0.8 default would request ~78 GB and fail.
+Real runs need either exclusive access or a utilization set against what is
+actually free.
 
 ---
 
@@ -261,10 +307,25 @@ dialed to 4090-equivalent size and the admission logic actually exercised.
    upstream's ~40 pinned transitive dependencies are what made it unresolvable.
    Upstream pins preserved under `reference/`. Engine sizing is configurable;
    `scripts/run-gh200.sh` carries the required environment.
-4. **TODO — GPU smoke test.** Nothing below the import layer has run yet. One
-   agent, one prompt: assert a segment stops with
-   `stop_reason == "stop by checker"`, resumes, and that `kv_cache_usage` /
-   `num_running_reqs` come back populated rather than defaulted.
+4. **DONE — Tests, and the port verified on hardware.**
+   `tests/test_segment_stop.py`: 15 checks, no GPU needed. `scripts/smoke-test.py`:
+   11 checks, run on the GH200 against Qwen2.5-0.5B-Instruct — all passing. The
+   detokenizer rebind lands (`stop_reason == "stop by checker"`, stopping at the
+   rule rather than `max_tokens`), `SchedulerStats` arrives with real readings,
+   `prompt_token_ids` is populated, and a request id can be reused to resume a
+   second segment. The smoke test uses a synthetic "stop after N tokens" rule, so
+   this exercises the plumbing independently of the model emitting valid MiniSpec.
+   It also caught the `num_running()` lag documented in B2.
+
+   The real MiniSpec rule has since been run against Llama-3-8B-Instruct on the
+   real TypeFly prompt and a real dataset task (`--real-rule`). It produced
+   `?s('scissors')==True{g('scissors')}->False`, segmented into
+   `?s('scissors')==True{` and `g('scissors')`, each confirmed to stop on the
+   token where the rule first fires, followed by a natural EOS finish carrying
+   `stop_reason=None` — which also confirms the `stop_terminated` guard does not
+   relabel a natural ending as a segment boundary.
+
+   Still unverified: the full scheduler loop under multi-agent load.
 5. *(deferred)* **V0 backend** behind the same interface, for the x86 comparison.
 
 Backend surface — only three things differ between V0 and V1; `add_request`,

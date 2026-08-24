@@ -131,6 +131,19 @@ original once, or accept that only the RELATIVE TimelyLLM-vs-vLLM comparison
 is defensible and both arms must run on the identical 0.27.1 engine.
 
 # Model
-Llama-3-8B-Instruct pending Meta approval. Using Qwen2.5-7B-Instruct meanwhile.
-Note: model swap changes tokens-per-segment, so lmax (10 TypeFly / 20 FLTRNN)
-may need retuning.
+Llama-3-8B-Instruct approved and downloaded to model/Meta-Llama-3-8B-Instruct
+(15G, safetensors only, original/ excluded). HF_HOME=/space/mm562/hf, token
+present there, logged in as MarkoMile.
+
+Model swap changes lmax semantics for a concrete reason, now measured: the stop
+rule is consulted once per token, so segment boundaries can only land on token
+boundaries. On Llama-3 the first segment of a real plan ran to 7 tokens because
+the tokenizer bundled the ')' the rule wanted to break on. A different tokenizer
+segments the same plan text differently, so lmax (10 TypeFly / 20 FLTRNN) is not
+transferable across models without rechecking. See PORT_PLAN.md C1b.
+
+# GPU sharing (measured 2026-08-24)
+devkit04's GPU is heavily shared: 71-77 GB of 97.9 GB resident in ~8 other
+processes, leaving 20-25 GB. gpu_memory_utilization is a fraction of TOTAL, so
+the 0.8 default requests ~78 GB and fails. Llama-3-8B fp16 fits at 0.22.
+Real latency experiments need exclusive access or the numbers are noise.

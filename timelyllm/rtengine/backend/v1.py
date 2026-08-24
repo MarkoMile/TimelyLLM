@@ -160,7 +160,16 @@ class V1Backend(EngineBackend):
         return last.kv_cache_usage < 1.0
 
     def num_running(self):
-        last = self._stats.get("last")
-        if last is None:
-            return 0
-        return last.num_running_reqs
+        # Deliberately not SchedulerStats.num_running_reqs. That is
+        # len(scheduler.running) sampled inside EngineCore's step, and a segment
+        # stop is decided in the frontend afterwards -- step() only flushes the
+        # abort to EngineCore after update_scheduler_stats has already run
+        # (llm_engine.py:313-320). So the last stats snapshot still counts a
+        # segment-stopped request as running, and since no further step happens
+        # once the frontend has no unfinished requests, it stays that way.
+        #
+        # The output processor's own count has no such lag: it drops a request
+        # the moment the frontend finishes it, segment stops included. That is
+        # also the view TimelyLLM's loop reasons about, since
+        # has_unfinished_requests() reads the same source.
+        return self.engine.get_num_unfinished_requests()
