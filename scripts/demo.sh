@@ -6,6 +6,8 @@
 #   ./scripts/demo.sh rtllm        # TimelyLLM only           (~55s)
 #   ./scripts/demo.sh vllm         # baseline only            (~55s)
 #   ./scripts/demo.sh both 60      # both, 60s per arm
+#   ./scripts/demo.sh rtllm -v     # verbose: every plan, with what was asked
+#                                  # and a merged generation/execution timeline
 #
 # The two arms differ only in run_mode:
 #
@@ -22,11 +24,19 @@
 #
 set -euo pipefail
 
-ARM="${1:-both}"
-DURATION="${2:-45}"
+VERBOSE=0
+POS=()
+for a in "$@"; do
+    case "$a" in
+        -v|--verbose) VERBOSE=1 ;;
+        *) POS+=("$a") ;;
+    esac
+done
+ARM="${POS[0]:-both}"
+DURATION="${POS[1]:-45}"
 case "$ARM" in
     rtllm|vllm|both) ;;
-    *) echo "usage: $0 [rtllm|vllm|both] [seconds]" >&2; exit 2 ;;
+    *) echo "usage: $0 [rtllm|vllm|both] [seconds] [-v]" >&2; exit 2 ;;
 esac
 if [ "$DURATION" -lt 40 ]; then
     echo "  refusing: ${DURATION}s is below the trace's 34s warm-up, so no task" >&2
@@ -67,20 +77,60 @@ if [ "$ARM" = both ] || [ "$ARM" = rtllm ]; then
 fi
 [ ${#ARGS[@]} -eq 0 ] && { echo "  nothing to report" >&2; exit 1; }
 
-"$PY" - "${ARGS[@]}" <<'PY'
-import re, sys, collections
+"$PY" - "$VERBOSE" "$REPO/dataset/data_sample_1.json" "${ARGS[@]}" <<'PY'
+import json, re, sys, collections
 
-PATTERN = re.compile(r"^Output for task (\d+): (.*), time: [\d.]+$")
+OUT = re.compile(r"^Output for task (\d+): (.*), time: ([\d.]+)$")
+ADD = re.compile(r"^Added task (\d+), time: ([\d.]+)$")
+EXE = re.compile(r"^(Start|Finish) executing task (\d+) for agent (\d+) "
+                 r"on time ([\d.]+) with plan (.*)$")
 LABEL = {"rtllm": "rtllm  (TimelyLLM)", "vllm": "vllm   (baseline)"}
+
+VERBOSE = sys.argv[1] == "1"
+try:
+    ASKED = {str(t["job_id"]): (t["task_input"], t["agent_id"])
+             for t in json.load(open(sys.argv[2]))}
+except Exception:
+    ASKED = {}
 
 
 def read(path):
-    plans = collections.OrderedDict()
+    """plans: task -> [segment text]; events: task -> [(t, kind, detail)]"""
+    plans, events = collections.OrderedDict(), collections.defaultdict(list)
     for line in open(path, errors="replace"):
-        m = PATTERN.match(line.rstrip("\n"))
+        line = line.rstrip("\n")
+        m = OUT.match(line)
         if m:
             plans.setdefault(m.group(1), []).append(m.group(2))
-    return plans
+            events[m.group(1)].append((float(m.group(3)), "gen", m.group(2)))
+            continue
+        m = ADD.match(line)
+        if m:
+            events[m.group(1)].append((float(m.group(2)), "submit", ""))
+            continue
+        m = EXE.match(line)
+        if m:
+            kind = "exec" if m.group(1) == "Start" else "done"
+            events[m.group(2)].append((float(m.group(4)), kind, m.group(5)))
+    return plans, events
+
+
+def timeline(tid, events):
+    """Generation and drone execution on one clock, so the overlap is visible."""
+    rows = sorted(events.get(tid, []))
+    if not rows:
+        return
+    t0 = rows[0][0]
+    for t, kind, detail in rows:
+        stamp = f"    +{t - t0:6.3f}s"
+        if kind == "submit":
+            print(f"{stamp}  gen    submit")
+        elif kind == "gen":
+            print(f"{stamp}  gen    -> {repr(detail) if detail else '<eos>'}")
+        elif kind == "exec":
+            print(f"{stamp}  drone  start  {detail!r}")
+        else:
+            print(f"{stamp}  drone  done   {detail!r}")
 
 
 def render(seg):
@@ -90,28 +140,69 @@ def render(seg):
     return seg if seg else "<eos>"
 
 
-arms = [(a.split("=", 1)[0], read(a.split("=", 1)[1])) for a in sys.argv[1:]]
+arms = []
+for a in sys.argv[3:]:
+    name, path = a.split("=", 1)
+    plans, events = read(path)
+    arms.append((name, plans, events))
 
-for arm, plans in arms:
+for arm, plans, events in arms:
     total = sum(len(v) for v in plans.values())
     split = sum(1 for v in plans.values() if len(v) > 1)
     print(f"\n  {LABEL[arm]}   {total} segments across {len(plans)} tasks, "
           f"{split} split into more than one piece\n")
+
+    if not VERBOSE:
+        for tid, segs in sorted(plans.items(), key=lambda kv: int(kv[0])):
+            print(f"    task {tid:<4} {len(segs)}  "
+                  + " | ".join(render(s) for s in segs))
+        continue
+
     for tid, segs in sorted(plans.items(), key=lambda kv: int(kv[0])):
-        print(f"    task {tid:<4} {len(segs)}  " + " | ".join(render(s) for s in segs))
+        asked, agent = ASKED.get(tid, ("", "?"))
+        print(f"  task {tid}   agent {agent}   {len(segs)} segment"
+              f"{'s' if len(segs) != 1 else ''}")
+        if asked:
+            print(f"    asked  {asked}")
+        print(f"    plan   {''.join(segs)}")
+        timeline(tid, events)
+        print()
+
+def time_to_first_move(events):
+    """Submission -> the drone's first movement, per task.
+
+    This is what segmenting is for: the baseline cannot move until the whole
+    plan exists, while TimelyLLM releases the first fragment as soon as it is
+    executable.
+    """
+    out = []
+    for tid, rows in events.items():
+        submits = [t for t, k, _ in rows if k == "submit"]
+        starts = [t for t, k, _ in rows if k == "exec"]
+        if submits and starts:
+            out.append(min(starts) - min(submits))
+    return sorted(out)
+
 
 if len(arms) == 2:
     print("\n  side by side")
     print("  ------------")
-    print(f"    {'':22}{'segments':>10}{'tasks':>8}{'per task':>10}")
-    for arm, plans in arms:
+    print(f"    {'':22}{'segments':>10}{'tasks':>8}{'per task':>10}"
+          f"{'to 1st move':>14}")
+    for arm, plans, events in arms:
         total = sum(len(v) for v in plans.values())
         n = len(plans) or 1
-        print(f"    {LABEL[arm]:22}{total:>10}{len(plans):>8}{total / n:>10.1f}")
+        d = time_to_first_move(events)
+        med = f"{d[len(d) // 2] * 1000:.0f} ms" if d else "-"
+        print(f"    {LABEL[arm]:22}{total:>10}{len(plans):>8}{total / n:>10.1f}"
+              f"{med:>14}")
+    print("\n    'to 1st move' is the median delay from a task being submitted to")
+    print("    the drone starting to act. Indicative only: one short run on a")
+    print("    shared GPU, not a measurement.")
 
     # Same prompt under both arms makes the difference concrete.
     by_plan = {arm: {"".join(v): (t, v) for t, v in plans.items()}
-               for arm, plans in arms}
+               for arm, plans, _ in arms}
     shared = set(by_plan["vllm"]) & set(by_plan["rtllm"])
     if shared:
         key = max(shared, key=lambda k: len(by_plan["rtllm"][k][1]))
@@ -125,5 +216,5 @@ if len(arms) == 2:
         print("  produced while the drone is still flying the previous one, so")
         print("  generation and physical execution overlap instead of alternating.")
 
-print(f"\n  logs: {', '.join(a.split('=', 1)[1] for a in sys.argv[1:])}\n")
+print(f"\n  logs: {', '.join(a.split('=', 1)[1] for a in sys.argv[3:])}\n")
 PY
