@@ -119,6 +119,31 @@ unfinished requests, it stays that way permanently. `sequential` mode would then
 never admit. `engine.get_num_unfinished_requests()` has no such lag and is the
 same source `has_unfinished_requests()` reads, so the backend uses that.
 
+### B3. The `request_id` type contract [V, found by running]
+
+Missed in the original analysis, and it broke every run mode. [V] V1 rejects any
+request id that is not a `str` (`v1/engine/llm_engine.py:231`); TimelyLLM's task
+ids are ints taken from the dataset's `job_id`, so the scheduler died on its very
+first `add_request`. The original pass checked that `add_request` *existed*, not
+what it accepts.
+
+Fixed at the vLLM seam, not system-wide. Making ids strings throughout would break
+`AgentTaskCache._get_task_by_job_id`, which matches `task_item['job_id'] == job_id`
+against the dataset by value, and would change upstream's semantics everywhere —
+contaminating the A/B, whose entire premise is that the arms differ only in the
+engine. So the backend now owns `add_request` / `step` /
+`has_unfinished_requests`, stringifies on the way in, and restores the submitted
+type on the way out via a small in-flight map.
+
+This revises a design claim made above: the interface originally exposed the raw
+engine because proxying the drive loop "would only add a layer that could drift".
+The id contract is precisely why that layer has to exist. Three differences
+between the engines became four.
+
+The smoke test did not catch this because it used string request ids
+(`"task-0"`), so it never exercised the type the real code passes. Regression
+tests now cover int ids end to end in `tests/test_segment_stop.py`.
+
 ---
 
 ## C. Semantics that must survive exactly
@@ -343,7 +368,17 @@ actually free.
    `stop_reason=None` — which also confirms the `stop_terminated` guard does not
    relabel a natural ending as a segment boundary.
 
-   Still unverified: the full scheduler loop under multi-agent load.
+   **The full scheduler loop now runs.** 42 agents, Llama-3-8B at
+   `gpu_memory_utilization=0.20` (1.84 GiB KV cache, 15,040 tokens — close to the
+   4090's regime, so the memory constraint can actually bind), 150 s: 611 segments
+   across 190 tasks, between 2 and 5 segments each. Sample plan, in order:
+   `md(40);` / `?iv('toy')==True{` / `g('toy')}` / `->False`. That is
+   segment-wise generation with resumption working end to end through the real
+   entry point.
+
+   Getting there took two bugs, both found by running rather than reading — see
+   B3 for the `request_id` contract, and NOTES.md for the pre-existing
+   `--agent-num` limitation that it was hiding.
 5. *(deferred)* **V0 backend** behind the same interface, for the x86 comparison.
 
 Backend surface — only three things differ between V0 and V1; `add_request`,

@@ -448,15 +448,15 @@ class RequestScheduler:
                         task_id, agent_id, prompt_input = task_info
                         id_urgent = self.taskData.get_urgent_registered_task(token_speed)
                         running_num += 1
-                        self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                        self.backend.add_request(task_id, prompt_input, self.sampling_params)
                         logger.info(f"Added task {task_id}, time: {time.time()}")
                         batch_cur_size += 1
                         # print(f"batch size: {batch_cur_size}")
                         break
 
-                while self.llm_engine.has_unfinished_requests():
+                while self.backend.has_unfinished_requests():
                     # process exsiting request
-                    step_outputs = self.llm_engine.step()
+                    step_outputs = self.backend.step()
 
                     # decide add more request or not
                     
@@ -505,7 +505,7 @@ class RequestScheduler:
                                 if task_info:
                                     task_id, agent_id, prompt_input = task_info
                                     running_num += 1
-                                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                                     logger.info(f"Added task {task_id}, time: {time.time()}")
                                     batch_cur_size += 1
                                     # print(f"batch size: {batch_cur_size}")
@@ -566,14 +566,14 @@ class RequestScheduler:
                 task_info = self.get_task()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 # decide add more request or not based on gpu util
                 # num_free_gpu = sum(
@@ -587,7 +587,7 @@ class RequestScheduler:
                     task_info = self.get_task()
                     if task_info:
                         task_id, agent_id, prompt_input = task_info
-                        self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                        self.backend.add_request(task_id, prompt_input, self.sampling_params)
                         logger.info(f"Added task {task_id}, time: {time.time()}")
                         batch_cur_size += 1
                 
@@ -632,15 +632,15 @@ class RequestScheduler:
                     task_id, agent_id, prompt_input = task_info
                     id_urgent = self.taskData.get_earliest_registered_task()
                     running_num += 1
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 # decide add more request or not
                 if not wait_flag:
@@ -668,7 +668,7 @@ class RequestScheduler:
                             if task_info:
                                 task_id, agent_id, prompt_input = task_info
                                 running_num += 1
-                                self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                                self.backend.add_request(task_id, prompt_input, self.sampling_params)
                                 logger.info(f"Added task {task_id}, time: {time.time()}")
                                 batch_cur_size += 1
                                 # print(f"batch size: {batch_cur_size}")
@@ -734,20 +734,20 @@ class RequestScheduler:
                 task_info = self.get_task_edf()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 if batch_cur_size < batch_size:
                     task_info = self.get_task_edf()
                     if task_info:
                         task_id, agent_id, prompt_input = task_info
-                        self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                        self.backend.add_request(task_id, prompt_input, self.sampling_params)
                         logger.info(f"Added task {task_id}, time: {time.time()}")
                         batch_cur_size += 1
                 
@@ -794,14 +794,14 @@ class RequestScheduler:
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
                     sampling_params = SamplingParams(temperature=0, skip_special_tokens=True, max_tokens=self.taskData._read_para(task_id, 'remaining_length'))
-                    self.llm_engine.add_request(task_id, prompt_input, sampling_params)
+                    self.backend.add_request(task_id, prompt_input, sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 # decide add more request or not based on gpu util
                 # num_free_gpu = sum(
@@ -816,7 +816,7 @@ class RequestScheduler:
                     if task_info:
                         task_id, agent_id, prompt_input = task_info
                         sampling_params = SamplingParams(temperature=0, skip_special_tokens=True, max_tokens=self.taskData._read_para(task_id, 'remaining_length'))
-                        self.llm_engine.add_request(task_id, prompt_input, sampling_params)
+                        self.backend.add_request(task_id, prompt_input, sampling_params)
                         logger.info(f"Added task {task_id}, time: {time.time()}")
                         batch_cur_size += 1
                 
@@ -862,15 +862,15 @@ class RequestScheduler:
                     running_num += 1
                     # Use dynamic sampling params based on remaining_length
                     sampling_params = SamplingParams(temperature=0, skip_special_tokens=True, max_tokens=self.taskData._read_para(task_id, 'remaining_length'))
-                    self.llm_engine.add_request(task_id, prompt_input, sampling_params)
+                    self.backend.add_request(task_id, prompt_input, sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process existing request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 # decide add more request or not
                 if not wait_flag:
@@ -904,7 +904,7 @@ class RequestScheduler:
                                 running_num += 1
                                 # Use dynamic sampling params
                                 sampling_params = SamplingParams(temperature=0, skip_special_tokens=True,max_tokens=self.taskData._read_para(task_id, 'remaining_length'))
-                                self.llm_engine.add_request(task_id, prompt_input, sampling_params)
+                                self.backend.add_request(task_id, prompt_input, sampling_params)
                                 logger.info(f"Added task {task_id}, time: {time.time()}")
                                 batch_cur_size += 1
                                 # print(f"batch size: {batch_cur_size}")
@@ -961,15 +961,15 @@ class RequestScheduler:
                 task_info = self.get_task_normal()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
                 # running_num = len(self.llm_engine.scheduler[0].running)
                 # print(f"current batch size: {batch_cur_size} running request number: {running_num} ")
 
@@ -979,7 +979,7 @@ class RequestScheduler:
                 task_info = self.get_task_normal()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
@@ -1013,21 +1013,21 @@ class RequestScheduler:
                 task_info = self.get_task_normal()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 if batch_cur_size < batch_size:
                     task_info = self.get_task_normal()
                     if task_info:
                         task_id, agent_id, prompt_input = task_info
-                        self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                        self.backend.add_request(task_id, prompt_input, self.sampling_params)
                         logger.info(f"Added task {task_id}, time: {time.time()}")
                         batch_cur_size += 1
                         # print(f"batch size: {batch_cur_size}")
@@ -1062,21 +1062,21 @@ class RequestScheduler:
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
                     sampling_params = SamplingParams(temperature=0, skip_special_tokens=True, max_tokens=self.taskData._read_para(task_id, 'output_length'))
-                    self.llm_engine.add_request(task_id, prompt_input, sampling_params)
+                    self.backend.add_request(task_id, prompt_input, sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 task_info = self.get_task_normal()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
                     sampling_params = SamplingParams(temperature=0, skip_special_tokens=True,max_tokens=self.taskData._read_para(task_id, 'output_length'))
-                    self.llm_engine.add_request(task_id, prompt_input, sampling_params)
+                    self.backend.add_request(task_id, prompt_input, sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
@@ -1138,20 +1138,20 @@ class RequestScheduler:
                 task_info = self.get_task_normal()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 task_info = self.get_task_normal()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
@@ -1182,20 +1182,20 @@ class RequestScheduler:
                 task_info = self.get_task_normal()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")
                     break
 
-            while self.llm_engine.has_unfinished_requests():
+            while self.backend.has_unfinished_requests():
                 # process exsiting request
-                step_outputs = self.llm_engine.step()
+                step_outputs = self.backend.step()
 
                 task_info = self.get_task_normal()
                 if task_info:
                     task_id, agent_id, prompt_input = task_info
-                    self.llm_engine.add_request(task_id, prompt_input, self.sampling_params)
+                    self.backend.add_request(task_id, prompt_input, self.sampling_params)
                     logger.info(f"Added task {task_id}, time: {time.time()}")
                     batch_cur_size += 1
                     # print(f"batch size: {batch_cur_size}")

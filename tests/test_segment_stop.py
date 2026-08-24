@@ -177,6 +177,90 @@ def test_rule_instances_are_per_request():
 
 
 # --------------------------------------------------------------------------
+# request id translation
+# --------------------------------------------------------------------------
+
+class _FakeOutput:
+    def __init__(self, request_id, finished):
+        self.request_id = request_id
+        self.finished = finished
+
+
+class _FakeEngine:
+    """Records what it was handed, and echoes ids back the way V1 does."""
+
+    def __init__(self):
+        self.seen = []
+        self.pending = []
+
+    def add_request(self, request_id, prompt, params):
+        if not isinstance(request_id, str):
+            raise TypeError(f"request_id must be a string, got {type(request_id)}")
+        self.seen.append(request_id)
+
+    def step(self):
+        out, self.pending = self.pending, []
+        return out
+
+
+def _backend():
+    """A V1Backend with the id map wired up but no real engine behind it."""
+    from rtengine.backend.v1 import V1Backend
+    b = V1Backend.__new__(V1Backend)
+    b.engine = _FakeEngine()
+    b._ids = {}
+    b._stats = {}
+    return b
+
+
+def test_int_request_ids_reach_vllm_as_strings():
+    # The regression this exists for: TimelyLLM's task ids come from the
+    # dataset's job_id and are ints, but V1 rejects non-str request ids.
+    b = _backend()
+    b.add_request(7, "prompt", None)
+    assert b.engine.seen == ["7"]
+
+
+def test_request_id_comes_back_in_the_submitted_type():
+    # The scheduler indexes its own bookkeeping with output.request_id, and
+    # those dicts are keyed by int, so the type has to survive the round trip.
+    b = _backend()
+    b.add_request(7, "prompt", None)
+    b.engine.pending = [_FakeOutput("7", finished=False)]
+    (out,) = b.step()
+    assert out.request_id == 7 and isinstance(out.request_id, int)
+
+
+def test_id_map_is_released_on_finish():
+    b = _backend()
+    b.add_request(7, "prompt", None)
+    b.engine.pending = [_FakeOutput("7", finished=True)]
+    b.step()
+    assert b._ids == {}
+
+
+def test_id_can_be_reused_for_the_next_segment():
+    # A segment stop finishes the request; the next segment re-submits the same
+    # task id, which must map cleanly again.
+    b = _backend()
+    b.add_request(7, "prompt", None)
+    b.engine.pending = [_FakeOutput("7", finished=True)]
+    b.step()
+    b.add_request(7, "prompt+plan", None)
+    b.engine.pending = [_FakeOutput("7", finished=False)]
+    (out,) = b.step()
+    assert out.request_id == 7
+    assert b.engine.seen == ["7", "7"]
+
+
+def test_unknown_ids_pass_through_untouched():
+    b = _backend()
+    b.engine.pending = [_FakeOutput("stranger", finished=False)]
+    (out,) = b.step()
+    assert out.request_id == "stranger"
+
+
+# --------------------------------------------------------------------------
 # vLLM wiring
 # --------------------------------------------------------------------------
 

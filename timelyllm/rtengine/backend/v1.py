@@ -152,6 +152,30 @@ class V1Backend(EngineBackend):
 
         output_processor.update_scheduler_stats = capture
 
+        # str(id) -> the id the caller submitted. V1 requires str request ids
+        # (llm_engine.py:231) and TimelyLLM's are ints, so they are converted
+        # here and converted back on the way out. Bounded by the number of
+        # in-flight requests: entries are dropped as requests finish.
+        self._ids = {}
+
+    def add_request(self, request_id, prompt, params):
+        key = str(request_id)
+        self._ids[key] = request_id
+        self.engine.add_request(key, prompt, params)
+
+    def step(self):
+        outputs = self.engine.step()
+        for output in outputs:
+            key = output.request_id
+            if key in self._ids:
+                output.request_id = self._ids[key]
+                if output.finished:
+                    del self._ids[key]
+        return outputs
+
+    def has_unfinished_requests(self):
+        return self.engine.has_unfinished_requests()
+
     def kv_has_free(self):
         last = self._stats.get("last")
         if last is None:

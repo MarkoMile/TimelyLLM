@@ -142,6 +142,14 @@ the tokenizer bundled the ')' the rule wanted to break on. A different tokenizer
 segments the same plan text differently, so lmax (10 TypeFly / 20 FLTRNN) is not
 transferable across models without rechecking. See PORT_PLAN.md C1b.
 
+# Gotcha: --agent-num cannot be reduced (measured, pre-existing)
+data_sample_1.json carries agent_id 0..41, and 476 of its 532 tasks reference
+agent_id >= 4. RequestGenerator stores agent_num but never filters on it, so
+--agent-num 4 feeds tasks referencing agent 41 into a 4-entry result_queues dict
+and dies with KeyError the moment one of them completes. Upstream behaviour, not
+a port issue -- it is simply invisible until tasks start completing. Use the
+preset's agent_num (42), or a dataset whose agent_ids fit the count.
+
 # GPU sharing (measured 2026-08-24)
 devkit04's GPU is heavily shared: 71-77 GB of 97.9 GB resident in ~8 other
 processes, leaving 20-25 GB. gpu_memory_utilization is a fraction of TOTAL, so
