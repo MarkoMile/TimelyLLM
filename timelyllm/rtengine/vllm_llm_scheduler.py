@@ -16,7 +16,10 @@ from rtengine.exe_worst_case import ExeWorstEst
 # model_path = "/home/neiwen/hf_modelzoo/models--meta-llama--Meta-Llama-3-8B-instruct/snapshots/e1945c40cd546c78e41f1151f4db032b271faeaa"
 # model_path = "/home/neiwen/hfmodelzoo/models--Qwen--Qwen2-7B-Instruct/snapshots/f2826a00ceef68f0f2b946d945ecc0477ce4450c"
 # model_path = "/home/neiwen/hfmodelzoo/models--microsoft--Phi-3-mini-128k-instruct/snapshots/a90b62ae09941edff87a90ced39ba5807e6b2ade"
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+# Respect an already-set value so the GPU can be chosen per run: needed to
+# pin around the Aerial cuBB workload on the GH200, and to place the two arms
+# of the x86 side-by-side comparison on separate GPUs. See PORT_PLAN.md D2.
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")
 from util.log_config import logger
 from util.util import Task
 from queue import PriorityQueue
@@ -128,11 +131,11 @@ class TaskDetails:
 class RequestScheduler:
     def __init__(self, prompt_path : str, global_stop_signal, agent_num: int, seg_exe: float, lmax : int,
                               run_mode : str = "rtllm", use_cache : bool =True, comm_time: float = 0, robot_system: str = "typefly",
-                              real_audio_task_ids=None, prompt_speech_path=None, model_path=None):
+                              real_audio_task_ids=None, prompt_speech_path=None, model_path=None,
+                              gpu_memory_utilization: float = 0.8, max_model_len: int = 4000,
+                              max_num_seqs: int = 8):
         # gpu parameter
-        gpu_memory_utilization=0.8
-        max_model_len=4000 #4000
-        self.max_num_seqs=8
+        self.max_num_seqs = max_num_seqs
 
         # Use passed model_path, or fall back to module-level default
         _model_path = model_path if model_path is not None else globals().get('model_path')
@@ -1227,7 +1230,8 @@ class RequestScheduler:
 
 
 
-def infer_start(task_queue, result_queues, prompt_path, agent_num, global_stop_signal, run_mode, robot_system='typefly', batchsize=1, seg_exe=0.09, lmax =10, comm_time=0, real_audio_task_ids=None, prompt_speech_path=None, model_path_override=None):
+def infer_start(task_queue, result_queues, prompt_path, agent_num, global_stop_signal, run_mode, robot_system='typefly', batchsize=1, seg_exe=0.09, lmax =10, comm_time=0, real_audio_task_ids=None, prompt_speech_path=None, model_path_override=None,
+                gpu_memory_utilization=0.8, max_model_len=4000, max_num_seqs=8):
     # llm_device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
     # for normal generation
     # plan_gen = SerialPlanner(plan_rec_path, global_stop_signal, agent_num,
@@ -1240,7 +1244,9 @@ def infer_start(task_queue, result_queues, prompt_path, agent_num, global_stop_s
     scheduler = RequestScheduler(prompt_path, global_stop_signal, agent_num, seg_exe, lmax,
                               run_mode= run_mode, use_cache=False, comm_time=comm_time, robot_system=robot_system,
                               real_audio_task_ids=real_audio_task_ids, prompt_speech_path=prompt_speech_path,
-                              model_path=effective_model_path)
+                              model_path=effective_model_path,
+                              gpu_memory_utilization=gpu_memory_utilization,
+                              max_model_len=max_model_len, max_num_seqs=max_num_seqs)
     if run_mode =='vllm' or run_mode =='vllm-edf':
         scheduler.vllm_schedule(task_queue, result_queues)
     elif run_mode =='vllm-fixed':

@@ -36,6 +36,15 @@ class ExperimentConfig:
     lmax: Optional[int] = None        # None = derived from robot_system
     comm_time: float = 0.008
 
+    # Engine sizing. Upstream hardcoded these for a 24GB RTX 4090. On a larger
+    # card the default KV cache is big enough that the memory-side admission
+    # constraint may never bind, leaving that path untested -- lower
+    # gpu_memory_utilization to reproduce the original pressure regime.
+    # See PORT_PLAN.md D4.
+    gpu_memory_utilization: float = 0.8
+    max_model_len: int = 4000
+    max_num_seqs: int = 8
+
     # Paths
     model_path: str = '../model/Meta-Llama-3-8B-Instruct'
     request_list_path: str = '../dataset/data_sample_1.json'
@@ -154,6 +163,9 @@ def build_config() -> ExperimentConfig:
     parser.add_argument('--prompt-speech-path', type=str)
     parser.add_argument('--run-duration', type=int)
     parser.add_argument('--max-workers', type=int)
+    parser.add_argument('--gpu-memory-utilization', type=float)
+    parser.add_argument('--max-model-len', type=int)
+    parser.add_argument('--max-num-seqs', type=int)
     parser.add_argument('--log-name', type=str, help='Custom log filename (without .log extension)')
 
     args = parser.parse_args()
@@ -194,6 +206,9 @@ def build_config() -> ExperimentConfig:
         'prompt_speech_path': args.prompt_speech_path,
         'run_duration': args.run_duration,
         'max_workers': args.max_workers,
+        'gpu_memory_utilization': args.gpu_memory_utilization,
+        'max_model_len': args.max_model_len,
+        'max_num_seqs': args.max_num_seqs,
     }
     for key, val in cli_mapping.items():
         if val is not None:

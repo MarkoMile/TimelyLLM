@@ -91,7 +91,8 @@ if __name__ == "__main__":
         args=(task_queue, result_queues, cfg.prompt_path, cfg.agent_num,
               global_stop_signal, cfg.run_mode, cfg.robot_system, cfg.batchsize,
               cfg.seg_exe, cfg.lmax, cfg.comm_time, cfg.real_audio_task_ids,
-              cfg.prompt_speech_path, cfg.model_path)
+              cfg.prompt_speech_path, cfg.model_path,
+              cfg.gpu_memory_utilization, cfg.max_model_len, cfg.max_num_seqs)
     )
 
     if cfg.executor_mode == 'virtual':

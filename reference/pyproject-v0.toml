@@ -1,0 +1,111 @@
+[project]
+name = "timelyllm"
+version = "0.1.0"
+description = "TimelyLLM: Real-time LLM inference scheduling"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    # Core ML/LLM
+    "torch==2.4.0",
+    "torchvision==0.19.0",
+    "xformers==0.0.27.post2",
+    "triton==3.0.0",
+    "vllm==0.5.4",
+    "vllm-flash-attn==2.6.1",
+    "transformers==4.44.2",
+    "accelerate==0.34.2",
+    "bitsandbytes==0.43.3",
+    "sentencepiece==0.2.0",
+    "tiktoken==0.7.0",
+    "tokenizers==0.19.1",
+    "openai==1.42.0",
+    "outlines==0.0.46",
+    "lm-format-enforcer==0.10.3",
+    "gguf==0.9.1",
+    "datasets==2.21.0",
+    "huggingface-hub==0.24.6",
+    "safetensors==0.4.4",
+
+    # Serving
+    "fastapi==0.112.2",
+    "uvicorn==0.30.6",
+    "uvloop==0.20.0",
+
+    # Distributed
+    "ray==2.34.0",
+
+    # Scientific computing
+    "numpy==1.26.4",
+    "scipy==1.14.1",
+    "pandas==2.2.2",
+    "scikit-learn==1.5.1",
+    "numba==0.60.0",
+    "filterpy==1.4.5",
+
+    # Visualization
+    "matplotlib==3.9.2",
+    "brokenaxes==0.6.1",
+
+    # Audio
+    "librosa==0.10.2.post1",
+    "soundfile==0.12.1",
+
+    # Image/Video
+    "opencv-python==4.11.0.86",
+    "pillow==10.4.0",
+
+    # Utilities
+    "aiohttp==3.10.5",
+    "requests==2.32.3",
+    "httpx==0.27.0",
+    "psutil==6.0.0",
+    "GPUtil==1.4.0",
+    "Pympler==1.1",
+    "python-dotenv==1.0.1",
+    "pydantic==2.8.2",
+    "PyYAML==6.0.2",
+    "tqdm==4.66.5",
+    "overrides==7.7.0",
+    "pygame==2.6.1",
+    "pyarrow==17.0.0",
+    "protobuf==5.27.3",
+
+    # pyairports from git (PyPI version is a fake/squatted package)
+    "pyairports",
+]
+
+[project.optional-dependencies]
+speech = [
+    "piper-tts==1.3.0",
+    "onnxruntime==1.18.1",
+    "openai-whisper==20250625",
+]
+# robot dependencies (install manually):
+#   podtp: pip install -e /path/to/POD-XIAO-Python
+#   djitellopy: pip install djitellopy
+notebook = [
+    "jupyter",
+    "ipykernel",
+]
+
+[tool.uv]
+find-links = [
+    "https://download.pytorch.org/whl/cu121",
+]
+
+# setuptools <71 needed for pkg_resources (required by pyairports)
+override-dependencies = [
+    "setuptools<71",
+]
+environments = [
+    "sys_platform == 'linux'",
+]
+
+[tool.uv.sources]
+pyairports = { git = "https://github.com/ozeliger/pyairports.git" }
+
+[tool.hatch.build.targets.wheel]
+packages = ["timelyllm"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

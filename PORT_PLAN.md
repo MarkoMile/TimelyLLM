@@ -250,13 +250,22 @@ dialed to 4090-equivalent size and the admission logic actually exercised.
 
 ## Commit sequence (GH200-first)
 
-1. **Backend interface + V1 implementation.** Interface designed so a V0 backend can
-   be added later without restructuring — that keeps the H100 A/B available at no
-   extra cost now.
-2. **Threshold semantics (D1).** The one deliberate behavior change, isolated so it
-   can be reviewed and reverted independently.
-3. **Config / environment plumbing (D2-D4).**
-4. *(deferred)* **V0 backend** behind the same interface, for the H100 comparison.
+1. **DONE — Backend interface + V1 implementation**, under `rtengine/backend/`.
+   Interface designed so a V0 backend can be added later without restructuring,
+   keeping the x86 A/B available at no extra cost.
+2. **DONE — Threshold semantics (D1)**, folded into step 1: the free-block query
+   cannot be replaced without simultaneously deciding what the threshold means, so
+   `_admit_memory_ok()` encodes the intent rather than transliterating `1376`.
+3. **DONE — Dependencies (A3) and config/environment plumbing (D2-D4).**
+   `pyproject.toml` now declares only what TimelyLLM imports plus `vllm==0.27.1`;
+   upstream's ~40 pinned transitive dependencies are what made it unresolvable.
+   Upstream pins preserved under `reference/`. Engine sizing is configurable;
+   `scripts/run-gh200.sh` carries the required environment.
+4. **TODO — GPU smoke test.** Nothing below the import layer has run yet. One
+   agent, one prompt: assert a segment stops with
+   `stop_reason == "stop by checker"`, resumes, and that `kv_cache_usage` /
+   `num_running_reqs` come back populated rather than defaulted.
+5. *(deferred)* **V0 backend** behind the same interface, for the x86 comparison.
 
 Backend surface — only three things differ between V0 and V1; `add_request`,
 `step()`, `has_unfinished_requests()` are already identical:
