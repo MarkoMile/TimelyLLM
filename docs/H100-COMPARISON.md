@@ -1,49 +1,109 @@
-# Comparing the port against upstream on the H100
+# Comparing base vLLM, original TimelyLLM, and the port — on an x86 H100
 
-This walks through validating `port/vllm-v1` against unmodified upstream TimelyLLM,
-side by side on the same machine. The GH200 cannot do this: vLLM 0.5.4 has no
-aarch64 wheels, so there is no reference implementation to diff against there.
-An x86 box with an H100 can run both.
-
-**What this establishes.** TimelyLLM samples at `temperature=0`, and a task's
-prompt depends only on its own input plus the plan accumulated so far — never on
-what else is in the batch. So for a given task the generated plan text should be
-identical on both engines. If it is, the port is faithful. Comparing plan *text*
-sidesteps latency noise entirely, which matters because the two arms run different
-engines on shared hardware and their timings have no reason to match.
-
-**What it does not establish.** Nothing about performance. Do not read the timings
-in these logs as a result.
+The GH200 cannot run this comparison: vLLM 0.5.4 has no aarch64 wheels, so there
+is no reference implementation to diff against. An x86 machine with an H100 can
+run both engines, which is the only place the port can be validated.
 
 ---
 
-## Step 0 — Verify the gating unknown first
+## What the experiment is
 
-Everything below assumes vLLM 0.5.4 installs on this machine. It is from August
-2024 and pins `torch==2.4.0` (cu121), `vllm-flash-attn==2.6.1` and
-`xformers==0.0.27.post2`. Those are the parts most likely to fight you on Hopper.
-Establish this before investing in the rest:
+Four runs, not three. Two engines crossed with two run modes:
+
+|  | vLLM 0.5.4 (upstream tree) | vLLM 0.27.1 (port tree) |
+|---|---|---|
+| `exp741_vllm_high` | base vLLM, old engine | base vLLM, new engine |
+| `exp741_timelyllm_high` | **original TimelyLLM** | **ported TimelyLLM** |
+
+The base-vLLM row is the control, and it is what makes the rest interpretable.
+Without it, ported TimelyLLM beating original TimelyLLM could just as easily be
+vLLM having got faster in the eighteen months between versions.
+
+- **Across a row** — did the port change behaviour? (engine effect)
+- **Down a column** — does TimelyLLM beat plain batching on that engine? (the
+  paper's claim)
+- **The two column-gaps against each other** — does the paper's effect survive
+  the port? That is the deliverable.
+
+Two separate questions get checked two different ways:
+
+- **Fidelity**: does the port produce the *same plans* as upstream? Compared as
+  text, by `compare-arms.py`. Greedy decoding makes this exact and immune to
+  timing noise.
+- **Effect**: does TimelyLLM still shorten *time to first action*? Compared as
+  timing, by `summarize-runs.py`.
+
+---
+
+# Part A — before you leave the GH200
+
+### A1. Commit the staged work
 
 ```bash
+cd /space/mm562/TimelyLLM
+git status --short          # confirm what is staged
+git commit -F commit-msg.txt
+rm commit-msg.txt
+```
+
+### A2. Fork on GitHub and push both branches
+
+The upstream repo is `Neawhen/TimelyLLM` and you cannot push to it. Fork it in
+the web UI (or `gh auth login` then `gh repo fork --remote=false`), then:
+
+```bash
+git remote rename origin upstream
+git remote add origin git@github.com:<you>/TimelyLLM.git
+git push -u origin port/vllm-v1 main
+```
+
+Both branches matter: `port/vllm-v1` is the work, and `main` is the reference
+arm. `.gitignore` covers `/model/*` and `*.log`, so the 15 GB of weights and the
+run logs stay out.
+
+### A3. Confirm `main` is still pristine
+
+The upstream arm is only a valid reference if it is upstream, untouched:
+
+```bash
+git diff --stat main upstream/main     # must print nothing
+```
+
+### A4. Nothing else
+
+`uv.lock` is a universal lock — it carries x86_64 wheels alongside the aarch64
+ones — so it will resolve on the H100 without re-locking. Your Hugging Face
+account is already approved for Llama-3, but the token lives on this machine
+only; you will authenticate again over there.
+
+---
+
+# Part B — once you are on the H100
+
+### B0. The gate: does vLLM 0.5.4 install at all?
+
+Do this before anything else. Everything below depends on it, and it is the one
+step with real risk: 0.5.4 is from August 2024 and pins `torch==2.4.0` (cu121),
+`vllm-flash-attn==2.6.1` and `xformers==0.0.27.post2`. Those are what will fight
+you on Hopper.
+
+```bash
+uname -m                    # expect x86_64
+nvidia-smi --query-gpu=index,name,memory.total,memory.free --format=csv
+
 cd /tmp && uv venv --python 3.10 probe-v0 && cd probe-v0
 uv pip install --find-links https://download.pytorch.org/whl/cu121 \
     torch==2.4.0 vllm==0.5.4
-./bin/python -c "import vllm, torch; print(vllm.__version__, torch.__version__,
-                 torch.cuda.get_device_name(0))"
+./bin/python -c "import vllm, torch; print(vllm.__version__, torch.__version__, \
+    torch.cuda.get_device_name(0))"
 ```
 
-If that fails and cannot be made to work, **stop**. Both comparison strategies
-need a running 0.5.4, so the port cannot be validated against upstream anywhere,
-and the fallback is to accept that only the relative TimelyLLM-vs-vLLM gap is
-defensible with both arms on identical 0.27.1. That is a decision for your
-advisor, not a workaround to improvise.
+**If this cannot be made to work, stop.** Both comparison strategies need a
+running 0.5.4. The fallback is that only the relative TimelyLLM-vs-vLLM gap is
+defensible, with both arms on identical 0.27.1 — that is a conversation with
+Zongshen about what the results can claim, not something to improvise around.
 
----
-
-## Step 1 — Clone the fork and create both working trees
-
-One clone, two working trees. `main` is an untouched mirror of upstream, which is
-what makes it a valid reference.
+### B1. Clone and create both working trees
 
 ```bash
 git clone git@github.com:<you>/TimelyLLM.git
@@ -52,189 +112,157 @@ git checkout port/vllm-v1
 git worktree add ../TimelyLLM-v0 main
 ```
 
-You now have:
+One clone, two trees, same history. **Never edit anything in `TimelyLLM-v0`** —
+the moment you do it stops being a reference, and the tooling will warn you.
 
-| path | branch | engine | python |
-|---|---|---|---|
-| `TimelyLLM` | `port/vllm-v1` | vLLM 0.27.1 | 3.12 |
-| `TimelyLLM-v0` | `main` (upstream verbatim) | vLLM 0.5.4 | 3.10 |
+### B2. Build both environments
 
-Do not edit anything in `TimelyLLM-v0`. The moment you do, it stops being a
-reference. The comparison script warns if that tree is dirty, on the wrong
-branch, or behind `origin/main`.
-
----
-
-## Step 2 — Build both environments
-
-Each tree carries its own `pyproject.toml` and `uv.lock`, so each resolves to its
-own stack. `uv` fetches the right Python for each.
+Each tree has its own `pyproject.toml` and `uv.lock`; `uv` fetches the right
+Python for each. They cannot share a venv — `torch==2.4.0` and `torch 2.13`
+cannot coexist.
 
 ```bash
-cd ~/TimelyLLM-v0 && uv sync      # upstream pins: torch 2.4.0 / vLLM 0.5.4 / py3.10
-cd ~/TimelyLLM    && uv sync      # ported pins:   torch 2.13 / vLLM 0.27.1 / py3.12
+cd ~/TimelyLLM-v0 && uv sync      # torch 2.4.0 / vLLM 0.5.4  / py3.10
+cd ~/TimelyLLM    && uv sync      # torch 2.13  / vLLM 0.27.1 / py3.12
 ```
 
-They cannot share a venv — `torch==2.4.0` and `torch 2.13` cannot coexist, and
-conflicting pins of the same package cannot be expressed as optional-dependency
-groups. Two environments is the whole reason for two trees.
+### B3. Get the model, once
 
----
-
-## Step 3 — Get the model
-
-Both arms must use the same weights. Download once, into the port tree; the
-comparison script points both arms at it, so it is not duplicated. (`/model/*` is
-gitignored, so the worktree has no copy and does not need one.)
+Both arms use the same weights; the tooling points both at one directory.
 
 ```bash
 cd ~/TimelyLLM
-hf auth login                    # gated repo; needs your approved account
+hf auth login
 hf download meta-llama/Meta-Llama-3-8B-Instruct \
     --local-dir model/Meta-Llama-3-8B-Instruct --exclude "original/*"
 ```
 
 `--exclude "original/*"` skips the duplicate consolidated checkpoint and halves
-the download to about 15 GB. If `HF_HOME` points somewhere with space, set it
-before downloading.
+the download to about 15 GB.
 
----
-
-## Step 4 — Preflight
+### B4. Preflight
 
 ```bash
-cd ~/TimelyLLM
 ./scripts/compare-arms.py --check
 ```
 
-This runs nothing. It resolves both trees and interpreters, prints the branch and
-commit of each, warns if the upstream arm is not stock, and confirms the model
-path exists. Every missing prerequisite is reported with the exact command that
-creates it, so work through it until it is clean.
+Runs nothing. Resolves both trees and interpreters, prints each branch and
+commit, warns if the upstream arm is not stock, confirms the model path. Every
+missing prerequisite is reported with the command that creates it — work through
+it until clean.
 
-Expected output resembles:
+### B5. Get the GPU to yourself
 
-```
-working trees
-  v0  /home/you/TimelyLLM-v0
-      branch main @ 669f249
-  v1  /home/you/TimelyLLM
-      branch port/vllm-v1 @ <sha>
-
-interpreters
-  v0  /home/you/TimelyLLM-v0/.venv/bin/python
-  v1  /home/you/TimelyLLM/.venv/bin/python
-
-model  /home/you/TimelyLLM/model/Meta-Llama-3-8B-Instruct
-preset exp741_timelyllm_high   run-duration 900s per arm
-```
-
----
-
-## Step 5 — Check the GPU is free enough
-
-Both arms request `gpu_memory_utilization=0.8`, which is hardcoded upstream and is
-the config default on the port branch. Matched on purpose — an unfair memory
-split would be a confound. On an 80 GB H100 that is about 64 GB, so the GPU needs
-to be mostly idle.
+All four runs must share one card with nothing else resident, at matched
+`gpu_memory_utilization` (0.8 is the default in both trees, so they match). On an
+80 GB H100 that is about 64 GB.
 
 ```bash
-nvidia-smi --query-gpu=index,memory.total,memory.free --format=csv
+nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv
 ```
 
-The arms run **sequentially, on GPU 0**, not in parallel. Upstream sets
-`CUDA_VISIBLE_DEVICES=0` by assignment at import time, overwriting anything passed
-in from outside, so the arms cannot be pinned to different GPUs without editing
-`main` — which would forfeit its status as a reference. If GPU 0 is occupied and
-others are free, the honest options are to wait, or to accept editing that one
-line and record that you did.
+The arms run **sequentially on GPU 0**, not in parallel: upstream sets
+`CUDA_VISIBLE_DEVICES=0` by assignment at import time, overwriting anything
+passed in, and changing that would forfeit its status as a reference.
 
----
-
-## Step 6 — Run the comparison
+### B6. Run the grid — two commands, four runs
 
 ```bash
-./scripts/compare-arms.py --preset exp741_timelyllm_high
+cd ~/TimelyLLM
+./scripts/compare-arms.py --preset exp741_timelyllm_high --tag rtllm
+./scripts/compare-arms.py --preset exp741_vllm_high      --tag vllm
 ```
 
-It runs the upstream arm, then the ported arm, each capped at 900 s (the preset
-default of 10000 s is far longer than a comparison needs). Console output from
-each goes to `<tree>/timelyllm/logs/cmp-v{0,1}.console.txt`, which is where to
-look if an arm dies.
+Each invocation runs the preset on both trees and diffs the plans. Budget about
+25 minutes total: the trace spans 34–303 s, so a full run is ~6 minutes, and
+there are four.
 
-To re-diff without re-running:
-
-```bash
-./scripts/compare-arms.py --skip-run --json report.json
-```
-
----
-
-## Step 7 — Read the result
+Each prints a fidelity verdict. What you want, twice:
 
 ```
-tasks with output   v0=42  v1=42  common=41
 identical plans     41
 diverged plans      0
-only in v0          1: 17
+RESULT: every task present in both arms produced identical plans.
 ```
 
-**`identical plans`** is the number that matters. Every task present in both arms
-producing identical segment text means the port reproduces upstream.
+Exit status is 0 on a clean match, 1 on any divergence.
 
-**`only in v0` / `only in v1`** is usually a deadline-miss drop. TimelyLLM discards
-tasks that miss their deadline, and which ones miss is timing-dependent, so a
-handful appearing in one arm only is expected and is not by itself a port defect.
-A large imbalance is worth investigating — it suggests one arm is systematically
-slower.
+### B7. Summarise the grid
 
-**Exit status** is 0 when every common task matched, 1 on any divergence or if no
-task produced output in both arms.
+```bash
+./scripts/summarize-runs.py
+```
 
----
+It finds the four logs the previous step left behind and prints:
 
-## Step 8 — If plans diverge
+```
+  engine   arm           tasks   segs  per task   1st move      p90   vs base
+  ---------------------------------------------------------------------------
+  0.5.4    base vLLM        38     38       1.0     166 ms   240 ms         -
+  0.5.4    TimelyLLM        32    100       3.1      73 ms   110 ms     2.27x
+  0.27.1   base vLLM        37     37       1.0     171 ms   246 ms         -
+  0.27.1   TimelyLLM        33    101       3.1      75 ms   112 ms     2.28x
+```
 
-The script prints the first differing segment per task. Work through the suspects
-in this order:
+### B8. Reading it
+
+**The two `vs base` numbers are the result.** If TimelyLLM's speedup over plain
+batching is the same on both engines, the effect survives the port. The script
+says so explicitly when they agree within 15%.
+
+Everything else is diagnostic:
+
+- **`identical plans` from B6** is the fidelity check, and it is the stronger of
+  the two — it is exact rather than statistical. If it passes and the timings
+  still differ, the difference is the engine, not your port.
+- **A task in only one arm** is usually a deadline-miss drop, which is
+  timing-dependent and not by itself a defect. A large imbalance means one arm is
+  systematically slower.
+- **`per task`** should be ~1.0 for base vLLM (whole plans) and ~3 for TimelyLLM
+  (segmented). A TimelyLLM row near 1.0 means the stop rule never fired — check
+  that the run really used `run_mode='rtllm'`.
+
+### B9. If plans diverge
+
+`compare-arms.py` prints the first differing segment per task. In order of
+likelihood:
 
 1. **`max_tokens` is now enforced.** Upstream's stop checkers comment out their
-   `super().maybe_stop_sequence()` call and return early, which bypasses V0's
-   length capping; the port does not restore that bypass, and V1 enforces the cap
-   in EngineCore regardless. A divergence where the ported plan is *shorter* and
-   ends at exactly 200 tokens is this. It is upstream's bug, not the port's.
-2. **Attention-kernel float drift.** Kernels changed between 0.5.4 and 0.27.1, so
-   greedy paths can separate after enough tokens. Diagnostic: divergences that
-   appear only in *late* segments, with early ones matching. Diff the first
-   segment of each task most carefully — that is where drift has had least chance
-   to accumulate.
-3. **Tokenizer differences.** Segment boundaries are token-quantized: the stop
-   rule is consulted once per token, so a boundary interior to a token is
-   invisible to it. If the two stacks tokenize identically this is a non-issue,
-   but a differing `transformers` version could move boundaries. Symptom:
-   segments split at different points while the concatenated plan is identical.
+   `super().maybe_stop_sequence()` call and return early, bypassing V0's length
+   capping; the port does not restore that bypass. *Symptom:* the ported plan is
+   shorter and ends at exactly 200 tokens. Upstream's bug, not the port's.
+2. **Attention-kernel float drift.** Kernels changed between versions, so greedy
+   paths can separate after enough tokens. *Symptom:* only late segments differ.
+   Diff each task's first segment most carefully.
+3. **Tokenizer differences.** Segment boundaries are token-quantized — the stop
+   rule is consulted once per token, so a boundary inside a token is invisible to
+   it. *Symptom:* different split points, identical concatenated plan.
 
-If the cause is still unclear, escalate to Strategy 2 in `PORT_PLAN.md` — a V0
+If the cause stays unclear, escalate to Strategy 2 in `PORT_PLAN.md`: a V0
 backend behind the same interface, so one harness drives both stacks and the
-engine becomes the only variable. Everything it needs is in git history at
+engine is the only variable. What it needs is in git history at
 `git show main:timelyllm/rtengine/vllm_llm_engine_usage.py`.
 
 ---
 
-## Appendix — optional follow-up
-
-**Exercise the memory constraint.** On an 80 GB card the KV cache is large enough
-that the memory-side admission check may never bind, leaving that path untested.
-The port can shrink it; upstream cannot without editing. Not a comparison run —
-both arms must stay matched — but worth doing once on the port alone:
+## Quick reference
 
 ```bash
-cd ~/TimelyLLM/timelyllm
-../.venv/bin/python rtllm.py --preset exp741_timelyllm_high \
-    --gpu-memory-utilization 0.25 --log-name mem-constrained
+# on the GH200, before leaving
+git commit -F commit-msg.txt && git push -u origin port/vllm-v1 main
+
+# on the H100
+uv venv --python 3.10 /tmp/probe-v0    # B0 gate: does 0.5.4 install?
+git clone <fork> TimelyLLM && cd TimelyLLM
+git worktree add ../TimelyLLM-v0 main
+(cd ../TimelyLLM-v0 && uv sync) && uv sync
+hf auth login && hf download meta-llama/Meta-Llama-3-8B-Instruct \
+    --local-dir model/Meta-Llama-3-8B-Instruct --exclude "original/*"
+./scripts/compare-arms.py --check
+./scripts/compare-arms.py --preset exp741_timelyllm_high --tag rtllm
+./scripts/compare-arms.py --preset exp741_vllm_high      --tag vllm
+./scripts/summarize-runs.py
 ```
 
-**Do not** try to demonstrate the `1376` sequential-threshold bug by running
-`--run-mode sequential`. That mode is not in `infer_start`'s dispatch chain, so it
-falls through every branch and returns without starting a scheduler. See the
-correction in `PORT_PLAN.md` D1.
+A 90-second sanity check of the port alone, on either machine:
+`./scripts/demo.sh` runs both arms and prints the same effect in miniature.
