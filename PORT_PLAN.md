@@ -238,9 +238,27 @@ Do **not** rescale the constant. Express the intent directly:
   needs no total-block count, no rounding
 
 This is the one place to change the *form* of the code in order to keep the *spirit*:
-a transliterated `1376` on a 96GB GH200 leaves sequential mode silently
-non-sequential — it would not crash or warn, it would just stop being a sequential
+a transliterated `1376` on a 96GB GH200 would leave sequential mode silently
+non-sequential — no crash, no warning, it would just stop being a sequential
 baseline.
+
+**Correction, found while writing the H100 runbook: the `sequential` branch is
+unreachable.** `infer_start` dispatches on `run_mode` through a chain of
+`elif`s covering `vllm{,-edf,-fixed,-stream,-chatbot,-chatbot-stream}` and
+`rtllm{,-fixed,-edf,-edf-fixed,-fcfs-fixed,-chatbot,-chatbot-timely}` — and no
+`sequential`. Passing `--run-mode sequential` falls through every branch and
+returns without starting a scheduler, so `run_mode == "sequential"` inside
+`_admit_memory_ok` can never be true.
+
+That does not change the code: expressing the intent as `num_running() == 0` is
+still the right form, and it is what a future reachable sequential mode should
+use. But it does downgrade the practical stakes — the live path is the
+`kv_has_free()` branch, which the three timely/EDF schedulers do exercise. And it
+removes a proposed H100 experiment: you cannot demonstrate the `1376`
+portability bug by running sequential mode, because that mode does not run.
+
+It stands on its own as a finding about the published artifact: a run mode
+referenced in the scheduler cannot be dispatched from any entry point.
 
 ### D2. `os.environ["CUDA_VISIBLE_DEVICES"] = "0"` at `vllm_llm_scheduler.py:21`
 
@@ -352,9 +370,54 @@ can eventually diverge a greedy path. Segments are short (`lmax` 10-20), so they
 should match; treat divergence as something to investigate, and diff the *first*
 segment most carefully.
 
-Secondary use: run *unmodified* 0.5.4 on the 80GB H100 and check whether `sequential`
-mode still serializes. If it does not, D1's [I] becomes a measured fact and a
-reportable portability bug in the published artifact.
+(An earlier draft proposed demonstrating the `1376` bug by running `sequential`
+mode on the H100. That mode is undispatchable — see the correction in D1 — so the
+experiment does not exist. The block-count evidence from `smoke-test.py` stands on
+its own.)
+
+### Strategy 1 — branch-level A/B, no new code in either tree
+
+`scripts/compare-arms.py` runs one preset through each branch's own entry point and
+diffs the plans. TimelyLLM already logs every segment
+(`Output for task <id>: <text>, time: <t>`), so the logs are the comparison surface
+and neither tree needs a shared harness. Stdlib only — it never imports vllm.
+
+It compares the **sequence of segment texts per task**, never timings. Sampling is
+greedy and a task's prompt depends only on its own input plus the plan accumulated
+so far — never on what else is in the batch — so the text should be reproducible
+even though the scheduling is not.
+
+    git clone <fork> TimelyLLM && cd TimelyLLM
+    git worktree add ../TimelyLLM-v0 main      # upstream arm, verbatim
+    # one venv per tree: 3.10 for v0, 3.12 for v1
+    ./scripts/compare-arms.py --check          # preflight; names what is missing
+    ./scripts/compare-arms.py --preset exp741_timelyllm_high
+
+Preflight reports each missing prerequisite with the exact command to fix it, and
+warns if the v0 tree is not stock upstream (wrong branch, behind origin/main, or
+dirty) — the arm is only a valid reference if it is.
+
+The arms run **sequentially, not in parallel**. Upstream sets
+`CUDA_VISIBLE_DEVICES=0` by assignment at import time, overwriting anything passed
+in, so they cannot be pinned to different GPUs without editing `main` — which would
+stop it being stock upstream. Leave it; the runs are just serialized.
+
+One model directory is shared by both arms via `--model-path`, so the weights are
+not duplicated per tree (the worktree has none — `/model/*` is gitignored).
+
+Interpreting the result: a task present in only one arm is usually a deadline-miss
+drop, which is timing-dependent and not by itself a port defect. Diverging *plans*
+for a task in both arms is the real signal, and the suspects in order are the
+`max_tokens` cap now being enforced (E), attention-kernel float drift, and
+tokenizer differences.
+
+### Strategy 2 — shared harness via the V0 backend
+
+Only needed if Strategy 1 diverges and the cause is unclear. Implement
+`backend/v0.py` against `EngineBackend`, reusing the same `segment_rules.py`
+predicates, so one harness drives both stacks and the engine is the only variable.
+Everything it needs is in git history:
+`git show main:timelyllm/rtengine/vllm_llm_engine_usage.py`.
 
 Also set `gpu_memory_utilization` low enough on H100 to make the KV cache
 4090-sized, or the memory constraint will not bind and that path stays untested.
