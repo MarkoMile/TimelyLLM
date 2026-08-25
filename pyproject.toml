@@ -13,18 +13,17 @@ dependencies = [
     # exactly because the V1 backend mirrors an internal detokenizer factory;
     # see PORT_PLAN.md B1.
     "vllm==0.27.1",
-
     # Scientific computing and vision
     "numpy",
     "matplotlib",
     "opencv-python",
     "pillow",
     "filterpy",
-
     # Utilities
     "psutil",
     "overrides",
     "openai",
+    "soundfile>=0.12.1",
 ]
 
 [project.optional-dependencies]
