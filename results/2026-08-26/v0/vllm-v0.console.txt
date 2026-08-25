@@ -1,0 +1,1721 @@
+/home/mm562/TimelyLLM-v0/.venv/lib/python3.10/site-packages/pyairports/airports.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_string
+Config: ExperimentConfig(agent_num=42, executor_mode='virtual', run_mode='vllm', robot_system='typefly', robot_type='drone', enable_memory_monitor=False, use_async_executor=False, max_workers=8, real_audio_task_ids=None, whisper_device='cpu', tts_engine='piper', batchsize=6, seg_exe=0.09, lmax=10, comm_time=0.008, model_path='/home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct', request_list_path='../dataset/data_sample_1.json', prompt_path='/rtengine/prompt/prompt_drone_typefly.txt', prompt_speech_path='/rtengine/prompt/prompt_doctor.txt', run_duration=900)
+WARNING 08-26 00:55:52 config.py:1454] Casting torch.bfloat16 to torch.float16.
+INFO 08-26 00:55:52 llm_engine.py:174] Initializing an LLM engine (v0.5.4) with config: model='/home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct', speculative_config=None, tokenizer='/home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4000, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None), seed=0, served_model_name=/home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct, use_v2_block_manager=False, enable_prefix_caching=True)
+INFO 08-26 00:55:54 model_runner.py:720] Starting to load model /home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct...
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.22s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.39s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:04<00:01,  1.65s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.17s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:05<00:00,  1.28s/it]
+
+INFO 08-26 00:55:59 model_runner.py:732] Loading model weights took 14.9595 GB
+INFO 08-26 00:56:00 gpu_executor.py:102] # GPU blocks: 24412, # CPU blocks: 2048
+INFO 08-26 00:56:01 model_runner.py:1024] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 08-26 00:56:01 model_runner.py:1028] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 08-26 00:56:02 model_runner.py:1225] Graph capturing finished in 1 secs.
+INFO 08-26 00:56:02 block_manager_v1.py:247] Automatic prefix caching is enabled.
+Starting to add task 0
+INFO 08-26 00:56:26 metrics.py:406] Avg prompt throughput: 121.1 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 1
+Starting to add task 2
+Starting to add task 3
+Starting to add task 4
+Starting to add task 5
+Starting to add task 6
+Starting to add task 7
+Starting to add task 8
+Starting to add task 9
+Starting to add task 10
+Starting to add task 11
+Starting to add task 12
+output for task:3
+output for task:4
+output for task:5
+output for task:7
+output for task:2
+output for task:6
+output for task:0
+output for task:1
+output for task:9
+output for task:8
+output for task:11
+output for task:10
+output for task:12
+Starting to add task 13
+Starting to add task 14
+Starting to add task 15
+Starting to add task 16
+Starting to add task 17
+Starting to add task 18
+Starting to add task 19
+Starting to add task 20
+Starting to add task 21
+Starting to add task 22
+Starting to add task 23
+Starting to add task 24
+Starting to add task 25
+output for task:13
+Starting to add task 26
+output for task:15
+output for task:16
+output for task:19
+output for task:14
+output for task:20
+output for task:17
+output for task:23
+output for task:18
+output for task:25
+output for task:21
+output for task:22
+output for task:26
+output for task:24
+Starting to add task 27
+INFO 08-26 00:56:37 metrics.py:406] Avg prompt throughput: 7220.3 tokens/s, Avg generation throughput: 36.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 28
+Starting to add task 29
+Starting to add task 30
+Starting to add task 31
+Starting to add task 32
+Starting to add task 33
+Starting to add task 34
+Starting to add task 35
+Starting to add task 36
+Starting to add task 37
+output for task:27
+output for task:31
+output for task:33
+output for task:30
+output for task:29
+output for task:34
+output for task:35
+output for task:36
+output for task:37
+output for task:28
+output for task:32
+Starting to add task 38
+output for task:38
+Starting to add task 39
+INFO 08-26 00:56:57 metrics.py:406] Avg prompt throughput: 1750.4 tokens/s, Avg generation throughput: 8.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 40
+Starting to add task 41
+Starting to add task 42
+Starting to add task 43
+Starting to add task 44
+Starting to add task 45
+Starting to add task 46
+Starting to add task 47
+output for task:42
+output for task:47
+output for task:41
+output for task:44
+output for task:39
+output for task:40
+output for task:46
+output for task:43
+output for task:45
+Starting to add task 48
+INFO 08-26 00:57:03 metrics.py:406] Avg prompt throughput: 4807.6 tokens/s, Avg generation throughput: 21.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 49
+output for task:48
+output for task:49
+Starting to add task 50
+Starting to add task 51
+Starting to add task 52
+Starting to add task 53
+Starting to add task 54
+Starting to add task 55
+output for task:52
+output for task:54
+output for task:50
+output for task:53
+output for task:55
+output for task:51
+Starting to add task 56
+Starting to add task 57
+Starting to add task 58
+Starting to add task 59
+output for task:56
+output for task:57
+output for task:58
+output for task:59
+Starting to add task 60
+INFO 08-26 00:57:15 metrics.py:406] Avg prompt throughput: 2887.1 tokens/s, Avg generation throughput: 9.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 61
+Starting to add task 62
+Starting to add task 63
+Starting to add task 64
+Starting to add task 65
+Starting to add task 66
+Starting to add task 67
+output for task:62
+output for task:60
+output for task:61
+output for task:64
+output for task:65
+output for task:66
+output for task:67
+output for task:63
+Starting to add task 68
+Starting to add task 69
+Starting to add task 70
+Starting to add task 71
+Starting to add task 72
+Starting to add task 73
+output for task:72
+output for task:69
+output for task:73
+output for task:68
+output for task:71
+output for task:70
+Starting to add task 74
+INFO 08-26 00:57:22 metrics.py:406] Avg prompt throughput: 6168.2 tokens/s, Avg generation throughput: 31.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 75
+Starting to add task 76
+Starting to add task 77
+Starting to add task 78
+Starting to add task 79
+Starting to add task 80
+Starting to add task 81
+Starting to add task 82
+Starting to add task 83
+Starting to add task 84
+Starting to add task 85
+Starting to add task 86
+output for task:74
+output for task:77
+output for task:80
+Starting to add task 87
+Starting to add task 88
+output for task:84
+output for task:76
+output for task:75
+output for task:78
+output for task:79
+output for task:81
+output for task:83
+output for task:87
+output for task:82
+output for task:85
+output for task:86
+output for task:88
+Starting to add task 89
+INFO 08-26 00:57:40 metrics.py:406] Avg prompt throughput: 2328.9 tokens/s, Avg generation throughput: 9.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 90
+Starting to add task 91
+Starting to add task 92
+Starting to add task 93
+Starting to add task 94
+Starting to add task 95
+Starting to add task 96
+Starting to add task 97
+Starting to add task 98
+Starting to add task 99
+Starting to add task 100
+Starting to add task 101
+output for task:94
+Starting to add task 102
+Starting to add task 103
+output for task:97
+output for task:92
+output for task:93
+output for task:95
+output for task:96
+output for task:89
+output for task:90
+output for task:91
+output for task:103
+output for task:98
+output for task:99
+output for task:101
+output for task:100
+output for task:102
+Starting to add task 104
+Starting to add task 105
+Starting to add task 106
+Starting to add task 107
+Starting to add task 108
+Starting to add task 109
+Starting to add task 110
+Starting to add task 111
+Starting to add task 112
+Starting to add task 113
+Starting to add task 114
+Starting to add task 115
+Starting to add task 116
+output for task:110
+output for task:111
+Starting to add task 117
+output for task:105
+output for task:106
+output for task:107
+output for task:104
+output for task:108
+output for task:109
+output for task:113
+output for task:112
+output for task:115
+output for task:116
+output for task:117
+output for task:114
+Starting to add task 118
+INFO 08-26 00:57:49 metrics.py:406] Avg prompt throughput: 10224.3 tokens/s, Avg generation throughput: 49.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 119
+Starting to add task 120
+Starting to add task 121
+Starting to add task 122
+Starting to add task 123
+Starting to add task 124
+Starting to add task 125
+Starting to add task 126
+Starting to add task 127
+Starting to add task 128
+Starting to add task 129
+Starting to add task 130
+output for task:122
+Starting to add task 131
+Starting to add task 132
+Starting to add task 133
+output for task:123
+output for task:120
+output for task:125
+output for task:118
+output for task:119
+output for task:121
+output for task:124
+output for task:128
+output for task:126
+output for task:131
+output for task:133
+output for task:130
+output for task:132
+output for task:127
+output for task:129
+Starting to add task 134
+Starting to add task 135
+Starting to add task 136
+Starting to add task 137
+Starting to add task 138
+Starting to add task 139
+Starting to add task 140
+Starting to add task 141
+Starting to add task 142
+Starting to add task 143
+Starting to add task 144
+Starting to add task 145
+Starting to add task 146
+output for task:134
+output for task:135
+output for task:136
+output for task:139
+output for task:140
+Starting to add task 147
+Starting to add task 148
+Starting to add task 149
+Starting to add task 150
+Starting to add task 151
+Starting to add task 152
+Starting to add task 153
+output for task:145
+output for task:138
+output for task:142
+output for task:137
+output for task:141
+output for task:144
+output for task:143
+output for task:146
+output for task:147
+output for task:153
+output for task:148
+output for task:150
+output for task:151
+Starting to add task 154
+Starting to add task 155
+output for task:149
+output for task:152
+output for task:154
+output for task:155
+Starting to add task 156
+Starting to add task 157
+Starting to add task 158
+Starting to add task 159
+output for task:157
+output for task:159
+output for task:158
+output for task:156
+Starting to add task 160
+INFO 08-26 00:57:59 metrics.py:406] Avg prompt throughput: 11467.9 tokens/s, Avg generation throughput: 58.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Init time for sending request: 1787684152.9159772
+Total tasks to generate: 532
+init_priority for task 0: 1787684186.8607767
+init_priority for task 1: 1787684186.8617766
+init_priority for task 2: 1787684186.8627768
+init_priority for task 3: 1787684186.8637767
+init_priority for task 4: 1787684186.8647766
+init_priority for task 5: 1787684186.8657768
+init_priority for task 6: 1787684186.8667767
+init_priority for task 7: 1787684186.8677766
+init_priority for task 8: 1787684186.8687766
+init_priority for task 9: 1787684186.8697767
+init_priority for task 10: 1787684186.8707767
+init_priority for task 11: 1787684186.8717766
+init_priority for task 12: 1787684186.8727767
+init_priority for task 13: 1787684189.927515
+init_priority for task 14: 1787684189.9285152
+init_priority for task 15: 1787684189.9295151
+init_priority for task 16: 1787684189.930515
+init_priority for task 17: 1787684189.9315152
+init_priority for task 18: 1787684189.9325151
+init_priority for task 19: 1787684189.933515
+init_priority for task 20: 1787684189.9345152
+init_priority for task 21: 1787684189.9355152
+init_priority for task 22: 1787684189.936515
+init_priority for task 23: 1787684189.937515
+init_priority for task 24: 1787684189.9385152
+init_priority for task 25: 1787684189.939515
+init_priority for task 26: 1787684189.940515
+init_priority for task 27: 1787684197.837704
+init_priority for task 28: 1787684197.838704
+init_priority for task 29: 1787684197.839704
+init_priority for task 30: 1787684197.840704
+init_priority for task 31: 1787684197.8417041
+init_priority for task 32: 1787684197.842704
+init_priority for task 33: 1787684197.843704
+init_priority for task 34: 1787684197.844704
+init_priority for task 35: 1787684197.845704
+init_priority for task 36: 1787684197.846704
+init_priority for task 37: 1787684197.847704
+init_priority for task 38: 1787684198.6087248
+init_priority for task 39: 1787684217.8226266
+init_priority for task 40: 1787684217.8236265
+init_priority for task 41: 1787684217.8246264
+init_priority for task 42: 1787684217.8256264
+init_priority for task 43: 1787684217.8266265
+init_priority for task 44: 1787684217.8276265
+init_priority for task 45: 1787684217.8286264
+init_priority for task 46: 1787684217.8296266
+init_priority for task 47: 1787684217.8306265
+init_priority for task 48: 1787684223.305656
+init_priority for task 49: 1787684223.306656
+init_priority for task 50: 1787684225.408551
+init_priority for task 51: 1787684225.409551
+init_priority for task 52: 1787684225.410551
+init_priority for task 53: 1787684225.411551
+init_priority for task 54: 1787684225.412551
+init_priority for task 55: 1787684225.413551
+init_priority for task 56: 1787684226.1850712
+init_priority for task 57: 1787684226.1860714
+init_priority for task 58: 1787684226.1870713
+init_priority for task 59: 1787684226.1880713
+init_priority for task 60: 1787684235.4368234
+init_priority for task 61: 1787684235.4378235
+init_priority for task 62: 1787684235.4388235
+init_priority for task 63: 1787684235.4398234
+init_priority for task 64: 1787684235.4408233
+init_priority for task 65: 1787684235.4418235
+init_priority for task 66: 1787684235.4428234
+init_priority for task 67: 1787684235.4438233
+init_priority for task 68: 1787684239.9625692
+init_priority for task 69: 1787684239.9635692
+init_priority for task 70: 1787684239.964569
+init_priority for task 71: 1787684239.965569
+init_priority for task 72: 1787684239.9665692
+init_priority for task 73: 1787684239.967569
+init_priority for task 74: 1787684242.0444205
+init_priority for task 75: 1787684242.0454204
+init_priority for task 76: 1787684242.0464206
+init_priority for task 77: 1787684242.0474205
+init_priority for task 78: 1787684242.0484204
+init_priority for task 79: 1787684242.0494204
+init_priority for task 80: 1787684242.0504205
+init_priority for task 81: 1787684242.0514205
+init_priority for task 82: 1787684242.0524204
+init_priority for task 83: 1787684242.0534205
+init_priority for task 84: 1787684242.0544205
+init_priority for task 85: 1787684242.0554204
+init_priority for task 86: 1787684242.0564206
+init_priority for task 87: 1787684242.0574205
+init_priority for task 88: 1787684242.0584204
+init_priority for task 89: 1787684260.7824714
+init_priority for task 90: 1787684260.7834713
+init_priority for task 91: 1787684260.7844713
+init_priority for task 92: 1787684260.7854712
+init_priority for task 93: 1787684260.7864714
+init_priority for task 94: 1787684260.7874713
+init_priority for task 95: 1787684260.7884712
+init_priority for task 96: 1787684260.7894714
+init_priority for task 97: 1787684260.7904713
+init_priority for task 98: 1787684260.7914712
+init_priority for task 99: 1787684260.7924714
+Progress: 100/532 tasks sent to queue
+init_priority for task 100: 1787684260.7934713
+init_priority for task 101: 1787684260.7944713
+init_priority for task 102: 1787684260.7954712
+init_priority for task 103: 1787684260.7964714
+init_priority for task 104: 1787684265.0094786
+init_priority for task 105: 1787684265.0104785
+init_priority for task 106: 1787684265.0114784
+init_priority for task 107: 1787684265.0124784
+init_priority for task 108: 1787684265.0134785
+init_priority for task 109: 1787684265.0144784
+init_priority for task 110: 1787684265.0154784
+init_priority for task 111: 1787684265.0164785
+init_priority for task 112: 1787684265.0174785
+init_priority for task 113: 1787684265.0184784
+init_priority for task 114: 1787684265.0194786
+init_priority for task 115: 1787684265.0204785
+init_priority for task 116: 1787684265.0214784
+init_priority for task 117: 1787684265.0224786
+init_priority for task 118: 1787684269.0487256
+init_priority for task 119: 1787684269.0497255
+init_priority for task 120: 1787684269.0507257
+init_priority for task 121: 1787684269.0517256
+init_priority for task 122: 1787684269.0527256
+init_priority for task 123: 1787684269.0537257
+init_priority for task 124: 1787684269.0547256
+init_priority for task 125: 1787684269.0557256
+init_priority for task 126: 1787684269.0567257
+init_priority for task 127: 1787684269.0577257
+init_priority for task 128: 1787684269.0587256
+init_priority for task 129: 1787684269.0597255
+init_priority for task 130: 1787684269.0607257
+init_priority for task 131: 1787684269.0617256
+init_priority for task 132: 1787684269.0627255
+init_priority for task 133: 1787684269.0637257
+init_priority for task 134: 1787684270.3290744
+init_priority for task 135: 1787684270.3300743
+init_priority for task 136: 1787684270.3310742
+init_priority for task 137: 1787684270.3320744
+init_priority for task 138: 1787684270.3330743
+init_priority for task 139: 1787684270.3340743
+init_priority for task 140: 1787684270.3350744
+init_priority for task 141: 1787684270.3360744
+init_priority for task 142: 1787684270.3370743
+init_priority for task 143: 1787684270.3380742
+init_priority for task 144: 1787684270.3390744
+init_priority for task 145: 1787684270.3400743
+init_priority for task 146: 1787684270.3410742
+init_priority for task 147: 1787684270.3420744
+init_priority for task 148: 1787684270.3430743
+init_priority for task 149: 1787684270.3440742
+init_priority for task 150: 1787684270.4272823
+init_priority for task 151: 1787684270.4282825
+init_priority for task 152: 1787684270.4292824
+init_priority for task 153: 1787684270.4302824
+init_priority for task 154: 1787684270.9958413
+init_priority for task 155: 1787684270.9968412
+init_priority for task 156: 1787684273.1545584
+init_priority for task 157: 1787684273.1555583
+init_priority for task 158: 1787684273.1565585
+init_priority for task 159: 1787684273.1575584
+init_priority for task 160: 1787684279.7279708
+init_priority for task 161: 1787684279.7289708
+init_priority for task 162: 1787684279.7299707
+init_priority for task 163: 1787684279.7309706
+init_priority for task 164: 1787684279.7319708
+init_priority for task 165: 1787684291.0511212
+init_priority for task 166: 1787684291.0521212
+init_priority for task 167: 1787684291.0531213
+init_priority for task 168: 1787684291.0541213
+init_priority for task 169: 1787684291.0551212
+init_priority for task 170: 1787684291.0561213
+init_priority for task 171: 1787684291.0571213
+init_priority for task 172: 1787684291.0581212
+init_priority for task 173: 1787684291.0591214
+Starting to add task 161
+Starting to add task 162
+Starting to add task 163
+Starting to add task 164
+output for task:163
+output for task:164
+output for task:161
+output for task:160
+output for task:162
+Starting to add task 165
+INFO 08-26 00:58:11 metrics.py:406] Avg prompt throughput: 1283.0 tokens/s, Avg generation throughput: 6.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 166
+Starting to add task 167
+Starting to add task 168
+Starting to add task 169
+Starting to add task 170
+Starting to add task 171
+Starting to add task 172
+Starting to add task 173
+Starting to add task 174
+output for task:165
+output for task:169
+output for task:167
+output for task:171
+output for task:172
+output for task:168
+output for task:174
+output for task:173
+output for task:166
+output for task:170
+Starting to add task 175
+Starting to add task 176
+Starting to add task 177
+Starting to add task 178
+Starting to add task 179
+Starting to add task 180
+Starting to add task 181
+Starting to add task 182
+Starting to add task 183
+Starting to add task 184
+Starting to add task 185
+output for task:176
+output for task:183
+output for task:184
+output for task:177
+output for task:179
+output for task:180
+output for task:181
+output for task:175
+output for task:178
+output for task:182
+output for task:185
+Starting to add task 186
+INFO 08-26 00:58:19 metrics.py:406] Avg prompt throughput: 7524.3 tokens/s, Avg generation throughput: 36.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 187
+Starting to add task 188
+Starting to add task 189
+output for task:187
+output for task:188
+output for task:186
+output for task:189
+Starting to add task 190
+INFO 08-26 00:58:28 metrics.py:406] Avg prompt throughput: 1315.1 tokens/s, Avg generation throughput: 8.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 191
+Starting to add task 192
+Starting to add task 193
+Starting to add task 194
+Starting to add task 195
+Starting to add task 196
+Starting to add task 197
+Starting to add task 198
+Starting to add task 199
+Starting to add task 200
+output for task:194
+output for task:195
+Starting to add task 201
+Starting to add task 202
+Starting to add task 203
+Starting to add task 204
+Starting to add task 205
+Starting to add task 206
+output for task:198
+Starting to add task 207
+Starting to add task 208
+output for task:190
+output for task:192
+output for task:193
+output for task:196
+output for task:197
+output for task:191
+output for task:203
+output for task:200
+output for task:201
+output for task:204
+output for task:208
+output for task:199
+output for task:206
+output for task:207
+output for task:205
+output for task:202
+Starting to add task 209
+Starting to add task 210
+Starting to add task 211
+Starting to add task 212
+Starting to add task 213
+Starting to add task 214
+Starting to add task 215
+Starting to add task 216
+Starting to add task 217
+Starting to add task 218
+Starting to add task 219
+Starting to add task 220
+Starting to add task 221
+output for task:209
+output for task:210
+output for task:212
+output for task:214
+output for task:216
+Starting to add task 222
+output for task:218
+output for task:219
+output for task:213
+output for task:222
+output for task:211
+output for task:215
+output for task:221
+output for task:217
+output for task:220
+Starting to add task 223
+INFO 08-26 00:58:36 metrics.py:406] Avg prompt throughput: 12115.8 tokens/s, Avg generation throughput: 47.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 224
+Starting to add task 225
+output for task:224
+output for task:223
+output for task:225
+Starting to add task 226
+INFO 08-26 00:58:41 metrics.py:406] Avg prompt throughput: 1628.8 tokens/s, Avg generation throughput: 6.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 227
+output for task:227
+output for task:226
+Starting to add task 228
+Starting to add task 229
+Starting to add task 230
+Starting to add task 231
+Starting to add task 232
+Starting to add task 233
+Starting to add task 234
+Starting to add task 235
+Starting to add task 236
+Starting to add task 237
+Starting to add task 238
+Starting to add task 239
+Starting to add task 240
+output for task:228
+Starting to add task 241
+Starting to add task 242
+Starting to add task 243
+output for task:232
+output for task:233
+output for task:234
+output for task:235
+output for task:229
+output for task:231
+output for task:236
+output for task:230
+output for task:241
+output for task:237
+output for task:240
+output for task:243
+output for task:238
+output for task:239
+output for task:242
+Starting to add task 244
+Starting to add task 245
+Starting to add task 246
+Starting to add task 247
+Starting to add task 248
+Starting to add task 249
+Starting to add task 250
+output for task:244
+output for task:247
+output for task:250
+output for task:245
+output for task:246
+output for task:248
+output for task:249
+Starting to add task 251
+INFO 08-26 00:58:48 metrics.py:406] Avg prompt throughput: 10377.4 tokens/s, Avg generation throughput: 46.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 252
+Starting to add task 253
+Starting to add task 254
+output for task:251
+output for task:252
+output for task:254
+output for task:253
+Starting to add task 255
+Starting to add task 256
+Starting to add task 257
+Starting to add task 258
+Starting to add task 259
+Starting to add task 260
+output for task:258
+output for task:259
+output for task:257
+output for task:260
+output for task:255
+output for task:256
+Starting to add task 261
+Starting to add task 262
+Starting to add task 263
+Starting to add task 264
+Starting to add task 265
+Starting to add task 266
+Starting to add task 267
+Starting to add task 268
+Starting to add task 269
+Starting to add task 270
+output for task:262
+output for task:264
+output for task:261
+output for task:263
+output for task:267
+output for task:269
+output for task:265
+output for task:268
+output for task:270
+output for task:266
+Starting to add task 271
+Starting to add task 272
+Starting to add task 273
+output for task:272
+output for task:273
+output for task:271
+Starting to add task 274
+INFO 08-26 00:58:59 metrics.py:406] Avg prompt throughput: 6110.0 tokens/s, Avg generation throughput: 28.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 275
+Starting to add task 276
+Starting to add task 277
+Starting to add task 278
+Starting to add task 279
+Starting to add task 280
+Starting to add task 281
+Starting to add task 282
+Starting to add task 283
+Starting to add task 284
+Starting to add task 285
+output for task:275
+output for task:279
+output for task:283
+output for task:276
+output for task:284
+output for task:274
+output for task:280
+output for task:281
+output for task:277
+output for task:285
+output for task:282
+output for task:278
+Starting to add task 286
+Starting to add task 287
+Starting to add task 288
+Starting to add task 289
+Starting to add task 290
+Starting to add task 291
+Starting to add task 292
+Starting to add task 293
+Starting to add task 294
+Starting to add task 295
+Starting to add task 296
+Starting to add task 297
+Starting to add task 298
+output for task:290
+output for task:294
+output for task:287
+output for task:288
+output for task:286
+output for task:291
+output for task:292
+output for task:296
+output for task:295
+output for task:289
+output for task:293
+output for task:297
+output for task:298
+Starting to add task 299
+Starting to add task 300
+Starting to add task 301
+Starting to add task 302
+Starting to add task 303
+output for task:300
+output for task:299
+output for task:303
+output for task:301
+output for task:302
+Starting to add task 304
+INFO 08-26 00:59:07 metrics.py:406] Avg prompt throughput: 11261.5 tokens/s, Avg generation throughput: 53.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 305
+Starting to add task 306
+Starting to add task 307
+Starting to add task 308
+Starting to add task 309
+Starting to add task 310
+Starting to add task 311
+Starting to add task 312
+Starting to add task 313
+Starting to add task 314
+Starting to add task 315
+Starting to add task 316
+output for task:304
+output for task:305
+output for task:307
+output for task:309
+output for task:306
+output for task:311
+output for task:310
+output for task:312
+output for task:313
+output for task:308
+output for task:315
+output for task:316
+output for task:314
+Starting to add task 317
+Starting to add task 318
+Starting to add task 319
+Starting to add task 320
+Starting to add task 321
+Starting to add task 322
+Starting to add task 323
+output for task:322
+output for task:320
+output for task:321
+output for task:323
+output for task:317
+output for task:318
+output for task:319
+Starting to add task 324
+INFO 08-26 00:59:16 metrics.py:406] Avg prompt throughput: 6086.3 tokens/s, Avg generation throughput: 31.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 325
+Starting to add task 326
+Starting to add task 327
+Starting to add task 328
+Starting to add task 329
+Starting to add task 330
+Starting to add task 331
+Starting to add task 332
+Starting to add task 333
+Starting to add task 334
+Starting to add task 335
+Starting to add task 336
+output for task:326
+output for task:327
+output for task:329
+output for task:330
+Starting to add task 337
+output for task:332
+output for task:335
+output for task:325
+output for task:328
+output for task:324
+output for task:331
+output for task:336
+output for task:337
+output for task:333
+output for task:334
+Starting to add task 338
+INFO 08-26 00:59:31 metrics.py:406] Avg prompt throughput: 2764.6 tokens/s, Avg generation throughput: 11.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+init_priority for task 174: 1787684291.0601213
+init_priority for task 175: 1787684294.6282892
+init_priority for task 176: 1787684294.6292892
+init_priority for task 177: 1787684294.630289
+init_priority for task 178: 1787684294.631289
+init_priority for task 179: 1787684294.6322892
+init_priority for task 180: 1787684294.633289
+init_priority for task 181: 1787684294.634289
+init_priority for task 182: 1787684294.6352892
+init_priority for task 183: 1787684294.6362891
+init_priority for task 184: 1787684294.637289
+init_priority for task 185: 1787684294.6382892
+init_priority for task 186: 1787684299.184526
+init_priority for task 187: 1787684299.185526
+init_priority for task 188: 1787684299.1865258
+init_priority for task 189: 1787684299.1875257
+init_priority for task 190: 1787684308.0361571
+init_priority for task 191: 1787684308.0371573
+init_priority for task 192: 1787684308.0381572
+init_priority for task 193: 1787684308.0391572
+init_priority for task 194: 1787684308.0401573
+init_priority for task 195: 1787684308.0411572
+init_priority for task 196: 1787684308.2025151
+init_priority for task 197: 1787684308.2035153
+init_priority for task 198: 1787684308.2045152
+init_priority for task 199: 1787684308.2055151
+Progress: 200/532 tasks sent to queue
+init_priority for task 200: 1787684308.2065153
+init_priority for task 201: 1787684308.2075152
+init_priority for task 202: 1787684308.2085152
+init_priority for task 203: 1787684308.2095153
+init_priority for task 204: 1787684308.2105153
+init_priority for task 205: 1787684308.2115152
+init_priority for task 206: 1787684308.2125154
+init_priority for task 207: 1787684308.2135153
+init_priority for task 208: 1787684308.2145152
+init_priority for task 209: 1787684309.717742
+init_priority for task 210: 1787684309.718742
+init_priority for task 211: 1787684309.7197418
+init_priority for task 212: 1787684309.7207417
+init_priority for task 213: 1787684309.721742
+init_priority for task 214: 1787684309.7227418
+init_priority for task 215: 1787684309.7237418
+init_priority for task 216: 1787684309.724742
+init_priority for task 217: 1787684309.7257419
+init_priority for task 218: 1787684309.7267418
+init_priority for task 219: 1787684309.727742
+init_priority for task 220: 1787684309.728742
+init_priority for task 221: 1787684309.7297418
+init_priority for task 222: 1787684309.7307417
+init_priority for task 223: 1787684315.9700766
+init_priority for task 224: 1787684315.9710767
+init_priority for task 225: 1787684315.9720767
+init_priority for task 226: 1787684321.3696878
+init_priority for task 227: 1787684321.3706877
+init_priority for task 228: 1787684322.487071
+init_priority for task 229: 1787684322.488071
+init_priority for task 230: 1787684322.489071
+init_priority for task 231: 1787684322.490071
+init_priority for task 232: 1787684322.491071
+init_priority for task 233: 1787684322.492071
+init_priority for task 234: 1787684322.493071
+init_priority for task 235: 1787684322.494071
+init_priority for task 236: 1787684322.495071
+init_priority for task 237: 1787684322.496071
+init_priority for task 238: 1787684322.497071
+init_priority for task 239: 1787684322.498071
+init_priority for task 240: 1787684322.499071
+init_priority for task 241: 1787684322.500071
+init_priority for task 242: 1787684322.501071
+init_priority for task 243: 1787684322.502071
+init_priority for task 244: 1787684323.18345
+init_priority for task 245: 1787684323.1844501
+init_priority for task 246: 1787684323.18545
+init_priority for task 247: 1787684323.18645
+init_priority for task 248: 1787684323.1874502
+init_priority for task 249: 1787684323.18845
+init_priority for task 250: 1787684323.18945
+init_priority for task 251: 1787684328.3810759
+init_priority for task 252: 1787684328.382076
+init_priority for task 253: 1787684328.383076
+init_priority for task 254: 1787684328.3840759
+init_priority for task 255: 1787684329.7980611
+init_priority for task 256: 1787684329.799061
+init_priority for task 257: 1787684329.8000612
+init_priority for task 258: 1787684329.8010612
+init_priority for task 259: 1787684329.802061
+init_priority for task 260: 1787684329.8030612
+init_priority for task 261: 1787684331.2361834
+init_priority for task 262: 1787684331.2371836
+init_priority for task 263: 1787684331.2381835
+init_priority for task 264: 1787684331.2391834
+init_priority for task 265: 1787684331.2401836
+init_priority for task 266: 1787684331.2411835
+init_priority for task 267: 1787684331.2421834
+init_priority for task 268: 1787684331.2431836
+init_priority for task 269: 1787684331.2441835
+init_priority for task 270: 1787684331.2451835
+init_priority for task 271: 1787684331.7044227
+init_priority for task 272: 1787684331.7054229
+init_priority for task 273: 1787684331.7064228
+init_priority for task 274: 1787684339.323889
+init_priority for task 275: 1787684339.324889
+init_priority for task 276: 1787684339.325889
+init_priority for task 277: 1787684339.326889
+init_priority for task 278: 1787684339.327889
+init_priority for task 279: 1787684339.3288891
+init_priority for task 280: 1787684339.329889
+init_priority for task 281: 1787684339.330889
+init_priority for task 282: 1787684339.3318892
+init_priority for task 283: 1787684339.332889
+init_priority for task 284: 1787684339.333889
+init_priority for task 285: 1787684339.334889
+init_priority for task 286: 1787684341.3863928
+init_priority for task 287: 1787684341.387393
+init_priority for task 288: 1787684341.388393
+init_priority for task 289: 1787684341.3893929
+init_priority for task 290: 1787684341.390393
+init_priority for task 291: 1787684341.391393
+init_priority for task 292: 1787684341.3923929
+init_priority for task 293: 1787684341.393393
+init_priority for task 294: 1787684341.394393
+init_priority for task 295: 1787684341.395393
+init_priority for task 296: 1787684341.3963928
+init_priority for task 297: 1787684341.397393
+init_priority for task 298: 1787684341.398393
+init_priority for task 299: 1787684342.2620847
+Progress: 300/532 tasks sent to queue
+init_priority for task 300: 1787684342.2630847
+init_priority for task 301: 1787684342.2640846
+init_priority for task 302: 1787684342.2650847
+init_priority for task 303: 1787684342.2660847
+init_priority for task 304: 1787684347.0850947
+init_priority for task 305: 1787684347.0860949
+init_priority for task 306: 1787684347.0870948
+init_priority for task 307: 1787684347.0880947
+init_priority for task 308: 1787684347.0890949
+init_priority for task 309: 1787684347.0900948
+init_priority for task 310: 1787684347.0910947
+init_priority for task 311: 1787684347.0920947
+init_priority for task 312: 1787684347.0930948
+init_priority for task 313: 1787684347.0940948
+init_priority for task 314: 1787684347.0950947
+init_priority for task 315: 1787684347.0960948
+init_priority for task 316: 1787684347.0970948
+init_priority for task 317: 1787684350.847937
+init_priority for task 318: 1787684350.8489373
+init_priority for task 319: 1787684350.8499372
+init_priority for task 320: 1787684350.8509371
+init_priority for task 321: 1787684350.8519373
+init_priority for task 322: 1787684350.8529372
+init_priority for task 323: 1787684350.8539371
+init_priority for task 324: 1787684356.6652873
+init_priority for task 325: 1787684356.6662872
+init_priority for task 326: 1787684356.6672873
+init_priority for task 327: 1787684356.6682873
+init_priority for task 328: 1787684356.6692872
+init_priority for task 329: 1787684356.6702871
+init_priority for task 330: 1787684356.6712873
+init_priority for task 331: 1787684356.6722872
+init_priority for task 332: 1787684356.6732872
+init_priority for task 333: 1787684356.6742873
+init_priority for task 334: 1787684356.6752872
+init_priority for task 335: 1787684356.6762872
+init_priority for task 336: 1787684356.6772873
+init_priority for task 337: 1787684356.6782873
+init_priority for task 338: 1787684371.4006145
+init_priority for task 339: 1787684371.4016144
+init_priority for task 340: 1787684371.4026144
+init_priority for task 341: 1787684371.4036145
+init_priority for task 342: 1787684371.4046144
+init_priority for task 343: 1787684371.4056144
+init_priority for task 344: 1787684371.4066145
+init_priority for task 345: 1787684377.5503623
+init_priority for task 346: 1787684377.5513623
+init_priority for task 347: 1787684377.5523622
+Starting to add task 339
+Starting to add task 340
+Starting to add task 341
+Starting to add task 342
+Starting to add task 343
+Starting to add task 344
+output for task:339
+output for task:342
+output for task:343
+output for task:340
+output for task:341
+output for task:338
+output for task:344
+Starting to add task 345
+INFO 08-26 00:59:37 metrics.py:406] Avg prompt throughput: 3320.7 tokens/s, Avg generation throughput: 13.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 346
+Starting to add task 347
+Starting to add task 348
+Starting to add task 349
+Starting to add task 350
+Starting to add task 351
+Starting to add task 352
+Starting to add task 353
+Starting to add task 354
+Starting to add task 355
+Starting to add task 356
+Starting to add task 357
+output for task:348
+output for task:345
+output for task:346
+output for task:347
+output for task:350
+output for task:351
+output for task:349
+output for task:353
+output for task:352
+output for task:355
+output for task:357
+output for task:354
+output for task:356
+Starting to add task 358
+Starting to add task 359
+Starting to add task 360
+Starting to add task 361
+Starting to add task 362
+Starting to add task 363
+Starting to add task 364
+Starting to add task 365
+Starting to add task 366
+Starting to add task 367
+Starting to add task 368
+Starting to add task 369
+output for task:362
+output for task:363
+output for task:366
+output for task:360
+output for task:358
+output for task:359
+output for task:364
+output for task:361
+output for task:365
+output for task:367
+output for task:368
+output for task:369
+Starting to add task 370
+INFO 08-26 00:59:44 metrics.py:406] Avg prompt throughput: 10794.5 tokens/s, Avg generation throughput: 52.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 371
+Starting to add task 372
+Starting to add task 373
+Starting to add task 374
+Starting to add task 375
+Starting to add task 376
+Starting to add task 377
+Starting to add task 378
+Starting to add task 379
+Starting to add task 380
+Starting to add task 381
+Starting to add task 382
+output for task:372
+output for task:373
+Starting to add task 383
+Starting to add task 384
+Starting to add task 385
+output for task:378
+output for task:376
+output for task:380
+output for task:370
+output for task:377
+output for task:375
+output for task:382
+output for task:374
+output for task:384
+output for task:385
+output for task:379
+output for task:371
+output for task:381
+output for task:383
+Starting to add task 386
+Starting to add task 387
+Starting to add task 388
+Starting to add task 389
+Starting to add task 390
+Starting to add task 391
+Starting to add task 392
+Starting to add task 393
+Starting to add task 394
+Starting to add task 395
+Starting to add task 396
+Starting to add task 397
+Starting to add task 398
+Starting to add task 399
+Starting to add task 400
+output for task:391
+output for task:388
+output for task:387
+output for task:392
+output for task:386
+output for task:389
+output for task:390
+output for task:393
+output for task:394
+output for task:397
+output for task:395
+output for task:396
+output for task:400
+output for task:398
+output for task:399
+Starting to add task 401
+INFO 08-26 00:59:53 metrics.py:406] Avg prompt throughput: 9613.5 tokens/s, Avg generation throughput: 48.6 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 402
+Starting to add task 403
+Starting to add task 404
+Starting to add task 405
+Starting to add task 406
+Starting to add task 407
+Starting to add task 408
+Starting to add task 409
+Starting to add task 410
+Starting to add task 411
+Starting to add task 412
+Starting to add task 413
+output for task:405
+output for task:401
+output for task:402
+output for task:403
+output for task:404
+output for task:413
+output for task:409
+output for task:406
+output for task:407
+output for task:408
+output for task:410
+output for task:411
+output for task:412
+Starting to add task 414
+INFO 08-26 01:00:00 metrics.py:406] Avg prompt throughput: 5672.2 tokens/s, Avg generation throughput: 31.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 415
+Starting to add task 416
+Starting to add task 417
+Starting to add task 418
+Starting to add task 419
+Starting to add task 420
+Starting to add task 421
+Starting to add task 422
+Starting to add task 423
+Starting to add task 424
+output for task:415
+output for task:416
+Starting to add task 425
+Starting to add task 426
+Starting to add task 427
+Starting to add task 428
+output for task:421
+Starting to add task 429
+Starting to add task 430
+Starting to add task 431
+Starting to add task 432
+output for task:414
+output for task:418
+Starting to add task 433
+output for task:422
+output for task:424
+output for task:423
+output for task:417
+output for task:419
+output for task:420
+output for task:431
+output for task:425
+output for task:426
+output for task:432
+output for task:430
+output for task:427
+output for task:428
+output for task:433
+output for task:429
+Starting to add task 434
+Starting to add task 435
+Starting to add task 436
+Starting to add task 437
+Starting to add task 438
+Starting to add task 439
+Starting to add task 440
+Starting to add task 441
+Starting to add task 442
+output for task:439
+output for task:441
+output for task:438
+output for task:440
+output for task:435
+output for task:434
+output for task:436
+output for task:442
+output for task:437
+Starting to add task 443
+INFO 08-26 01:00:08 metrics.py:406] Avg prompt throughput: 10941.1 tokens/s, Avg generation throughput: 62.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+output for task:443
+Starting to add task 444
+INFO 08-26 01:00:14 metrics.py:406] Avg prompt throughput: 459.3 tokens/s, Avg generation throughput: 2.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 445
+Starting to add task 446
+Starting to add task 447
+Starting to add task 448
+Starting to add task 449
+Starting to add task 450
+output for task:444
+output for task:448
+output for task:445
+output for task:446
+output for task:447
+output for task:450
+output for task:449
+Starting to add task 451
+Starting to add task 452
+output for task:452
+Starting to add task 453
+Starting to add task 454
+Starting to add task 455
+Starting to add task 456
+output for task:453
+output for task:454
+output for task:455
+output for task:451
+output for task:456
+Starting to add task 457
+Starting to add task 458
+Starting to add task 459
+Starting to add task 460
+Starting to add task 461
+Starting to add task 462
+Starting to add task 463
+Starting to add task 464
+Starting to add task 465
+Starting to add task 466
+Starting to add task 467
+Starting to add task 468
+Starting to add task 469
+output for task:460
+output for task:459
+output for task:462
+output for task:463
+output for task:458
+output for task:461
+output for task:466
+output for task:464
+output for task:465
+output for task:468
+output for task:457
+output for task:467
+output for task:469
+Starting to add task 470
+Starting to add task 471
+Starting to add task 472
+Starting to add task 473
+Starting to add task 474
+Starting to add task 475
+Starting to add task 476
+Starting to add task 477
+Starting to add task 478
+Starting to add task 479
+output for task:471
+output for task:475
+output for task:476
+output for task:470
+output for task:473
+output for task:472
+output for task:477
+INFO 08-26 01:00:19 metrics.py:406] Avg prompt throughput: 20359.2 tokens/s, Avg generation throughput: 87.1 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+output for task:479
+output for task:478
+output for task:474
+Starting to add task 480
+Starting to add task 481
+Starting to add task 482
+Starting to add task 483
+output for task:482
+output for task:480
+output for task:481
+output for task:483
+Starting to add task 484
+INFO 08-26 01:00:25 metrics.py:406] Avg prompt throughput: 2565.4 tokens/s, Avg generation throughput: 12.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 485
+Starting to add task 486
+Starting to add task 487
+Starting to add task 488
+Starting to add task 489
+output for task:484
+output for task:487
+output for task:486
+output for task:489
+output for task:488
+output for task:485
+Starting to add task 490
+Starting to add task 491
+Starting to add task 492
+output for task:492
+output for task:490
+output for task:491
+Starting to add task 493
+INFO 08-26 01:00:41 metrics.py:406] Avg prompt throughput: 1628.8 tokens/s, Avg generation throughput: 7.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+init_priority for task 348: 1787684377.5533624
+init_priority for task 349: 1787684377.5543623
+init_priority for task 350: 1787684377.5553622
+init_priority for task 351: 1787684377.5563624
+init_priority for task 352: 1787684377.5573623
+init_priority for task 353: 1787684377.5583622
+init_priority for task 354: 1787684377.5593624
+init_priority for task 355: 1787684377.5603623
+init_priority for task 356: 1787684377.5613623
+init_priority for task 357: 1787684377.5623624
+init_priority for task 358: 1787684381.7589827
+init_priority for task 359: 1787684381.7599828
+init_priority for task 360: 1787684381.7609828
+init_priority for task 361: 1787684381.7619827
+init_priority for task 362: 1787684381.7629828
+init_priority for task 363: 1787684381.7639828
+init_priority for task 364: 1787684381.7649827
+init_priority for task 365: 1787684381.7659829
+init_priority for task 366: 1787684381.7669828
+init_priority for task 367: 1787684381.7679827
+init_priority for task 368: 1787684381.7689826
+init_priority for task 369: 1787684381.7699828
+init_priority for task 370: 1787684384.3198402
+init_priority for task 371: 1787684384.3208401
+init_priority for task 372: 1787684384.3218403
+init_priority for task 373: 1787684384.3228402
+init_priority for task 374: 1787684384.3238401
+init_priority for task 375: 1787684384.32484
+init_priority for task 376: 1787684384.3258402
+init_priority for task 377: 1787684384.3268402
+init_priority for task 378: 1787684384.32784
+init_priority for task 379: 1787684384.3288403
+init_priority for task 380: 1787684384.3298402
+init_priority for task 381: 1787684384.33084
+init_priority for task 382: 1787684384.3318403
+init_priority for task 383: 1787684384.3328402
+init_priority for task 384: 1787684384.3338401
+init_priority for task 385: 1787684384.33484
+init_priority for task 386: 1787684386.4008906
+init_priority for task 387: 1787684386.4018905
+init_priority for task 388: 1787684386.4028907
+init_priority for task 389: 1787684386.4038906
+init_priority for task 390: 1787684386.4048905
+init_priority for task 391: 1787684386.4058907
+init_priority for task 392: 1787684386.4068906
+init_priority for task 393: 1787684386.4078906
+init_priority for task 394: 1787684386.4088907
+init_priority for task 395: 1787684386.4098907
+init_priority for task 396: 1787684386.4108906
+init_priority for task 397: 1787684386.4118907
+init_priority for task 398: 1787684386.4128907
+init_priority for task 399: 1787684386.4138906
+Progress: 400/532 tasks sent to queue
+init_priority for task 400: 1787684386.4148905
+init_priority for task 401: 1787684393.7141283
+init_priority for task 402: 1787684393.7151282
+init_priority for task 403: 1787684393.716128
+init_priority for task 404: 1787684393.7171283
+init_priority for task 405: 1787684393.7181282
+init_priority for task 406: 1787684393.7191281
+init_priority for task 407: 1787684393.7201283
+init_priority for task 408: 1787684393.7211282
+init_priority for task 409: 1787684393.7221282
+init_priority for task 410: 1787684393.723128
+init_priority for task 411: 1787684393.7241282
+init_priority for task 412: 1787684393.7251282
+init_priority for task 413: 1787684393.726128
+init_priority for task 414: 1787684400.3781946
+init_priority for task 415: 1787684400.3791945
+init_priority for task 416: 1787684400.3801947
+init_priority for task 417: 1787684400.3811946
+init_priority for task 418: 1787684400.3821945
+init_priority for task 419: 1787684400.3831947
+init_priority for task 420: 1787684400.3841946
+init_priority for task 421: 1787684400.3851945
+init_priority for task 422: 1787684400.3861947
+init_priority for task 423: 1787684400.3871946
+init_priority for task 424: 1787684400.3881946
+init_priority for task 425: 1787684400.7614489
+init_priority for task 426: 1787684400.762449
+init_priority for task 427: 1787684400.763449
+init_priority for task 428: 1787684400.764449
+init_priority for task 429: 1787684400.765449
+init_priority for task 430: 1787684400.766449
+init_priority for task 431: 1787684400.767449
+init_priority for task 432: 1787684400.7684488
+init_priority for task 433: 1787684400.769449
+init_priority for task 434: 1787684402.1172297
+init_priority for task 435: 1787684402.1182296
+init_priority for task 436: 1787684402.1192296
+init_priority for task 437: 1787684402.1202297
+init_priority for task 438: 1787684402.1212296
+init_priority for task 439: 1787684402.1222296
+init_priority for task 440: 1787684402.1232297
+init_priority for task 441: 1787684402.1242297
+init_priority for task 442: 1787684402.1252296
+init_priority for task 443: 1787684408.094267
+init_priority for task 444: 1787684414.455457
+init_priority for task 445: 1787684414.4564571
+init_priority for task 446: 1787684414.457457
+init_priority for task 447: 1787684414.458457
+init_priority for task 448: 1787684414.4594572
+init_priority for task 449: 1787684414.460457
+init_priority for task 450: 1787684414.461457
+init_priority for task 451: 1787684414.804902
+init_priority for task 452: 1787684414.805902
+init_priority for task 453: 1787684414.9032366
+init_priority for task 454: 1787684414.9042366
+init_priority for task 455: 1787684414.9052367
+init_priority for task 456: 1787684414.9062366
+init_priority for task 457: 1787684415.3500843
+init_priority for task 458: 1787684415.3510845
+init_priority for task 459: 1787684415.3520844
+init_priority for task 460: 1787684415.3530843
+init_priority for task 461: 1787684415.3540845
+init_priority for task 462: 1787684415.3550844
+init_priority for task 463: 1787684415.3560843
+init_priority for task 464: 1787684415.3570843
+init_priority for task 465: 1787684415.3580844
+init_priority for task 466: 1787684415.3590844
+init_priority for task 467: 1787684415.3600843
+init_priority for task 468: 1787684415.3610845
+init_priority for task 469: 1787684415.3620844
+init_priority for task 470: 1787684419.1628458
+init_priority for task 471: 1787684419.1638458
+init_priority for task 472: 1787684419.164846
+init_priority for task 473: 1787684419.1658459
+init_priority for task 474: 1787684419.1668458
+init_priority for task 475: 1787684419.167846
+init_priority for task 476: 1787684419.168846
+init_priority for task 477: 1787684419.1698458
+init_priority for task 478: 1787684419.170846
+init_priority for task 479: 1787684419.171846
+init_priority for task 480: 1787684423.5185735
+init_priority for task 481: 1787684423.5195735
+init_priority for task 482: 1787684423.5205734
+init_priority for task 483: 1787684423.5215735
+init_priority for task 484: 1787684425.1657214
+init_priority for task 485: 1787684425.1667213
+init_priority for task 486: 1787684425.1677213
+init_priority for task 487: 1787684425.1687214
+init_priority for task 488: 1787684425.1697214
+init_priority for task 489: 1787684425.1707213
+init_priority for task 490: 1787684426.5582554
+init_priority for task 491: 1787684426.5592556
+init_priority for task 492: 1787684426.5602555
+init_priority for task 493: 1787684441.228178
+init_priority for task 494: 1787684441.229178
+init_priority for task 495: 1787684441.230178
+init_priority for task 496: 1787684441.231178
+init_priority for task 497: 1787684441.232178
+init_priority for task 498: 1787684441.2331781
+init_priority for task 499: 1787684441.234178
+Progress: 500/532 tasks sent to queue
+init_priority for task 500: 1787684443.278705
+init_priority for task 501: 1787684443.279705
+init_priority for task 502: 1787684445.8168209
+init_priority for task 503: 1787684445.8178208
+init_priority for task 504: 1787684445.8188207
+init_priority for task 505: 1787684445.819821
+init_priority for task 506: 1787684445.8208208
+init_priority for task 507: 1787684446.829493
+init_priority for task 508: 1787684446.830493
+init_priority for task 509: 1787684446.831493
+init_priority for task 510: 1787684446.832493
+init_priority for task 511: 1787684446.833493
+init_priority for task 512: 1787684446.834493
+init_priority for task 513: 1787684446.835493
+init_priority for task 514: 1787684446.836493
+init_priority for task 515: 1787684446.837493
+init_priority for task 516: 1787684446.838493
+init_priority for task 517: 1787684446.839493
+init_priority for task 518: 1787684446.840493
+init_priority for task 519: 1787684446.841493
+init_priority for task 520: 1787684446.842493
+Starting to add task 494
+Starting to add task 495
+Starting to add task 496
+Starting to add task 497
+Starting to add task 498
+Starting to add task 499
+output for task:493
+output for task:494
+output for task:499
+output for task:496
+output for task:498
+output for task:495
+output for task:497
+Starting to add task 500
+Starting to add task 501
+output for task:500
+output for task:501
+Starting to add task 502
+Starting to add task 503
+Starting to add task 504
+Starting to add task 505
+Starting to add task 506
+output for task:503
+output for task:502
+output for task:504
+output for task:506
+output for task:505
+Starting to add task 507
+INFO 08-26 01:00:46 metrics.py:406] Avg prompt throughput: 7295.1 tokens/s, Avg generation throughput: 32.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 508
+Starting to add task 509
+Starting to add task 510
+Starting to add task 511
+Starting to add task 512
+Starting to add task 513
+Starting to add task 514
+Starting to add task 515
+Starting to add task 516
+Starting to add task 517
+Starting to add task 518
+Starting to add task 519
+output for task:507
+output for task:510
+Starting to add task 520
+Starting to add task 521
+output for task:509
+output for task:511
+output for task:512
+output for task:514
+output for task:508
+output for task:517
+output for task:515
+output for task:518
+output for task:513
+output for task:516
+output for task:519
+output for task:520
+output for task:521
+Starting to add task 522
+INFO 08-26 01:00:54 metrics.py:406] Avg prompt throughput: 5395.8 tokens/s, Avg generation throughput: 26.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+init_priority for task 521: 1787684446.843493
+init_priority for task 522: 1787684454.901518
+init_priority for task 523: 1787684454.902518
+init_priority for task 524: 1787684454.903518
+init_priority for task 525: 1787684454.904518
+init_priority for task 526: 1787684454.905518
+init_priority for task 527: 1787684454.906518
+init_priority for task 528: 1787684454.907518
+init_priority for task 529: 1787684454.908518
+init_priority for task 530: 1787684454.909518
+init_priority for task 531: 1787684455.8644137
+All tasks sent (532/532). Request generator finishing.
+Request generator shutting down. Total tasks sent: 532/532
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task executor process shutting down.
+All requests sent. Waiting for scheduler & executor to finish...
+All queues drained. Experiment complete.
+Process Process-3:
+Traceback (most recent call last):
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mm562/TimelyLLM-v0/timelyllm/rtengine/vllm_llm_scheduler.py", line 1253, in infer_start
+    scheduler.vllm_schedule(task_queue, result_queues)
+  File "/home/mm562/TimelyLLM-v0/timelyllm/rtengine/vllm_llm_scheduler.py", line 966, in vllm_schedule
+    task_info = self.get_task_normal()
+  File "/home/mm562/TimelyLLM-v0/timelyllm/rtengine/vllm_llm_scheduler.py", line 340, in get_task_normal
+    task_item = self.task_queue.get_nowait()
+  File "<string>", line 2, in get_nowait
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/managers.py", line 817, in _callmethod
+    conn.send((self._id, methodname, args, kwds))
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py", line 206, in send
+    self._send_bytes(_ForkingPickler.dumps(obj))
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py", line 411, in _send_bytes
+    self._send(header + buf)
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Starting to add task 523
+Starting to add task 524
+Starting to add task 525
+Starting to add task 526
+Starting to add task 527
+Starting to add task 528
+Starting to add task 529
+Starting to add task 530
+output for task:523
+output for task:528
+output for task:529
+output for task:522
+output for task:524
+output for task:526
+output for task:525
+output for task:527
+output for task:530
+Starting to add task 531
+output for task:531

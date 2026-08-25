@@ -1,0 +1,5181 @@
+/home/mm562/TimelyLLM-v0/.venv/lib/python3.10/site-packages/pyairports/airports.py:1: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_string
+Config: ExperimentConfig(agent_num=42, executor_mode='virtual', run_mode='rtllm', robot_system='typefly', robot_type='drone', enable_memory_monitor=False, use_async_executor=False, max_workers=8, real_audio_task_ids=None, whisper_device='cpu', tts_engine='piper', batchsize=6, seg_exe=0.09, lmax=10, comm_time=0.008, model_path='/home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct', request_list_path='../dataset/data_sample_1.json', prompt_path='/rtengine/prompt/prompt_drone_typefly.txt', prompt_speech_path='/rtengine/prompt/prompt_doctor.txt', run_duration=900)
+WARNING 08-26 00:49:30 config.py:1454] Casting torch.bfloat16 to torch.float16.
+INFO 08-26 00:49:30 llm_engine.py:174] Initializing an LLM engine (v0.5.4) with config: model='/home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct', speculative_config=None, tokenizer='/home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, rope_scaling=None, rope_theta=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=4000, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None), seed=0, served_model_name=/home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct, use_v2_block_manager=False, enable_prefix_caching=True)
+INFO 08-26 00:49:31 model_runner.py:720] Starting to load model /home/mm562/TimelyLLM/model/Meta-Llama-3-8B-Instruct...
+Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:01<00:03,  1.12s/it]
+Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:02<00:02,  1.21s/it]
+Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:03<00:01,  1.22s/it]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04<00:00,  1.11it/s]
+Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:04<00:00,  1.01s/it]
+
+INFO 08-26 00:49:35 model_runner.py:732] Loading model weights took 14.9595 GB
+INFO 08-26 00:49:36 gpu_executor.py:102] # GPU blocks: 24412, # CPU blocks: 2048
+INFO 08-26 00:49:37 model_runner.py:1024] Capturing the model for CUDA graphs. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforce_eager=True' or use '--enforce-eager' in the CLI.
+INFO 08-26 00:49:37 model_runner.py:1028] CUDA graphs can take additional 1~3 GiB memory per GPU. If you are running out of memory, consider decreasing `gpu_memory_utilization` or enforcing eager mode. You can also reduce the `max_num_seqs` as needed to decrease memory usage.
+INFO 08-26 00:49:39 model_runner.py:1225] Graph capturing finished in 2 secs.
+INFO 08-26 00:49:39 block_manager_v1.py:247] Automatic prefix caching is enabled.
+initilize stop checker
+Starting to add task 0
+INFO 08-26 00:50:04 metrics.py:406] Avg prompt throughput: 118.9 tokens/s, Avg generation throughput: 0.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 7
+Starting to add task 5
+Starting to add task 4
+Starting to add task 3
+Starting to add task 1
+Starting to add task 2
+output for task:7
+read request to task queue
+output for task:5
+read request to task queue
+output for task:4
+read request to task queue
+output for task:3
+read request to task queue
+output for task:2
+read request to task queue
+output for task:0
+read request to task queue
+output for task:1
+read request to task queue
+Starting to add task 1
+Starting to add task 7
+output for task:7
+output for task:1
+read request to task queue
+Starting to add task 5
+Starting to add task 3
+output for task:5
+Starting to add task 6
+output for task:3
+Starting to add task 8
+Starting to add task 9
+Starting to add task 10
+Starting to add task 11
+Starting to add task 12
+Starting to add task 4
+Starting to add task 1
+output for task:4
+output for task:8
+read request to task queue
+output for task:9
+read request to task queue
+output for task:11
+read request to task queue
+output for task:12
+read request to task queue
+output for task:1
+Starting to add task 2
+output for task:10
+read request to task queue
+Starting to add task 10
+Starting to add task 0
+output for task:6
+read request to task queue
+output for task:2
+read request to task queue
+output for task:10
+read request to task queue
+output for task:0
+read request to task queue
+Starting to add task 10
+Starting to add task 6
+output for task:6
+read request to task queue
+output for task:10
+read request to task queue
+Starting to add task 10
+Starting to add task 8
+output for task:10
+read request to task queue
+output for task:8
+read request to task queue
+Starting to add task 10
+Starting to add task 8
+output for task:10
+Starting to add task 9
+output for task:8
+read request to task queue
+Starting to add task 11
+Starting to add task 12
+Starting to add task 2
+Starting to add task 0
+Starting to add task 6
+Starting to add task 8
+output for task:2
+output for task:6
+output for task:0
+output for task:8
+output for task:9
+read request to task queue
+output for task:11
+read request to task queue
+output for task:12
+read request to task queue
+Starting to add task 9
+Starting to add task 11
+Starting to add task 12
+output for task:9
+read request to task queue
+Starting to add task 9
+output for task:11
+read request to task queue
+output for task:12
+read request to task queue
+Starting to add task 11
+output for task:9
+Starting to add task 12
+output for task:11
+output for task:12
+Starting to add task 13
+Starting to add task 15
+output for task:13
+read request to task queue
+output for task:15
+read request to task queue
+Starting to add task 23
+Starting to add task 22
+Starting to add task 16
+Starting to add task 15
+Starting to add task 13
+output for task:13
+output for task:23
+read request to task queue
+output for task:15
+read request to task queue
+output for task:22
+read request to task queue
+output for task:16
+read request to task queue
+Starting to add task 16
+Starting to add task 22
+Starting to add task 23
+output for task:23
+output for task:16
+read request to task queue
+output for task:22
+read request to task queue
+Starting to add task 14
+Starting to add task 17
+Starting to add task 18
+Starting to add task 19
+Starting to add task 20
+Starting to add task 21
+Starting to add task 24
+Starting to add task 25
+Starting to add task 26
+Starting to add task 15
+Starting to add task 16
+output for task:14
+read request to task queue
+output for task:17
+read request to task queue
+output for task:20
+read request to task queue
+Starting to add task 22
+Starting to add task 14
+output for task:18
+read request to task queue
+output for task:21
+read request to task queue
+output for task:24
+read request to task queue
+output for task:25
+read request to task queue
+Starting to add task 24
+output for task:19
+read request to task queue
+output for task:26
+read request to task queue
+output for task:15
+output for task:16
+Starting to add task 21
+Starting to add task 18
+Starting to add task 25
+output for task:22
+output for task:25
+read request to task queue
+output for task:14
+read request to task queue
+output for task:24
+read request to task queue
+output for task:21
+read request to task queue
+output for task:18
+read request to task queue
+Starting to add task 18
+Starting to add task 24
+Starting to add task 21
+output for task:18
+read request to task queue
+output for task:24
+read request to task queue
+output for task:21
+read request to task queue
+Starting to add task 21
+Starting to add task 24
+Starting to add task 18
+Starting to add task 19
+output for task:19
+read request to task queue
+output for task:21
+read request to task queue
+output for task:24
+read request to task queue
+output for task:18
+read request to task queue
+Starting to add task 18
+Starting to add task 24
+Starting to add task 21
+Starting to add task 17
+output for task:18
+output for task:24
+output for task:21
+Starting to add task 14
+Starting to add task 20
+Starting to add task 26
+Starting to add task 25
+Starting to add task 19
+output for task:14
+read request to task queue
+output for task:25
+Starting to add task 14
+output for task:19
+output for task:17
+read request to task queue
+Starting to add task 17
+output for task:14
+output for task:20
+read request to task queue
+output for task:26
+read request to task queue
+Starting to add task 20
+output for task:17
+read request to task queue
+Starting to add task 26
+Starting to add task 17
+output for task:20
+read request to task queue
+Starting to add task 20
+output for task:17
+output for task:26
+read request to task queue
+Starting to add task 26
+output for task:20
+output for task:26
+Starting to add task 27
+INFO 08-26 00:50:15 metrics.py:406] Avg prompt throughput: 24387.2 tokens/s, Avg generation throughput: 36.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 30
+output for task:27
+read request to task queue
+output for task:30
+read request to task queue
+Starting to add task 35
+Starting to add task 33
+Starting to add task 31
+Starting to add task 30
+Starting to add task 27
+output for task:27
+output for task:33
+read request to task queue
+output for task:31
+read request to task queue
+output for task:30
+read request to task queue
+output for task:35
+read request to task queue
+Starting to add task 35
+Starting to add task 33
+output for task:33
+output for task:35
+read request to task queue
+Starting to add task 31
+Starting to add task 28
+output for task:31
+Starting to add task 29
+Starting to add task 32
+Starting to add task 34
+Starting to add task 36
+Starting to add task 37
+Starting to add task 30
+Starting to add task 35
+output for task:29
+read request to task queue
+output for task:34
+read request to task queue
+output for task:36
+read request to task queue
+output for task:37
+read request to task queue
+output for task:30
+output for task:35
+Starting to add task 36
+output for task:28
+read request to task queue
+output for task:32
+read request to task queue
+Starting to add task 32
+Starting to add task 28
+Starting to add task 29
+output for task:32
+read request to task queue
+output for task:28
+read request to task queue
+Starting to add task 28
+Starting to add task 32
+Starting to add task 34
+output for task:36
+read request to task queue
+output for task:29
+read request to task queue
+output for task:28
+read request to task queue
+output for task:32
+read request to task queue
+Starting to add task 32
+Starting to add task 28
+Starting to add task 37
+output for task:34
+read request to task queue
+output for task:32
+read request to task queue
+output for task:28
+read request to task queue
+output for task:37
+read request to task queue
+Starting to add task 38
+Starting to add task 28
+Starting to add task 32
+Starting to add task 34
+output for task:34
+read request to task queue
+output for task:28
+output for task:32
+output for task:38
+read request to task queue
+Starting to add task 38
+Starting to add task 29
+output for task:38
+Starting to add task 36
+Starting to add task 34
+Starting to add task 37
+output for task:29
+read request to task queue
+output for task:36
+read request to task queue
+Starting to add task 29
+output for task:34
+Starting to add task 36
+output for task:37
+read request to task queue
+Starting to add task 37
+output for task:29
+output for task:36
+output for task:37
+Starting to add task 39
+INFO 08-26 00:50:34 metrics.py:406] Avg prompt throughput: 5852.7 tokens/s, Avg generation throughput: 8.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 40
+output for task:39
+read request to task queue
+output for task:40
+read request to task queue
+Starting to add task 47
+Starting to add task 42
+Starting to add task 40
+Starting to add task 39
+Starting to add task 41
+output for task:47
+read request to task queue
+output for task:42
+read request to task queue
+output for task:40
+read request to task queue
+output for task:39
+read request to task queue
+Starting to add task 43
+Starting to add task 44
+Starting to add task 45
+Starting to add task 46
+Starting to add task 47
+Starting to add task 40
+output for task:47
+output for task:41
+read request to task queue
+Starting to add task 42
+Starting to add task 39
+output for task:42
+Starting to add task 41
+output for task:43
+read request to task queue
+output for task:45
+read request to task queue
+output for task:40
+Starting to add task 43
+Starting to add task 45
+output for task:44
+read request to task queue
+output for task:39
+output for task:41
+read request to task queue
+Starting to add task 44
+output for task:46
+read request to task queue
+Starting to add task 46
+Starting to add task 41
+output for task:41
+output for task:44
+read request to task queue
+Starting to add task 44
+output for task:43
+read request to task queue
+output for task:45
+read request to task queue
+output for task:46
+read request to task queue
+Starting to add task 43
+Starting to add task 45
+Starting to add task 46
+output for task:44
+output for task:46
+output for task:43
+read request to task queue
+output for task:45
+read request to task queue
+Starting to add task 43
+Starting to add task 45
+output for task:43
+output for task:45
+Starting to add task 48
+INFO 08-26 00:50:40 metrics.py:406] Avg prompt throughput: 14375.2 tokens/s, Avg generation throughput: 21.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 49
+output for task:48
+read request to task queue
+output for task:49
+read request to task queue
+Starting to add task 48
+Starting to add task 49
+output for task:48
+output for task:49
+Starting to add task 50
+Starting to add task 52
+output for task:52
+read request to task queue
+output for task:50
+read request to task queue
+Starting to add task 54
+Starting to add task 50
+Starting to add task 52
+output for task:52
+output for task:54
+read request to task queue
+output for task:50
+read request to task queue
+Starting to add task 51
+Starting to add task 53
+Starting to add task 55
+Starting to add task 54
+Starting to add task 50
+output for task:54
+output for task:50
+output for task:51
+read request to task queue
+Starting to add task 51
+output for task:53
+read request to task queue
+output for task:55
+read request to task queue
+output for task:51
+read request to task queue
+Starting to add task 51
+Starting to add task 53
+output for task:51
+read request to task queue
+output for task:53
+read request to task queue
+Starting to add task 51
+Starting to add task 55
+output for task:55
+read request to task queue
+output for task:51
+read request to task queue
+Starting to add task 51
+Starting to add task 53
+output for task:51
+output for task:53
+Starting to add task 55
+output for task:55
+Starting to add task 56
+Starting to add task 57
+output for task:56
+read request to task queue
+output for task:57
+read request to task queue
+Starting to add task 58
+Starting to add task 56
+output for task:56
+output for task:58
+read request to task queue
+Starting to add task 57
+Starting to add task 58
+output for task:57
+Starting to add task 59
+output for task:58
+output for task:59
+read request to task queue
+Starting to add task 59
+output for task:59
+read request to task queue
+Starting to add task 59
+output for task:59
+Starting to add task 60
+INFO 08-26 00:50:52 metrics.py:406] Avg prompt throughput: 7465.3 tokens/s, Avg generation throughput: 9.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 61
+output for task:60
+read request to task queue
+output for task:61
+read request to task queue
+Starting to add task 67
+Starting to add task 66
+Starting to add task 64
+Starting to add task 62
+Starting to add task 61
+Starting to add task 60
+Starting to add task 63
+output for task:62
+read request to task queue
+output for task:61
+read request to task queue
+output for task:60
+read request to task queue
+output for task:63
+read request to task queue
+output for task:67
+read request to task queue
+output for task:66
+read request to task queue
+output for task:64
+read request to task queue
+Starting to add task 64
+Starting to add task 66
+Starting to add task 67
+Starting to add task 63
+Starting to add task 65
+output for task:64
+read request to task queue
+output for task:66
+read request to task queue
+output for task:67
+read request to task queue
+output for task:63
+read request to task queue
+Starting to add task 63
+Starting to add task 62
+output for task:62
+output for task:65
+read request to task queue
+output for task:63
+read request to task queue
+Starting to add task 63
+Starting to add task 60
+output for task:60
+output for task:63
+read request to task queue
+Starting to add task 63
+Starting to add task 61
+output for task:63
+Starting to add task 66
+output for task:61
+Starting to add task 64
+Starting to add task 67
+Starting to add task 65
+output for task:66
+output for task:64
+output for task:67
+output for task:65
+read request to task queue
+Starting to add task 65
+output for task:65
+Starting to add task 68
+Starting to add task 72
+Starting to add task 69
+output for task:72
+read request to task queue
+Starting to add task 72
+Starting to add task 70
+output for task:72
+Starting to add task 71
+Starting to add task 73
+output for task:69
+read request to task queue
+Starting to add task 69
+output for task:68
+read request to task queue
+Starting to add task 68
+output for task:71
+read request to task queue
+Starting to add task 71
+output for task:70
+read request to task queue
+Starting to add task 70
+output for task:73
+read request to task queue
+output for task:69
+read request to task queue
+output for task:68
+read request to task queue
+output for task:70
+read request to task queue
+Starting to add task 70
+Starting to add task 73
+output for task:71
+read request to task queue
+output for task:73
+read request to task queue
+output for task:70
+read request to task queue
+Starting to add task 70
+Starting to add task 71
+output for task:71
+read request to task queue
+output for task:70
+read request to task queue
+Starting to add task 70
+Starting to add task 69
+output for task:69
+INFO 08-26 00:50:57 metrics.py:406] Avg prompt throughput: 23910.8 tokens/s, Avg generation throughput: 39.6 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%.
+output for task:70
+Starting to add task 68
+Starting to add task 73
+Starting to add task 71
+output for task:73
+output for task:68
+output for task:71
+Starting to add task 74
+Starting to add task 75
+output for task:74
+read request to task queue
+Starting to add task 77
+Starting to add task 80
+output for task:75
+read request to task queue
+Starting to add task 88
+output for task:77
+read request to task queue
+output for task:80
+read request to task queue
+Starting to add task 87
+Starting to add task 86
+Starting to add task 84
+Starting to add task 83
+Starting to add task 80
+Starting to add task 74
+output for task:80
+Starting to add task 76
+output for task:74
+Starting to add task 77
+Starting to add task 78
+output for task:77
+Starting to add task 79
+Starting to add task 81
+Starting to add task 82
+Starting to add task 85
+Starting to add task 75
+output for task:87
+read request to task queue
+output for task:84
+read request to task queue
+Starting to add task 84
+Starting to add task 87
+output for task:76
+read request to task queue
+Starting to add task 76
+output for task:88
+read request to task queue
+output for task:86
+read request to task queue
+output for task:83
+read request to task queue
+output for task:78
+read request to task queue
+output for task:79
+read request to task queue
+output for task:82
+read request to task queue
+Starting to add task 86
+output for task:84
+output for task:87
+output for task:81
+read request to task queue
+output for task:75
+read request to task queue
+output for task:76
+read request to task queue
+output for task:86
+read request to task queue
+Starting to add task 83
+output for task:85
+read request to task queue
+Starting to add task 88
+Starting to add task 75
+output for task:83
+read request to task queue
+output for task:88
+read request to task queue
+output for task:75
+Starting to add task 86
+Starting to add task 83
+Starting to add task 88
+Starting to add task 78
+Starting to add task 79
+Starting to add task 81
+Starting to add task 85
+Starting to add task 82
+Starting to add task 76
+output for task:86
+output for task:83
+output for task:88
+output for task:85
+read request to task queue
+Starting to add task 85
+output for task:78
+read request to task queue
+output for task:79
+read request to task queue
+output for task:81
+read request to task queue
+output for task:76
+output for task:85
+Starting to add task 78
+Starting to add task 79
+Starting to add task 81
+output for task:82
+read request to task queue
+Starting to add task 82
+output for task:78
+output for task:79
+output for task:81
+output for task:82
+read request to task queue
+Starting to add task 82
+output for task:82
+Starting to add task 89
+INFO 08-26 00:51:17 metrics.py:406] Avg prompt throughput: 6452.9 tokens/s, Avg generation throughput: 8.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 94
+output for task:94
+read request to task queue
+output for task:89
+read request to task queue
+Starting to add task 103
+Starting to add task 97
+Starting to add task 89
+Starting to add task 94
+output for task:94
+output for task:103
+read request to task queue
+output for task:97
+read request to task queue
+output for task:89
+read request to task queue
+Starting to add task 103
+Starting to add task 97
+output for task:103
+Starting to add task 90
+output for task:97
+Starting to add task 91
+Starting to add task 92
+Starting to add task 93
+Starting to add task 95
+Starting to add task 96
+Starting to add task 98
+Starting to add task 99
+Starting to add task 100
+Starting to add task 101
+Starting to add task 102
+Starting to add task 89
+output for task:91
+read request to task queue
+Starting to add task 91
+output for task:92
+read request to task queue
+output for task:93
+read request to task queue
+output for task:95
+read request to task queue
+output for task:96
+read request to task queue
+output for task:99
+read request to task queue
+Starting to add task 92
+output for task:90
+read request to task queue
+output for task:98
+read request to task queue
+output for task:89
+output for task:92
+read request to task queue
+Starting to add task 96
+output for task:100
+read request to task queue
+Starting to add task 95
+Starting to add task 93
+Starting to add task 99
+Starting to add task 90
+Starting to add task 98
+Starting to add task 100
+output for task:101
+read request to task queue
+Starting to add task 101
+Starting to add task 92
+output for task:102
+read request to task queue
+output for task:91
+read request to task queue
+Starting to add task 102
+Starting to add task 91
+output for task:96
+read request to task queue
+output for task:95
+read request to task queue
+output for task:93
+read request to task queue
+output for task:99
+read request to task queue
+Starting to add task 95
+Starting to add task 93
+Starting to add task 96
+Starting to add task 99
+output for task:90
+read request to task queue
+output for task:92
+output for task:95
+Starting to add task 90
+output for task:98
+read request to task queue
+output for task:101
+read request to task queue
+output for task:93
+output for task:96
+output for task:99
+Starting to add task 98
+Starting to add task 101
+output for task:100
+read request to task queue
+output for task:91
+read request to task queue
+output for task:101
+Starting to add task 100
+output for task:102
+read request to task queue
+output for task:90
+output for task:98
+Starting to add task 102
+Starting to add task 91
+output for task:100
+output for task:102
+output for task:91
+Starting to add task 104
+Starting to add task 105
+Starting to add task 110
+output for task:104
+read request to task queue
+output for task:110
+read request to task queue
+output for task:105
+read request to task queue
+Starting to add task 115
+Starting to add task 113
+Starting to add task 111
+Starting to add task 105
+Starting to add task 110
+output for task:110
+output for task:111
+read request to task queue
+output for task:105
+read request to task queue
+output for task:115
+read request to task queue
+output for task:113
+read request to task queue
+Starting to add task 113
+Starting to add task 115
+Starting to add task 106
+output for task:113
+read request to task queue
+output for task:115
+read request to task queue
+Starting to add task 107
+Starting to add task 108
+Starting to add task 109
+Starting to add task 112
+Starting to add task 114
+Starting to add task 116
+Starting to add task 117
+Starting to add task 111
+Starting to add task 105
+output for task:106
+read request to task queue
+Starting to add task 113
+output for task:111
+output for task:107
+read request to task queue
+output for task:108
+read request to task queue
+output for task:109
+read request to task queue
+output for task:116
+read request to task queue
+output for task:117
+read request to task queue
+Starting to add task 115
+Starting to add task 106
+Starting to add task 104
+Starting to add task 107
+output for task:112
+read request to task queue
+output for task:114
+read request to task queue
+Starting to add task 114
+output for task:105
+Starting to add task 112
+Starting to add task 109
+output for task:113
+output for task:115
+output for task:106
+read request to task queue
+output for task:104
+read request to task queue
+output for task:107
+read request to task queue
+output for task:114
+read request to task queue
+output for task:112
+read request to task queue
+Starting to add task 112
+Starting to add task 114
+INFO 08-26 00:51:22 metrics.py:406] Avg prompt throughput: 41866.9 tokens/s, Avg generation throughput: 62.3 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+Starting to add task 104
+output for task:109
+read request to task queue
+output for task:104
+read request to task queue
+output for task:112
+read request to task queue
+output for task:114
+read request to task queue
+Starting to add task 114
+Starting to add task 112
+Starting to add task 107
+output for task:107
+read request to task queue
+output for task:114
+read request to task queue
+output for task:112
+read request to task queue
+Starting to add task 112
+Starting to add task 114
+Starting to add task 108
+output for task:112
+output for task:114
+Starting to add task 107
+Starting to add task 109
+Starting to add task 116
+Starting to add task 117
+Starting to add task 106
+Starting to add task 104
+output for task:107
+output for task:106
+output for task:104
+output for task:108
+read request to task queue
+output for task:109
+read request to task queue
+Starting to add task 108
+Starting to add task 109
+output for task:116
+read request to task queue
+output for task:117
+read request to task queue
+output for task:109
+Starting to add task 116
+output for task:108
+read request to task queue
+Starting to add task 117
+Starting to add task 108
+output for task:117
+read request to task queue
+Starting to add task 117
+output for task:108
+output for task:116
+read request to task queue
+Starting to add task 116
+output for task:117
+output for task:116
+Starting to add task 122
+Starting to add task 123
+output for task:122
+read request to task queue
+output for task:123
+read request to task queue
+Starting to add task 123
+Starting to add task 122
+output for task:122
+output for task:123
+read request to task queue
+Starting to add task 118
+Starting to add task 119
+Starting to add task 120
+Starting to add task 121
+Starting to add task 124
+Starting to add task 125
+Starting to add task 126
+Starting to add task 127
+Starting to add task 128
+Starting to add task 129
+Starting to add task 130
+Starting to add task 131
+output for task:118
+read request to task queue
+output for task:119
+read request to task queue
+output for task:120
+read request to task queue
+output for task:121
+read request to task queue
+output for task:124
+read request to task queue
+output for task:125
+read request to task queue
+Starting to add task 132
+Starting to add task 133
+output for task:126
+read request to task queue
+output for task:127
+read request to task queue
+output for task:130
+read request to task queue
+output for task:132
+read request to task queue
+Starting to add task 127
+output for task:129
+read request to task queue
+Starting to add task 129
+Starting to add task 123
+Starting to add task 126
+Starting to add task 120
+output for task:128
+read request to task queue
+output for task:131
+read request to task queue
+output for task:133
+read request to task queue
+output for task:123
+output for task:127
+read request to task queue
+output for task:129
+read request to task queue
+output for task:126
+read request to task queue
+Starting to add task 126
+Starting to add task 129
+Starting to add task 127
+Starting to add task 128
+output for task:120
+read request to task queue
+output for task:128
+read request to task queue
+output for task:126
+read request to task queue
+output for task:129
+read request to task queue
+output for task:127
+read request to task queue
+Starting to add task 127
+Starting to add task 129
+Starting to add task 126
+Starting to add task 131
+output for task:131
+read request to task queue
+output for task:127
+read request to task queue
+output for task:129
+read request to task queue
+output for task:126
+read request to task queue
+Starting to add task 126
+Starting to add task 129
+Starting to add task 127
+Starting to add task 133
+output for task:126
+output for task:129
+output for task:127
+Starting to add task 121
+output for task:133
+read request to task queue
+Starting to add task 118
+Starting to add task 119
+Starting to add task 120
+Starting to add task 124
+Starting to add task 125
+Starting to add task 130
+Starting to add task 132
+Starting to add task 128
+Starting to add task 131
+output for task:120
+read request to task queue
+Starting to add task 120
+Starting to add task 134
+output for task:128
+Starting to add task 135
+Starting to add task 136
+output for task:131
+Starting to add task 139
+Starting to add task 148
+Starting to add task 150
+output for task:120
+Starting to add task 153
+output for task:121
+read request to task queue
+output for task:118
+read request to task queue
+output for task:119
+read request to task queue
+output for task:124
+read request to task queue
+output for task:125
+read request to task queue
+output for task:130
+read request to task queue
+output for task:132
+read request to task queue
+output for task:134
+read request to task queue
+output for task:135
+read request to task queue
+output for task:136
+read request to task queue
+output for task:139
+read request to task queue
+output for task:153
+read request to task queue
+output for task:148
+read request to task queue
+output for task:150
+read request to task queue
+Starting to add task 150
+Starting to add task 148
+Starting to add task 135
+output for task:135
+output for task:150
+read request to task queue
+output for task:148
+read request to task queue
+Starting to add task 139
+INFO 08-26 00:51:27 metrics.py:406] Avg prompt throughput: 44681.5 tokens/s, Avg generation throughput: 71.0 tokens/s, Running: 0 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.0%, CPU KV cache usage: 0.0%.
+Starting to add task 136
+output for task:139
+Starting to add task 153
+output for task:136
+Starting to add task 137
+output for task:153
+Starting to add task 138
+output for task:137
+read request to task queue
+Starting to add task 154
+Starting to add task 141
+output for task:138
+read request to task queue
+output for task:141
+read request to task queue
+output for task:154
+read request to task queue
+Starting to add task 154
+Starting to add task 142
+output for task:154
+read request to task queue
+output for task:142
+read request to task queue
+Starting to add task 151
+Starting to add task 152
+output for task:151
+read request to task queue
+output for task:152
+read request to task queue
+Starting to add task 134
+Starting to add task 150
+output for task:134
+Starting to add task 148
+Starting to add task 119
+Starting to add task 118
+Starting to add task 125
+Starting to add task 121
+Starting to add task 124
+Starting to add task 155
+Starting to add task 130
+Starting to add task 132
+output for task:125
+read request to task queue
+Starting to add task 125
+Starting to add task 154
+Starting to add task 138
+output for task:150
+output for task:148
+output for task:119
+read request to task queue
+output for task:118
+read request to task queue
+output for task:121
+read request to task queue
+output for task:124
+read request to task queue
+output for task:155
+read request to task queue
+Starting to add task 142
+Starting to add task 137
+Starting to add task 141
+Starting to add task 133
+Starting to add task 151
+Starting to add task 155
+Starting to add task 118
+Starting to add task 119
+output for task:130
+read request to task queue
+Starting to add task 121
+output for task:125
+output for task:133
+output for task:132
+read request to task queue
+output for task:154
+output for task:138
+read request to task queue
+output for task:142
+read request to task queue
+Starting to add task 124
+Starting to add task 130
+Starting to add task 132
+Starting to add task 138
+Starting to add task 142
+output for task:118
+output for task:119
+output for task:121
+output for task:124
+output for task:137
+read request to task queue
+output for task:141
+read request to task queue
+output for task:138
+output for task:142
+Starting to add task 137
+output for task:130
+output for task:132
+Starting to add task 141
+output for task:151
+read request to task queue
+output for task:155
+read request to task queue
+Starting to add task 151
+Starting to add task 155
+output for task:137
+read request to task queue
+output for task:141
+read request to task queue
+Starting to add task 137
+Starting to add task 141
+output for task:151
+read request to task queue
+output for task:155
+read request to task queue
+Starting to add task 151
+output for task:137
+output for task:141
+Starting to add task 155
+output for task:151
+output for task:155
+Starting to add task 156
+Starting to add task 157
+Starting to add task 158
+Starting to add task 159
+output for task:156
+read request to task queue
+output for task:158
+read request to task queue
+Starting to add task 156
+Starting to add task 158
+output for task:157
+read request to task queue
+output for task:159
+read request to task queue
+Starting to add task 157
+Starting to add task 159
+output for task:156
+read request to task queue
+output for task:158
+read request to task queue
+Starting to add task 156
+output for task:157
+read request to task queue
+output for task:159
+read request to task queue
+Starting to add task 158
+Starting to add task 157
+Starting to add task 159
+output for task:158
+read request to task queue
+Starting to add task 158
+output for task:157
+output for task:159
+output for task:156
+read request to task queue
+Starting to add task 156
+output for task:158
+output for task:156
+Starting to add task 161
+INFO 08-26 00:51:36 metrics.py:406] Avg prompt throughput: 19974.7 tokens/s, Avg generation throughput: 27.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Init time for sending request: 1787683770.03115
+Total tasks to generate: 532
+init_priority for task 0: -0.4173956751049649
+init_priority for task 1: -1.8704463095912336
+init_priority for task 2: -0.42002524510744293
+init_priority for task 3: -1.8682508535502877
+init_priority for task 4: -1.8668865675389172
+init_priority for task 5: -1.8654467779925428
+init_priority for task 6: -0.4187710425037777
+init_priority for task 7: -1.8625878481142568
+init_priority for task 8: -0.41815337171647876
+init_priority for task 9: -0.417854690927349
+init_priority for task 10: -0.41755144495709495
+init_priority for task 11: -0.4172562780350962
+init_priority for task 12: -0.41695058348154007
+init_priority for task 13: -1.8116340343768262
+init_priority for task 14: -0.40701954540724955
+init_priority for task 15: -1.8106633221606196
+init_priority for task 16: -1.8094692138694815
+init_priority for task 17: -0.40625306170362574
+init_priority for task 18: -0.40602531489608634
+init_priority for task 19: -0.4057587075040967
+init_priority for task 20: -0.4057861827119898
+init_priority for task 21: -0.4057844412703546
+init_priority for task 22: -1.8061809701407232
+init_priority for task 23: -1.806179678259884
+init_priority for task 24: -0.4057844412703546
+init_priority for task 25: -0.4057844412703546
+init_priority for task 26: -0.4057848282567388
+init_priority for task 27: -1.820464208062401
+init_priority for task 28: -0.4091396689648548
+init_priority for task 29: -0.40893048521917497
+init_priority for task 30: -1.819365135671908
+init_priority for task 31: -1.818284067251986
+init_priority for task 32: -0.4082526660788897
+init_priority for task 33: -1.8159814064996658
+init_priority for task 34: -0.40771845197089274
+init_priority for task 35: -1.8136198274701636
+init_priority for task 36: -0.4071764909904201
+init_priority for task 37: -0.4069059262321613
+init_priority for task 38: -1.8075267503222303
+init_priority for task 39: -1.818287101843444
+init_priority for task 40: -1.8186027270089973
+init_priority for task 41: -0.4083727951648961
+init_priority for task 42: -1.8165491106371334
+init_priority for task 43: -0.40784523045825577
+init_priority for task 44: -0.40757548458364823
+init_priority for task 45: -0.4072991195228661
+init_priority for task 46: -0.4070249797407418
+init_priority for task 47: -1.8104530985222171
+init_priority for task 48: -1.8160567437472819
+init_priority for task 49: -1.8162498638388942
+init_priority for task 50: -1.8099313141302666
+init_priority for task 51: -0.4066516351916711
+init_priority for task 52: -1.8090921998685696
+init_priority for task 53: -0.40619243294630314
+init_priority for task 54: -1.8068856134922642
+init_priority for task 55: -0.40578627945896634
+init_priority for task 56: -1.8075151147647746
+init_priority for task 57: -1.8071656520061479
+init_priority for task 58: -1.806227478466351
+init_priority for task 59: -0.4057859892181057
+init_priority for task 60: -1.8229329211209855
+init_priority for task 61: -1.8235593176893363
+init_priority for task 62: -1.8226304499481234
+init_priority for task 63: -0.4092298118583149
+init_priority for task 64: -1.82037176148946
+init_priority for task 65: -0.40870971497833863
+init_priority for task 66: -1.8179663302049633
+init_priority for task 67: -1.81672105910061
+init_priority for task 68: -0.40761620234236784
+init_priority for task 69: -0.40767296132679215
+init_priority for task 70: -0.40748910643620057
+init_priority for task 71: -0.40725299598789416
+init_priority for task 72: -1.811594729426888
+init_priority for task 73: -0.406743072436809
+init_priority for task 74: -1.8099088751642498
+init_priority for task 75: -1.8097958215288645
+init_priority for task 76: -0.406369017607434
+init_priority for task 77: -1.8076409551392425
+init_priority for task 78: -0.40584839577915743
+init_priority for task 79: -0.4057902461048685
+init_priority for task 80: -1.8061831232775094
+init_priority for task 81: -0.4057845380169161
+init_priority for task 82: -0.4057842477773009
+init_priority for task 83: -1.8061783863799685
+init_priority for task 84: -1.8061814007678754
+init_priority for task 85: -0.4057845380169161
+init_priority for task 86: -1.8061788170065043
+init_priority for task 87: -1.806177525127205
+init_priority for task 88: -1.8061891520741649
+init_priority for task 89: -1.8402973752105674
+init_priority for task 90: -0.413507343359041
+init_priority for task 91: -0.4133310073344032
+init_priority for task 92: -0.413077034343369
+init_priority for task 93: -0.4128137687416567
+init_priority for task 94: -1.8362214175827096
+init_priority for task 95: -0.4122544194351554
+init_priority for task 96: -0.41197655151028295
+init_priority for task 97: -1.8324878112592193
+init_priority for task 98: -0.4114134321465265
+init_priority for task 99: -0.4111318180972828
+Progress: 100/532 tasks sent to queue
+init_priority for task 100: -0.4108557843394741
+init_priority for task 101: -0.410573181564131
+init_priority for task 102: -0.41028128465232955
+init_priority for task 103: -1.8249802659822123
+init_priority for task 104: -0.40747385370479056
+init_priority for task 105: -1.8138494467564674
+init_priority for task 106: -0.4072988281999383
+init_priority for task 107: -0.4070657395547442
+init_priority for task 108: -0.4068080509471302
+init_priority for task 109: -0.40653550171834685
+init_priority for task 110: -1.8082905514395815
+init_priority for task 111: -1.8070945611964329
+init_priority for task 112: -0.4057868599413106
+init_priority for task 113: -1.8061779557535353
+init_priority for task 114: -0.40578405428433956
+init_priority for task 115: -1.806177525127205
+init_priority for task 116: -0.4057843445238163
+init_priority for task 117: -0.4057843445238163
+init_priority for task 118: -0.4074162482201099
+init_priority for task 119: -0.40743266446774307
+init_priority for task 120: -0.40719930506303176
+init_priority for task 121: -0.4069582201019274
+init_priority for task 122: -1.8103218829982708
+init_priority for task 123: -1.8091918378076044
+init_priority for task 124: -0.4062046354512492
+init_priority for task 125: -0.4059367489164337
+init_priority for task 126: -0.40578666644710354
+init_priority for task 127: -0.4057851184967691
+init_priority for task 128: -0.40578579572431384
+init_priority for task 129: -0.40578550548379916
+init_priority for task 130: -0.4057842477773009
+init_priority for task 131: -0.4057839575378934
+init_priority for task 132: -0.4057843445238163
+init_priority for task 133: -0.40578492500339247
+init_priority for task 134: -1.8084173081208181
+init_priority for task 135: -1.807916369263472
+init_priority for task 136: -1.806799456526309
+init_priority for task 137: -0.4057856989774526
+init_priority for task 138: -0.4057851184967691
+init_priority for task 139: -1.8061848457887861
+init_priority for task 140: -1.8061831232775094
+init_priority for task 141: -0.40578521524349204
+init_priority for task 142: -0.4057843445238163
+init_priority for task 143: -0.4057850217500693
+init_priority for task 144: -0.4057850217500693
+init_priority for task 145: -1.806185276416862
+init_priority for task 146: -0.4057844412703546
+init_priority for task 147: -0.4057846347635006
+init_priority for task 148: -1.8061809701407232
+init_priority for task 149: -0.40578405428433956
+init_priority for task 150: -1.8062606379112738
+init_priority for task 151: -0.405785311990238
+init_priority for task 152: -0.4057850217500693
+init_priority for task 153: -1.8061801088867278
+init_priority for task 154: -1.807156603929593
+init_priority for task 155: -0.4059496212412845
+init_priority for task 156: -0.4066275914828511
+init_priority for task 157: -0.40657543703377663
+init_priority for task 158: -0.40635351615529963
+init_priority for task 159: -0.40608504734425876
+init_priority for task 160: -0.4080908300250133
+init_priority for task 161: -1.816639197474894
+init_priority for task 162: -0.4079370333478153
+init_priority for task 163: -1.814750475089399
+init_priority for task 164: -0.4074682190821904
+init_priority for task 165: -1.8267006279093612
+init_priority for task 166: -0.4104972272895418
+init_priority for task 167: -0.4103442847192818
+init_priority for task 168: -0.4100942001830964
+init_priority for task 169: -1.8242720456566517
+Starting to add task 163
+output for task:163
+read request to task queue
+output for task:161
+read request to task queue
+Starting to add task 161
+Starting to add task 163
+output for task:163
+output for task:161
+read request to task queue
+Starting to add task 160
+Starting to add task 162
+Starting to add task 164
+Starting to add task 161
+output for task:160
+read request to task queue
+output for task:162
+read request to task queue
+output for task:161
+Starting to add task 160
+Starting to add task 162
+output for task:164
+read request to task queue
+Starting to add task 164
+output for task:164
+read request to task queue
+Starting to add task 164
+output for task:160
+read request to task queue
+output for task:162
+read request to task queue
+Starting to add task 160
+Starting to add task 162
+output for task:164
+output for task:160
+read request to task queue
+output for task:162
+read request to task queue
+Starting to add task 160
+Starting to add task 162
+output for task:160
+output for task:162
+Starting to add task 165
+INFO 08-26 00:51:48 metrics.py:406] Avg prompt throughput: 4116.1 tokens/s, Avg generation throughput: 6.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 169
+output for task:165
+read request to task queue
+output for task:169
+read request to task queue
+Starting to add task 172
+Starting to add task 165
+output for task:165
+output for task:172
+read request to task queue
+Starting to add task 172
+Starting to add task 169
+output for task:169
+output for task:172
+read request to task queue
+Starting to add task 166
+Starting to add task 167
+Starting to add task 168
+Starting to add task 170
+Starting to add task 171
+Starting to add task 173
+Starting to add task 174
+Starting to add task 172
+output for task:168
+read request to task queue
+output for task:173
+read request to task queue
+output for task:172
+Starting to add task 168
+output for task:166
+read request to task queue
+output for task:170
+read request to task queue
+Starting to add task 170
+Starting to add task 166
+Starting to add task 173
+output for task:174
+read request to task queue
+output for task:167
+read request to task queue
+output for task:171
+read request to task queue
+output for task:170
+read request to task queue
+output for task:166
+read request to task queue
+Starting to add task 166
+Starting to add task 170
+Starting to add task 174
+output for task:168
+read request to task queue
+output for task:173
+read request to task queue
+output for task:174
+read request to task queue
+output for task:166
+read request to task queue
+output for task:170
+read request to task queue
+Starting to add task 170
+Starting to add task 166
+Starting to add task 167
+output for task:167
+read request to task queue
+output for task:170
+read request to task queue
+output for task:166
+read request to task queue
+Starting to add task 166
+Starting to add task 170
+Starting to add task 171
+output for task:166
+output for task:170
+Starting to add task 168
+Starting to add task 173
+Starting to add task 174
+Starting to add task 167
+output for task:171
+read request to task queue
+output for task:168
+read request to task queue
+output for task:173
+read request to task queue
+output for task:174
+Starting to add task 168
+output for task:167
+Starting to add task 173
+Starting to add task 171
+output for task:168
+output for task:173
+output for task:171
+Starting to add task 175
+Starting to add task 176
+Starting to add task 180
+output for task:175
+read request to task queue
+output for task:176
+read request to task queue
+output for task:180
+read request to task queue
+Starting to add task 185
+Starting to add task 184
+Starting to add task 183
+Starting to add task 181
+Starting to add task 180
+Starting to add task 176
+output for task:176
+output for task:184
+read request to task queue
+output for task:183
+read request to task queue
+output for task:180
+read request to task queue
+output for task:185
+read request to task queue
+output for task:181
+read request to task queue
+Starting to add task 181
+Starting to add task 185
+Starting to add task 177
+output for task:181
+read request to task queue
+output for task:185
+read request to task queue
+Starting to add task 178
+Starting to add task 179
+Starting to add task 182
+Starting to add task 184
+Starting to add task 183
+output for task:184
+output for task:183
+output for task:177
+read request to task queue
+Starting to add task 180
+output for task:178
+read request to task queue
+Starting to add task 181
+Starting to add task 185
+Starting to add task 177
+Starting to add task 175
+Starting to add task 178
+output for task:182
+read request to task queue
+Starting to add task 182
+output for task:179
+read request to task queue
+output for task:180
+output for task:181
+output for task:185
+output for task:177
+read request to task queue
+output for task:175
+read request to task queue
+output for task:178
+read request to task queue
+output for task:182
+read request to task queue
+Starting to add task 182
+Starting to add task 179
+output for task:182
+read request to task queue
+output for task:179
+read request to task queue
+Starting to add task 182
+Starting to add task 175
+output for task:175
+read request to task queue
+output for task:182
+read request to task queue
+Starting to add task 182
+Starting to add task 178
+output for task:182
+Starting to add task 177
+output for task:178
+read request to task queue
+Starting to add task 179
+Starting to add task 175
+Starting to add task 178
+output for task:177
+output for task:179
+output for task:175
+output for task:178
+Starting to add task 187
+INFO 08-26 00:51:56 metrics.py:406] Avg prompt throughput: 24441.3 tokens/s, Avg generation throughput: 36.9 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 188
+output for task:187
+read request to task queue
+output for task:188
+read request to task queue
+Starting to add task 188
+Starting to add task 187
+Starting to add task 186
+output for task:188
+read request to task queue
+output for task:187
+read request to task queue
+output for task:186
+read request to task queue
+Starting to add task 189
+Starting to add task 188
+Starting to add task 187
+Starting to add task 186
+output for task:188
+output for task:187
+output for task:189
+read request to task queue
+Starting to add task 189
+output for task:186
+read request to task queue
+output for task:189
+read request to task queue
+Starting to add task 189
+Starting to add task 186
+output for task:186
+read request to task queue
+output for task:189
+read request to task queue
+Starting to add task 189
+Starting to add task 186
+output for task:186
+output for task:189
+read request to task queue
+Starting to add task 189
+output for task:189
+Starting to add task 191
+INFO 08-26 00:52:05 metrics.py:406] Avg prompt throughput: 4945.4 tokens/s, Avg generation throughput: 8.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 194
+output for task:194
+read request to task queue
+output for task:191
+read request to task queue
+Starting to add task 195
+Starting to add task 191
+Starting to add task 194
+output for task:194
+output for task:195
+read request to task queue
+output for task:191
+read request to task queue
+Starting to add task 198
+Starting to add task 203
+output for task:198
+read request to task queue
+output for task:203
+read request to task queue
+Starting to add task 204
+Starting to add task 208
+output for task:208
+read request to task queue
+output for task:204
+read request to task queue
+Starting to add task 204
+Starting to add task 190
+output for task:204
+read request to task queue
+Starting to add task 192
+Starting to add task 193
+Starting to add task 195
+Starting to add task 191
+output for task:195
+output for task:190
+read request to task queue
+Starting to add task 198
+Starting to add task 203
+output for task:198
+Starting to add task 196
+output for task:203
+Starting to add task 197
+output for task:191
+Starting to add task 199
+Starting to add task 200
+Starting to add task 201
+Starting to add task 202
+Starting to add task 205
+Starting to add task 206
+output for task:192
+read request to task queue
+output for task:193
+read request to task queue
+Starting to add task 207
+Starting to add task 208
+output for task:196
+read request to task queue
+output for task:197
+read request to task queue
+output for task:200
+read request to task queue
+output for task:201
+read request to task queue
+Starting to add task 204
+output for task:208
+output for task:199
+read request to task queue
+output for task:202
+read request to task queue
+output for task:205
+read request to task queue
+output for task:204
+Starting to add task 202
+output for task:206
+read request to task queue
+Starting to add task 199
+Starting to add task 190
+output for task:207
+read request to task queue
+output for task:190
+read request to task queue
+output for task:202
+read request to task queue
+output for task:199
+read request to task queue
+Starting to add task 199
+Starting to add task 202
+Starting to add task 192
+output for task:192
+read request to task queue
+output for task:199
+read request to task queue
+output for task:202
+read request to task queue
+Starting to add task 202
+Starting to add task 199
+Starting to add task 193
+output for task:193
+read request to task queue
+output for task:202
+read request to task queue
+output for task:199
+read request to task queue
+Starting to add task 199
+Starting to add task 202
+Starting to add task 196
+output for task:199
+output for task:202
+Starting to add task 197
+output for task:196
+read request to task queue
+Starting to add task 206
+Starting to add task 207
+Starting to add task 201
+Starting to add task 200
+Starting to add task 205
+Starting to add task 190
+output for task:190
+Starting to add task 192
+Starting to add task 193
+Starting to add task 196
+output for task:197
+read request to task queue
+output for task:192
+output for task:193
+Starting to add task 197
+output for task:206
+read request to task queue
+output for task:207
+read request to task queue
+output for task:196
+output for task:197
+Starting to add task 206
+Starting to add task 207
+output for task:201
+read request to task queue
+output for task:200
+read request to task queue
+output for task:205
+read request to task queue
+Starting to add task 201
+output for task:206
+output for task:207
+Starting to add task 200
+Starting to add task 205
+output for task:201
+read request to task queue
+output for task:200
+read request to task queue
+Starting to add task 201
+Starting to add task 200
+output for task:205
+read request to task queue
+Starting to add task 205
+output for task:201
+output for task:200
+output for task:205
+Starting to add task 209
+Starting to add task 210
+output for task:209
+read request to task queue
+output for task:210
+read request to task queue
+Starting to add task 212
+Starting to add task 214
+output for task:212
+read request to task queue
+output for task:214
+read request to task queue
+Starting to add task 222
+Starting to add task 219
+Starting to add task 218
+Starting to add task 216
+Starting to add task 209
+output for task:209
+output for task:222
+read request to task queue
+output for task:219
+read request to task queue
+output for task:218
+read request to task queue
+output for task:216
+read request to task queue
+Starting to add task 222
+Starting to add task 218
+output for task:222
+Starting to add task 216
+output for task:218
+Starting to add task 210
+output for task:216
+Starting to add task 212
+output for task:210
+Starting to add task 214
+output for task:212
+Starting to add task 211
+output for task:214
+Starting to add task 213
+Starting to add task 215
+Starting to add task 217
+Starting to add task 220
+Starting to add task 221
+Starting to add task 219
+output for task:219
+output for task:211
+read request to task queue
+output for task:215
+read request to task queue
+output for task:220
+read request to task queue
+Starting to add task 211
+Starting to add task 215
+Starting to add task 220
+output for task:213
+read request to task queue
+output for task:221
+read request to task queue
+Starting to add task 213
+output for task:217
+read request to task queue
+Starting to add task 221
+Starting to add task 217
+output for task:213
+read request to task queue
+output for task:221
+read request to task queue
+Starting to add task 213
+output for task:211
+read request to task queue
+output for task:215
+read request to task queue
+output for task:220
+read request to task queue
+output for task:217
+read request to task queue
+Starting to add task 211
+Starting to add task 220
+Starting to add task 215
+Starting to add task 221
+Starting to add task 217
+output for task:213
+output for task:211
+read request to task queue
+output for task:215
+read request to task queue
+output for task:221
+Starting to add task 211
+output for task:217
+Starting to add task 215
+output for task:220
+read request to task queue
+Starting to add task 220
+output for task:211
+output for task:215
+output for task:220
+Starting to add task 224
+INFO 08-26 00:52:13 metrics.py:406] Avg prompt throughput: 35290.1 tokens/s, Avg generation throughput: 47.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 223
+output for task:224
+read request to task queue
+Starting to add task 224
+Starting to add task 225
+output for task:224
+output for task:223
+read request to task queue
+Starting to add task 223
+output for task:225
+read request to task queue
+Starting to add task 225
+output for task:223
+read request to task queue
+Starting to add task 223
+output for task:225
+read request to task queue
+Starting to add task 225
+output for task:223
+output for task:225
+read request to task queue
+Starting to add task 225
+output for task:225
+Starting to add task 227
+INFO 08-26 00:52:18 metrics.py:406] Avg prompt throughput: 4888.0 tokens/s, Avg generation throughput: 6.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 226
+output for task:227
+read request to task queue
+output for task:226
+read request to task queue
+Starting to add task 227
+Starting to add task 226
+output for task:227
+output for task:226
+read request to task queue
+Starting to add task 226
+output for task:226
+read request to task queue
+Starting to add task 226
+output for task:226
+Starting to add task 228
+Starting to add task 233
+output for task:228
+read request to task queue
+Starting to add task 234
+Starting to add task 237
+output for task:233
+read request to task queue
+Starting to add task 243
+Starting to add task 241
+Starting to add task 233
+Starting to add task 228
+output for task:228
+output for task:234
+read request to task queue
+output for task:237
+read request to task queue
+output for task:241
+read request to task queue
+output for task:233
+read request to task queue
+Starting to add task 237
+output for task:243
+read request to task queue
+Starting to add task 243
+output for task:237
+read request to task queue
+Starting to add task 234
+Starting to add task 229
+output for task:243
+read request to task queue
+output for task:234
+read request to task queue
+output for task:229
+read request to task queue
+Starting to add task 230
+Starting to add task 231
+Starting to add task 232
+Starting to add task 235
+Starting to add task 236
+Starting to add task 238
+Starting to add task 239
+Starting to add task 240
+Starting to add task 242
+Starting to add task 241
+Starting to add task 233
+output for task:230
+read request to task queue
+output for task:231
+read request to task queue
+output for task:238
+read request to task queue
+output for task:239
+read request to task queue
+output for task:240
+read request to task queue
+Starting to add task 244
+Starting to add task 245
+output for task:241
+Starting to add task 247
+Starting to add task 250
+output for task:236
+read request to task queue
+output for task:232
+read request to task queue
+output for task:235
+read request to task queue
+output for task:242
+read request to task queue
+output for task:233
+output for task:244
+read request to task queue
+output for task:247
+read request to task queue
+output for task:250
+read request to task queue
+output for task:245
+read request to task queue
+Starting to add task 245
+Starting to add task 237
+output for task:245
+read request to task queue
+output for task:237
+Starting to add task 234
+Starting to add task 243
+Starting to add task 244
+Starting to add task 247
+output for task:244
+Starting to add task 250
+output for task:247
+Starting to add task 246
+output for task:250
+Starting to add task 248
+Starting to add task 249
+Starting to add task 245
+Starting to add task 236
+output for task:234
+output for task:243
+output for task:245
+output for task:236
+read request to task queue
+Starting to add task 232
+Starting to add task 235
+Starting to add task 229
+Starting to add task 230
+Starting to add task 231
+Starting to add task 238
+Starting to add task 239
+Starting to add task 240
+output for task:246
+read request to task queue
+output for task:248
+read request to task queue
+output for task:249
+read request to task queue
+Starting to add task 246
+Starting to add task 248
+Starting to add task 249
+Starting to add task 242
+Starting to add task 236
+output for task:232
+read request to task queue
+output for task:235
+read request to task queue
+Starting to add task 232
+Starting to add task 235
+output for task:229
+read request to task queue
+output for task:230
+read request to task queue
+output for task:231
+read request to task queue
+Starting to add task 229
+Starting to add task 230
+Starting to add task 231
+output for task:236
+output for task:238
+read request to task queue
+output for task:239
+read request to task queue
+output for task:240
+read request to task queue
+output for task:246
+read request to task queue
+output for task:248
+read request to task queue
+Starting to add task 238
+Starting to add task 239
+output for task:232
+output for task:229
+read request to task queue
+output for task:231
+read request to task queue
+Starting to add task 229
+Starting to add task 231
+Starting to add task 240
+Starting to add task 246
+output for task:249
+read request to task queue
+output for task:235
+Starting to add task 248
+Starting to add task 249
+output for task:230
+read request to task queue
+output for task:238
+read request to task queue
+output for task:229
+output for task:231
+output for task:240
+read request to task queue
+Starting to add task 240
+Starting to add task 230
+Starting to add task 238
+output for task:242
+read request to task queue
+output for task:239
+read request to task queue
+output for task:246
+Starting to add task 242
+output for task:248
+output for task:249
+output for task:240
+output for task:230
+output for task:238
+Starting to add task 239
+output for task:239
+output for task:242
+read request to task queue
+Starting to add task 242
+output for task:242
+Starting to add task 251
+INFO 08-26 00:52:25 metrics.py:406] Avg prompt throughput: 32075.5 tokens/s, Avg generation throughput: 46.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 252
+output for task:251
+read request to task queue
+output for task:252
+read request to task queue
+Starting to add task 251
+Starting to add task 252
+output for task:251
+Starting to add task 253
+output for task:252
+Starting to add task 254
+output for task:253
+read request to task queue
+Starting to add task 253
+output for task:254
+read request to task queue
+Starting to add task 254
+output for task:253
+read request to task queue
+Starting to add task 253
+output for task:254
+read request to task queue
+Starting to add task 254
+output for task:254
+output for task:253
+read request to task queue
+Starting to add task 253
+output for task:253
+Starting to add task 255
+Starting to add task 258
+output for task:258
+read request to task queue
+output for task:255
+read request to task queue
+Starting to add task 259
+Starting to add task 255
+Starting to add task 258
+output for task:258
+output for task:259
+read request to task queue
+output for task:255
+read request to task queue
+Starting to add task 259
+Starting to add task 256
+output for task:259
+Starting to add task 257
+Starting to add task 260
+Starting to add task 255
+output for task:256
+read request to task queue
+output for task:255
+Starting to add task 256
+output for task:257
+read request to task queue
+output for task:260
+read request to task queue
+Starting to add task 257
+Starting to add task 260
+output for task:257
+read request to task queue
+output for task:260
+read request to task queue
+Starting to add task 257
+output for task:256
+read request to task queue
+Starting to add task 256
+Starting to add task 260
+output for task:257
+output for task:256
+read request to task queue
+output for task:260
+Starting to add task 256
+output for task:256
+Starting to add task 261
+Starting to add task 262
+Starting to add task 263
+output for task:262
+read request to task queue
+Starting to add task 264
+Starting to add task 262
+output for task:262
+output for task:261
+read request to task queue
+output for task:263
+read request to task queue
+Starting to add task 263
+output for task:264
+read request to task queue
+Starting to add task 264
+output for task:264
+output for task:263
+read request to task queue
+Starting to add task 265
+Starting to add task 266
+Starting to add task 267
+Starting to add task 268
+Starting to add task 269
+Starting to add task 270
+Starting to add task 263
+Starting to add task 261
+output for task:265
+read request to task queue
+output for task:267
+read request to task queue
+output for task:268
+read request to task queue
+output for task:270
+read request to task queue
+output for task:263
+Starting to add task 268
+output for task:266
+read request to task queue
+output for task:261
+read request to task queue
+Starting to add task 266
+Starting to add task 265
+output for task:269
+read request to task queue
+output for task:266
+read request to task queue
+Starting to add task 266
+Starting to add task 271
+output for task:268
+read request to task queue
+output for task:265
+read request to task queue
+output for task:266
+read request to task queue
+output for task:271
+read request to task queue
+Starting to add task 271
+Starting to add task 266
+Starting to add task 272
+output for task:271
+read request to task queue
+output for task:272
+read request to task queue
+output for task:266
+read request to task queue
+Starting to add task 266
+Starting to add task 271
+Starting to add task 273
+output for task:266
+output for task:273
+read request to task queue
+output for task:271
+read request to task queue
+Starting to add task 271
+Starting to add task 269
+output for task:269
+read request to task queue
+output for task:271
+read request to task queue
+Starting to add task 271
+Starting to add task 272
+output for task:271
+Starting to add task 267
+output for task:272
+read request to task queue
+Starting to add task 265
+Starting to add task 270
+Starting to add task 268
+Starting to add task 273
+Starting to add task 261
+Starting to add task 269
+Starting to add task 272
+output for task:269
+output for task:272
+output for task:261
+output for task:265
+read request to task queue
+output for task:268
+read request to task queue
+Starting to add task 265
+Starting to add task 268
+output for task:267
+read request to task queue
+output for task:270
+read request to task queue
+output for task:273
+read request to task queue
+output for task:265
+output for task:268
+Starting to add task 267
+Starting to add task 270
+Starting to add task 273
+output for task:267
+read request to task queue
+Starting to add task 267
+output for task:270
+read request to task queue
+output for task:273
+read request to task queue
+Starting to add task 270
+output for task:267
+Starting to add task 273
+output for task:270
+output for task:273
+Starting to add task 275
+INFO 08-26 00:52:36 metrics.py:406] Avg prompt throughput: 19706.4 tokens/s, Avg generation throughput: 28.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 279
+output for task:275
+read request to task queue
+output for task:279
+read request to task queue
+Starting to add task 283
+Starting to add task 284
+output for task:283
+read request to task queue
+output for task:284
+read request to task queue
+Starting to add task 285
+Starting to add task 275
+output for task:275
+output for task:285
+read request to task queue
+Starting to add task 283
+Starting to add task 285
+output for task:283
+Starting to add task 279
+output for task:285
+Starting to add task 284
+output for task:279
+Starting to add task 274
+output for task:284
+Starting to add task 276
+Starting to add task 277
+Starting to add task 278
+Starting to add task 280
+Starting to add task 281
+Starting to add task 282
+output for task:277
+read request to task queue
+Starting to add task 277
+output for task:278
+read request to task queue
+Starting to add task 278
+output for task:276
+read request to task queue
+output for task:274
+read request to task queue
+output for task:280
+read request to task queue
+output for task:281
+read request to task queue
+output for task:282
+read request to task queue
+output for task:278
+read request to task queue
+Starting to add task 278
+Starting to add task 276
+output for task:277
+read request to task queue
+output for task:276
+read request to task queue
+output for task:278
+read request to task queue
+Starting to add task 278
+Starting to add task 274
+output for task:274
+read request to task queue
+output for task:278
+read request to task queue
+Starting to add task 278
+Starting to add task 280
+output for task:278
+Starting to add task 281
+Starting to add task 282
+Starting to add task 277
+Starting to add task 276
+Starting to add task 274
+output for task:280
+read request to task queue
+output for task:277
+read request to task queue
+output for task:276
+Starting to add task 277
+output for task:274
+Starting to add task 280
+output for task:281
+read request to task queue
+output for task:282
+read request to task queue
+output for task:277
+output for task:280
+Starting to add task 281
+Starting to add task 282
+output for task:281
+output for task:282
+Starting to add task 286
+Starting to add task 290
+Starting to add task 294
+output for task:286
+read request to task queue
+output for task:290
+read request to task queue
+output for task:294
+read request to task queue
+Starting to add task 296
+Starting to add task 294
+output for task:294
+output for task:296
+read request to task queue
+Starting to add task 290
+Starting to add task 296
+output for task:290
+Starting to add task 287
+output for task:296
+Starting to add task 288
+Starting to add task 289
+Starting to add task 291
+Starting to add task 292
+Starting to add task 293
+Starting to add task 295
+Starting to add task 297
+Starting to add task 298
+Starting to add task 286
+output for task:291
+read request to task queue
+output for task:292
+read request to task queue
+output for task:297
+read request to task queue
+Starting to add task 291
+Starting to add task 297
+output for task:289
+read request to task queue
+output for task:293
+read request to task queue
+Starting to add task 293
+Starting to add task 289
+Starting to add task 292
+output for task:295
+read request to task queue
+Starting to add task 295
+output for task:287
+read request to task queue
+output for task:288
+read request to task queue
+output for task:298
+read request to task queue
+output for task:293
+read request to task queue
+output for task:286
+read request to task queue
+output for task:291
+read request to task queue
+output for task:289
+read request to task queue
+output for task:295
+read request to task queue
+Starting to add task 289
+output for task:297
+read request to task queue
+Starting to add task 293
+Starting to add task 287
+output for task:292
+read request to task queue
+output for task:289
+read request to task queue
+output for task:293
+read request to task queue
+output for task:287
+read request to task queue
+Starting to add task 293
+Starting to add task 289
+Starting to add task 288
+output for task:288
+read request to task queue
+output for task:293
+read request to task queue
+output for task:289
+read request to task queue
+Starting to add task 289
+Starting to add task 293
+Starting to add task 286
+output for task:289
+output for task:293
+Starting to add task 291
+output for task:286
+read request to task queue
+Starting to add task 292
+Starting to add task 297
+Starting to add task 298
+Starting to add task 299
+Starting to add task 300
+Starting to add task 301
+Starting to add task 302
+Starting to add task 303
+Starting to add task 295
+output for task:297
+read request to task queue
+Starting to add task 297
+Starting to add task 287
+Starting to add task 288
+output for task:291
+read request to task queue
+output for task:292
+read request to task queue
+output for task:301
+read request to task queue
+output for task:302
+read request to task queue
+Starting to add task 302
+Starting to add task 301
+Starting to add task 286
+Starting to add task 291
+Starting to add task 292
+output for task:295
+output for task:300
+read request to task queue
+output for task:297
+output for task:287
+output for task:288
+Starting to add task 300
+output for task:298
+read request to task queue
+output for task:299
+read request to task queue
+Starting to add task 299
+Starting to add task 298
+output for task:303
+read request to task queue
+output for task:286
+output for task:291
+output for task:292
+Starting to add task 303
+output for task:300
+read request to task queue
+Starting to add task 300
+output for task:302
+read request to task queue
+output for task:299
+read request to task queue
+output for task:298
+read request to task queue
+Starting to add task 302
+Starting to add task 299
+Starting to add task 298
+output for task:301
+read request to task queue
+output for task:303
+read request to task queue
+output for task:300
+Starting to add task 301
+output for task:299
+output for task:298
+Starting to add task 303
+output for task:302
+read request to task queue
+Starting to add task 302
+output for task:303
+output for task:301
+read request to task queue
+Starting to add task 301
+output for task:302
+output for task:301
+Starting to add task 304
+INFO 08-26 00:52:44 metrics.py:406] Avg prompt throughput: 36065.5 tokens/s, Avg generation throughput: 53.0 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 305
+output for task:304
+read request to task queue
+output for task:305
+read request to task queue
+Starting to add task 306
+Starting to add task 311
+output for task:306
+read request to task queue
+output for task:311
+read request to task queue
+Starting to add task 312
+Starting to add task 311
+Starting to add task 306
+Starting to add task 305
+output for task:305
+output for task:311
+read request to task queue
+output for task:306
+read request to task queue
+output for task:312
+read request to task queue
+Starting to add task 312
+Starting to add task 304
+output for task:304
+output for task:312
+read request to task queue
+Starting to add task 307
+Starting to add task 308
+Starting to add task 309
+Starting to add task 310
+Starting to add task 313
+Starting to add task 314
+Starting to add task 315
+Starting to add task 316
+Starting to add task 311
+Starting to add task 306
+output for task:310
+read request to task queue
+output for task:315
+read request to task queue
+output for task:316
+read request to task queue
+Starting to add task 312
+Starting to add task 310
+Starting to add task 315
+Starting to add task 316
+output for task:308
+read request to task queue
+output for task:314
+read request to task queue
+Starting to add task 314
+Starting to add task 308
+output for task:307
+read request to task queue
+output for task:309
+read request to task queue
+Starting to add task 307
+Starting to add task 309
+output for task:313
+read request to task queue
+output for task:311
+output for task:306
+output for task:312
+Starting to add task 313
+output for task:314
+read request to task queue
+output for task:307
+read request to task queue
+output for task:309
+read request to task queue
+output for task:310
+read request to task queue
+output for task:315
+read request to task queue
+output for task:308
+read request to task queue
+output for task:313
+read request to task queue
+Starting to add task 308
+output for task:316
+read request to task queue
+Starting to add task 314
+Starting to add task 310
+output for task:310
+read request to task queue
+output for task:308
+read request to task queue
+output for task:314
+read request to task queue
+Starting to add task 314
+Starting to add task 308
+Starting to add task 315
+output for task:315
+read request to task queue
+output for task:314
+read request to task queue
+output for task:308
+read request to task queue
+Starting to add task 308
+Starting to add task 314
+Starting to add task 310
+output for task:308
+output for task:314
+output for task:310
+Starting to add task 316
+Starting to add task 315
+Starting to add task 307
+Starting to add task 309
+Starting to add task 313
+output for task:316
+read request to task queue
+output for task:307
+output for task:309
+Starting to add task 316
+output for task:315
+output for task:313
+output for task:316
+Starting to add task 317
+Starting to add task 322
+Starting to add task 323
+output for task:317
+read request to task queue
+output for task:322
+read request to task queue
+output for task:323
+read request to task queue
+Starting to add task 323
+Starting to add task 322
+output for task:322
+output for task:323
+read request to task queue
+Starting to add task 318
+Starting to add task 319
+Starting to add task 320
+Starting to add task 321
+Starting to add task 323
+Starting to add task 317
+output for task:318
+read request to task queue
+output for task:323
+Starting to add task 318
+output for task:319
+read request to task queue
+Starting to add task 319
+output for task:320
+read request to task queue
+output for task:321
+read request to task queue
+output for task:317
+read request to task queue
+output for task:319
+read request to task queue
+Starting to add task 319
+Starting to add task 320
+output for task:318
+read request to task queue
+output for task:319
+read request to task queue
+output for task:320
+read request to task queue
+Starting to add task 319
+Starting to add task 321
+output for task:321
+read request to task queue
+output for task:319
+read request to task queue
+Starting to add task 319
+Starting to add task 317
+output for task:317
+read request to task queue
+output for task:319
+Starting to add task 317
+Starting to add task 318
+Starting to add task 320
+Starting to add task 321
+output for task:318
+read request to task queue
+Starting to add task 318
+output for task:317
+output for task:320
+output for task:321
+output for task:318
+Starting to add task 324
+INFO 08-26 00:52:53 metrics.py:406] Avg prompt throughput: 20729.3 tokens/s, Avg generation throughput: 31.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+init_priority for task 170: -0.409601421819419
+init_priority for task 171: -0.40938194862759825
+init_priority for task 172: -1.821038523619174
+init_priority for task 173: -0.4088734536707376
+init_priority for task 174: -0.408600981952264
+init_priority for task 175: -0.4072250331039108
+init_priority for task 176: -1.8127470206200977
+init_priority for task 177: -0.4070624397989208
+init_priority for task 178: -0.4068422900688306
+init_priority for task 179: -0.4066051972102685
+init_priority for task 180: -1.8087325137560202
+init_priority for task 181: -1.8076327666292165
+init_priority for task 182: -0.40583281742869576
+init_priority for task 183: -1.8061882908162674
+init_priority for task 184: -1.806182262022487
+init_priority for task 185: -1.8061788170065043
+init_priority for task 186: -0.40718629603095663
+init_priority for task 187: -1.8125318014977723
+init_priority for task 188: -1.8116266916290973
+init_priority for task 189: -0.4067814763914457
+init_priority for task 190: -0.4093829246713868
+init_priority for task 191: -1.822081262815995
+init_priority for task 192: -0.40912620776950764
+init_priority for task 193: -0.40886341304215323
+init_priority for task 194: -1.8186192034534032
+init_priority for task 195: -1.8173327558133658
+init_priority for task 196: -0.40583136606003567
+init_priority for task 197: -0.4057856989774526
+init_priority for task 198: -1.8061814007678754
+init_priority for task 199: -0.4057844412703546
+Progress: 200/532 tasks sent to queue
+init_priority for task 200: -0.4057843445238163
+init_priority for task 201: -0.4057842477773009
+init_priority for task 202: -0.40578405428433956
+init_priority for task 203: -1.806177094500977
+init_priority for task 204: -1.8061788170065043
+init_priority for task 205: -0.4057837640450704
+init_priority for task 206: -0.40578666644710354
+init_priority for task 207: -0.4057839575378934
+init_priority for task 208: -1.8061783863799685
+init_priority for task 209: -1.808844207182441
+init_priority for task 210: -1.808635488385388
+init_priority for task 211: -0.4061066383812787
+init_priority for task 212: -1.8065289503546913
+init_priority for task 213: -0.4057859892181057
+init_priority for task 214: -1.8061835539051747
+init_priority for task 215: -0.40578405428433956
+init_priority for task 216: -1.8061826926499471
+init_priority for task 217: -0.4057845380169161
+init_priority for task 218: -1.8061805395136745
+init_priority for task 219: -1.8061801088867278
+init_priority for task 220: -0.40578550548379916
+init_priority for task 221: -0.4057843445238163
+init_priority for task 222: -1.8061839845329424
+init_priority for task 223: -0.4083171069478183
+init_priority for task 224: -1.8177023862652248
+init_priority for task 225: -0.4081625437986168
+init_priority for task 226: -0.40779087810515835
+init_priority for task 227: -1.8144666656135662
+init_priority for task 228: -1.8071673754544375
+init_priority for task 229: -0.40582265795707523
+init_priority for task 230: -0.40578231285183863
+init_priority for task 231: -0.40578095840950473
+init_priority for task 232: -0.40578095840950473
+init_priority for task 233: -1.806165467631635
+init_priority for task 234: -1.8061646063850316
+init_priority for task 235: -0.40578018444448655
+init_priority for task 236: -0.40578086166379673
+init_priority for task 237: -1.806162022647685
+init_priority for task 238: -0.4057807649181119
+init_priority for task 239: -0.4057810551552358
+init_priority for task 240: -0.40578115190098996
+init_priority for task 241: -1.8061633145158964
+init_priority for task 242: -0.40578066817244995
+init_priority for task 243: -1.8062016403598236
+init_priority for task 244: -1.8064708054316017
+init_priority for task 245: -1.8061667595023103
+init_priority for task 246: -0.4057810551552358
+init_priority for task 247: -1.8061637451388388
+init_priority for task 248: -0.40578047468119544
+init_priority for task 249: -0.40578095840950473
+init_priority for task 250: -1.806165037008282
+init_priority for task 251: -1.814416051819488
+init_priority for task 252: -1.8137011206165508
+init_priority for task 253: -0.4071507660163797
+init_priority for task 254: -0.40682124188224306
+init_priority for task 255: -1.8071790087733828
+init_priority for task 256: -0.4058219806680101
+init_priority for task 257: -0.4057843445238163
+init_priority for task 258: -1.806167190126074
+init_priority for task 259: -1.8061723576192472
+init_priority for task 260: -0.4057810551552358
+init_priority for task 261: -0.40637018024018245
+init_priority for task 262: -1.8084832768476247
+init_priority for task 263: -1.8074470267079377
+init_priority for task 264: -1.8062283397429348
+init_priority for task 265: -0.40578734367723174
+init_priority for task 266: -0.4057848282567388
+init_priority for task 267: -0.40578550548379916
+init_priority for task 268: -0.405785311990238
+init_priority for task 269: -0.4057851184967691
+init_priority for task 270: -0.4057841510308088
+init_priority for task 271: -0.4059584288566309
+init_priority for task 272: -0.40583165633335244
+init_priority for task 273: -0.40578637620596614
+init_priority for task 274: -0.408521593942089
+init_priority for task 275: -1.8176421482745768
+init_priority for task 276: -0.4080274949605426
+init_priority for task 277: -0.40768637470698144
+init_priority for task 278: -0.40743616150536066
+init_priority for task 279: -1.8122029718331916
+init_priority for task 280: -0.4078419243837241
+init_priority for task 281: -0.4075394347843383
+init_priority for task 282: -0.4072016350828113
+init_priority for task 283: -1.8109344474051223
+init_priority for task 284: -1.8094088173264173
+init_priority for task 285: -1.8078495591659156
+init_priority for task 286: -0.406282604552463
+init_priority for task 287: -0.406076817878948
+init_priority for task 288: -0.405761126021667
+init_priority for task 289: -0.4057831835671549
+init_priority for task 290: -1.8061663288786491
+init_priority for task 291: -0.4057815388842371
+init_priority for task 292: -0.4057803779356027
+init_priority for task 293: -0.4057810551552358
+init_priority for task 294: -1.8061641757618838
+init_priority for task 295: -0.4057818291219147
+init_priority for task 296: -1.806165467631635
+init_priority for task 297: -0.4057812486467672
+init_priority for task 298: -0.40578086166379673
+init_priority for task 299: -0.4061117700521884
+Progress: 300/532 tasks sent to queue
+init_priority for task 300: -0.4058236255148434
+init_priority for task 301: -0.4057831835671549
+init_priority for task 302: -0.4057830868209164
+init_priority for task 303: -0.40578240959789263
+init_priority for task 304: -1.8148525881363664
+init_priority for task 305: -1.8144662330110533
+init_priority for task 306: -1.81341271937928
+init_priority for task 307: -0.40714008820261627
+init_priority for task 308: -0.406853542080669
+init_priority for task 309: -0.4065778604194487
+init_priority for task 310: -0.40629112879015905
+init_priority for task 311: -1.8072177870440584
+init_priority for task 312: -1.8061878601874732
+init_priority for task 313: -0.4057844412703546
+init_priority for task 314: -0.40578492500339247
+init_priority for task 315: -0.40578550548379916
+init_priority for task 316: -0.40578492500339247
+init_priority for task 317: -0.4072860101973973
+init_priority for task 318: -0.407131837356508
+init_priority for task 319: -0.406856743140894
+init_priority for task 320: -0.4065372463831906
+init_priority for task 321: -0.4061961130282365
+init_priority for task 322: -1.8065039693436178
+init_priority for task 323: -1.806169343246433
+init_priority for task 324: -1.8158285767425324
+init_priority for task 325: -0.40774537938020816
+init_priority for task 326: -1.8134447136565233
+init_priority for task 327: -1.8119178327819794
+init_priority for task 328: -0.40673560542223475
+init_priority for task 329: -1.8088709456281369
+init_priority for task 330: -1.8072992241209835
+init_priority for task 331: -0.40578163563010655
+init_priority for task 332: -1.8061663288786491
+init_priority for task 333: -0.40578086166379673
+init_priority for task 334: -0.4057829900747009
+init_priority for task 335: -1.8061663288786491
+init_priority for task 336: -1.806165467631635
+init_priority for task 337: -0.40578115190098996
+Starting to add task 326
+output for task:326
+read request to task queue
+output for task:324
+read request to task queue
+Starting to add task 332
+Starting to add task 336
+Starting to add task 335
+Starting to add task 330
+Starting to add task 329
+Starting to add task 327
+Starting to add task 326
+Starting to add task 325
+output for task:326
+Starting to add task 328
+Starting to add task 331
+Starting to add task 333
+Starting to add task 334
+Starting to add task 337
+output for task:332
+read request to task queue
+output for task:335
+read request to task queue
+output for task:330
+read request to task queue
+output for task:329
+read request to task queue
+output for task:327
+read request to task queue
+Starting to add task 330
+Starting to add task 327
+Starting to add task 329
+Starting to add task 332
+Starting to add task 335
+output for task:330
+output for task:327
+output for task:329
+output for task:332
+output for task:335
+output for task:325
+read request to task queue
+output for task:328
+read request to task queue
+output for task:336
+read request to task queue
+output for task:337
+read request to task queue
+Starting to add task 336
+output for task:333
+read request to task queue
+output for task:334
+read request to task queue
+Starting to add task 334
+output for task:331
+read request to task queue
+output for task:336
+read request to task queue
+Starting to add task 333
+output for task:334
+read request to task queue
+Starting to add task 334
+output for task:333
+read request to task queue
+output for task:334
+read request to task queue
+Starting to add task 334
+Starting to add task 333
+Starting to add task 336
+output for task:336
+output for task:333
+read request to task queue
+output for task:334
+read request to task queue
+Starting to add task 334
+Starting to add task 333
+Starting to add task 325
+output for task:334
+output for task:325
+read request to task queue
+output for task:333
+read request to task queue
+Starting to add task 333
+Starting to add task 328
+output for task:333
+Starting to add task 331
+output for task:328
+read request to task queue
+Starting to add task 337
+Starting to add task 325
+Starting to add task 328
+output for task:325
+output for task:328
+output for task:331
+read request to task queue
+Starting to add task 331
+output for task:337
+read request to task queue
+Starting to add task 337
+output for task:331
+output for task:337
+read request to task queue
+Starting to add task 337
+output for task:337
+Starting to add task 339
+INFO 08-26 00:53:08 metrics.py:406] Avg prompt throughput: 7710.5 tokens/s, Avg generation throughput: 10.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 340
+output for task:339
+read request to task queue
+output for task:340
+read request to task queue
+Starting to add task 342
+Starting to add task 340
+Starting to add task 339
+output for task:339
+output for task:342
+read request to task queue
+output for task:340
+read request to task queue
+Starting to add task 338
+Starting to add task 341
+Starting to add task 343
+Starting to add task 344
+Starting to add task 342
+Starting to add task 340
+output for task:342
+output for task:338
+read request to task queue
+output for task:344
+read request to task queue
+output for task:340
+Starting to add task 338
+Starting to add task 344
+output for task:343
+read request to task queue
+Starting to add task 343
+output for task:341
+read request to task queue
+Starting to add task 341
+output for task:343
+read request to task queue
+Starting to add task 343
+output for task:338
+read request to task queue
+output for task:344
+read request to task queue
+output for task:341
+read request to task queue
+Starting to add task 338
+Starting to add task 344
+Starting to add task 341
+output for task:343
+output for task:338
+read request to task queue
+output for task:344
+read request to task queue
+Starting to add task 338
+output for task:341
+Starting to add task 344
+output for task:338
+output for task:344
+Starting to add task 345
+INFO 08-26 00:53:14 metrics.py:406] Avg prompt throughput: 9994.2 tokens/s, Avg generation throughput: 13.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 346
+output for task:345
+read request to task queue
+output for task:346
+read request to task queue
+Starting to add task 355
+Starting to add task 357
+Starting to add task 351
+Starting to add task 350
+Starting to add task 348
+Starting to add task 347
+Starting to add task 349
+Starting to add task 352
+Starting to add task 353
+Starting to add task 354
+Starting to add task 356
+Starting to add task 346
+output for task:348
+read request to task queue
+output for task:349
+read request to task queue
+Starting to add task 348
+Starting to add task 349
+output for task:352
+read request to task queue
+Starting to add task 352
+output for task:355
+read request to task queue
+output for task:357
+read request to task queue
+output for task:351
+read request to task queue
+output for task:350
+read request to task queue
+output for task:347
+read request to task queue
+output for task:354
+read request to task queue
+Starting to add task 350
+output for task:348
+output for task:353
+read request to task queue
+output for task:356
+read request to task queue
+output for task:346
+read request to task queue
+output for task:350
+read request to task queue
+Starting to add task 356
+output for task:352
+read request to task queue
+Starting to add task 352
+Starting to add task 346
+Starting to add task 350
+Starting to add task 353
+Starting to add task 354
+Starting to add task 347
+Starting to add task 351
+Starting to add task 357
+Starting to add task 355
+output for task:349
+read request to task queue
+Starting to add task 349
+output for task:346
+output for task:350
+output for task:353
+read request to task queue
+output for task:347
+read request to task queue
+Starting to add task 347
+Starting to add task 353
+output for task:356
+read request to task queue
+output for task:352
+read request to task queue
+output for task:349
+read request to task queue
+output for task:351
+read request to task queue
+output for task:353
+output for task:354
+read request to task queue
+output for task:357
+read request to task queue
+output for task:355
+read request to task queue
+output for task:347
+Starting to add task 352
+Starting to add task 356
+Starting to add task 351
+output for task:351
+output for task:356
+read request to task queue
+output for task:352
+read request to task queue
+Starting to add task 352
+Starting to add task 356
+Starting to add task 357
+output for task:352
+output for task:357
+output for task:356
+read request to task queue
+Starting to add task 356
+Starting to add task 355
+output for task:356
+Starting to add task 349
+output for task:355
+Starting to add task 354
+output for task:354
+read request to task queue
+Starting to add task 354
+output for task:349
+output for task:354
+Starting to add task 358
+Starting to add task 359
+output for task:358
+read request to task queue
+output for task:359
+read request to task queue
+Starting to add task 362
+Starting to add task 367
+Starting to add task 366
+Starting to add task 364
+Starting to add task 363
+Starting to add task 359
+Starting to add task 360
+Starting to add task 361
+Starting to add task 365
+Starting to add task 368
+Starting to add task 369
+Starting to add task 358
+output for task:362
+read request to task queue
+output for task:366
+read request to task queue
+output for task:363
+read request to task queue
+output for task:359
+read request to task queue
+output for task:361
+read request to task queue
+Starting to add task 362
+Starting to add task 366
+Starting to add task 363
+Starting to add task 359
+output for task:362
+output for task:366
+output for task:363
+output for task:360
+read request to task queue
+output for task:367
+read request to task queue
+output for task:364
+read request to task queue
+output for task:365
+read request to task queue
+output for task:368
+read request to task queue
+output for task:369
+read request to task queue
+output for task:358
+read request to task queue
+output for task:359
+Starting to add task 364
+Starting to add task 367
+Starting to add task 358
+output for task:364
+read request to task queue
+output for task:367
+read request to task queue
+output for task:358
+Starting to add task 364
+Starting to add task 367
+Starting to add task 360
+Starting to add task 361
+Starting to add task 365
+Starting to add task 369
+Starting to add task 368
+output for task:364
+output for task:367
+output for task:360
+read request to task queue
+Starting to add task 360
+INFO 08-26 00:53:19 metrics.py:406] Avg prompt throughput: 40865.0 tokens/s, Avg generation throughput: 64.3 tokens/s, Running: 4 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+output for task:360
+output for task:361
+read request to task queue
+output for task:365
+read request to task queue
+output for task:369
+read request to task queue
+output for task:368
+read request to task queue
+Starting to add task 361
+Starting to add task 368
+Starting to add task 365
+Starting to add task 369
+output for task:361
+read request to task queue
+output for task:365
+read request to task queue
+output for task:369
+read request to task queue
+Starting to add task 361
+Starting to add task 365
+Starting to add task 369
+output for task:368
+read request to task queue
+Starting to add task 368
+output for task:361
+output for task:365
+output for task:369
+output for task:368
+Starting to add task 370
+Starting to add task 372
+output for task:372
+read request to task queue
+Starting to add task 373
+Starting to add task 378
+output for task:370
+read request to task queue
+Starting to add task 385
+output for task:373
+read request to task queue
+output for task:378
+read request to task queue
+Starting to add task 384
+Starting to add task 383
+Starting to add task 382
+Starting to add task 380
+Starting to add task 372
+Starting to add task 373
+output for task:372
+Starting to add task 378
+output for task:373
+Starting to add task 371
+output for task:378
+Starting to add task 374
+Starting to add task 375
+Starting to add task 376
+Starting to add task 377
+Starting to add task 379
+Starting to add task 381
+output for task:385
+read request to task queue
+output for task:384
+read request to task queue
+output for task:382
+read request to task queue
+output for task:380
+read request to task queue
+output for task:374
+read request to task queue
+output for task:375
+read request to task queue
+Starting to add task 385
+Starting to add task 380
+output for task:385
+output for task:380
+output for task:371
+read request to task queue
+output for task:383
+read request to task queue
+output for task:379
+read request to task queue
+output for task:381
+read request to task queue
+Starting to add task 383
+Starting to add task 371
+Starting to add task 384
+output for task:384
+output for task:376
+read request to task queue
+output for task:377
+read request to task queue
+output for task:383
+read request to task queue
+output for task:371
+read request to task queue
+Starting to add task 371
+Starting to add task 382
+output for task:382
+output for task:371
+read request to task queue
+Starting to add task 371
+Starting to add task 383
+output for task:383
+output for task:371
+read request to task queue
+Starting to add task 371
+Starting to add task 376
+output for task:371
+Starting to add task 377
+output for task:376
+read request to task queue
+Starting to add task 374
+Starting to add task 375
+Starting to add task 379
+Starting to add task 381
+Starting to add task 376
+output for task:376
+output for task:377
+read request to task queue
+Starting to add task 377
+output for task:374
+read request to task queue
+output for task:375
+read request to task queue
+output for task:379
+read request to task queue
+output for task:381
+read request to task queue
+Starting to add task 374
+output for task:377
+Starting to add task 375
+Starting to add task 379
+Starting to add task 381
+output for task:375
+read request to task queue
+Starting to add task 375
+output for task:374
+read request to task queue
+output for task:379
+read request to task queue
+output for task:381
+read request to task queue
+Starting to add task 374
+output for task:375
+Starting to add task 379
+Starting to add task 381
+output for task:374
+output for task:379
+output for task:381
+Starting to add task 388
+Starting to add task 386
+output for task:386
+read request to task queue
+Starting to add task 386
+Starting to add task 387
+output for task:388
+read request to task queue
+output for task:387
+read request to task queue
+output for task:386
+read request to task queue
+Starting to add task 388
+Starting to add task 386
+output for task:388
+read request to task queue
+output for task:386
+read request to task queue
+Starting to add task 386
+Starting to add task 389
+output for task:389
+read request to task queue
+output for task:386
+read request to task queue
+Starting to add task 386
+Starting to add task 389
+Starting to add task 390
+output for task:386
+output for task:389
+read request to task queue
+output for task:390
+read request to task queue
+Starting to add task 390
+Starting to add task 389
+Starting to add task 391
+output for task:390
+read request to task queue
+output for task:389
+read request to task queue
+Starting to add task 389
+output for task:391
+read request to task queue
+Starting to add task 390
+Starting to add task 392
+output for task:392
+read request to task queue
+output for task:390
+read request to task queue
+output for task:389
+read request to task queue
+Starting to add task 389
+Starting to add task 393
+Starting to add task 394
+Starting to add task 395
+Starting to add task 396
+Starting to add task 397
+Starting to add task 398
+Starting to add task 399
+Starting to add task 400
+Starting to add task 388
+Starting to add task 391
+output for task:389
+Starting to add task 390
+Starting to add task 387
+output for task:395
+read request to task queue
+output for task:396
+read request to task queue
+output for task:397
+read request to task queue
+output for task:399
+read request to task queue
+Starting to add task 392
+Starting to add task 395
+Starting to add task 396
+output for task:393
+read request to task queue
+output for task:394
+read request to task queue
+output for task:398
+read request to task queue
+output for task:388
+output for task:391
+read request to task queue
+output for task:400
+read request to task queue
+output for task:390
+read request to task queue
+output for task:387
+read request to task queue
+Starting to add task 390
+output for task:392
+read request to task queue
+Starting to add task 393
+Starting to add task 394
+INFO 08-26 00:53:24 metrics.py:406] Avg prompt throughput: 51889.5 tokens/s, Avg generation throughput: 75.5 tokens/s, Running: 5 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+output for task:395
+read request to task queue
+output for task:396
+read request to task queue
+output for task:390
+output for task:393
+read request to task queue
+output for task:394
+read request to task queue
+Starting to add task 393
+Starting to add task 398
+output for task:393
+read request to task queue
+output for task:398
+read request to task queue
+Starting to add task 393
+Starting to add task 387
+output for task:387
+read request to task queue
+output for task:393
+read request to task queue
+Starting to add task 393
+Starting to add task 387
+output for task:393
+output for task:387
+Starting to add task 400
+Starting to add task 392
+Starting to add task 397
+Starting to add task 395
+Starting to add task 399
+Starting to add task 396
+output for task:392
+read request to task queue
+Starting to add task 392
+Starting to add task 391
+Starting to add task 394
+Starting to add task 398
+output for task:400
+read request to task queue
+output for task:395
+read request to task queue
+output for task:396
+read request to task queue
+output for task:391
+Starting to add task 400
+Starting to add task 395
+Starting to add task 396
+output for task:392
+output for task:394
+output for task:400
+output for task:398
+output for task:395
+output for task:396
+output for task:397
+read request to task queue
+output for task:399
+read request to task queue
+Starting to add task 397
+Starting to add task 399
+output for task:397
+read request to task queue
+output for task:399
+read request to task queue
+Starting to add task 397
+Starting to add task 399
+output for task:397
+output for task:399
+Starting to add task 401
+INFO 08-26 00:53:30 metrics.py:406] Avg prompt throughput: 11390.8 tokens/s, Avg generation throughput: 15.8 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 403
+output for task:401
+read request to task queue
+output for task:403
+read request to task queue
+Starting to add task 413
+Starting to add task 405
+Starting to add task 403
+Starting to add task 401
+Starting to add task 402
+output for task:413
+read request to task queue
+output for task:405
+read request to task queue
+output for task:403
+read request to task queue
+output for task:401
+read request to task queue
+Starting to add task 413
+Starting to add task 405
+output for task:413
+Starting to add task 404
+output for task:405
+Starting to add task 406
+Starting to add task 407
+Starting to add task 408
+Starting to add task 409
+Starting to add task 410
+Starting to add task 411
+Starting to add task 412
+Starting to add task 403
+Starting to add task 401
+output for task:402
+read request to task queue
+Starting to add task 402
+output for task:409
+read request to task queue
+Starting to add task 409
+output for task:406
+read request to task queue
+output for task:407
+read request to task queue
+output for task:408
+read request to task queue
+Starting to add task 408
+Starting to add task 407
+Starting to add task 406
+output for task:412
+read request to task queue
+Starting to add task 412
+output for task:404
+read request to task queue
+output for task:410
+read request to task queue
+output for task:411
+read request to task queue
+output for task:403
+Starting to add task 410
+Starting to add task 404
+output for task:401
+output for task:402
+read request to task queue
+output for task:408
+read request to task queue
+output for task:409
+read request to task queue
+output for task:407
+read request to task queue
+output for task:406
+read request to task queue
+output for task:410
+read request to task queue
+Starting to add task 406
+output for task:404
+read request to task queue
+Starting to add task 407
+Starting to add task 408
+Starting to add task 411
+output for task:412
+read request to task queue
+output for task:406
+read request to task queue
+output for task:407
+read request to task queue
+output for task:408
+read request to task queue
+output for task:411
+read request to task queue
+Starting to add task 408
+Starting to add task 407
+Starting to add task 406
+Starting to add task 409
+output for task:409
+read request to task queue
+output for task:408
+read request to task queue
+output for task:407
+read request to task queue
+output for task:406
+read request to task queue
+Starting to add task 406
+Starting to add task 407
+Starting to add task 408
+Starting to add task 409
+output for task:406
+output for task:407
+output for task:408
+output for task:409
+Starting to add task 412
+Starting to add task 402
+Starting to add task 404
+Starting to add task 410
+Starting to add task 411
+output for task:412
+read request to task queue
+Starting to add task 412
+output for task:402
+output for task:404
+output for task:410
+output for task:411
+output for task:412
+Starting to add task 414
+INFO 08-26 00:53:37 metrics.py:406] Avg prompt throughput: 19756.7 tokens/s, Avg generation throughput: 31.1 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 415
+Starting to add task 421
+output for task:414
+read request to task queue
+output for task:415
+read request to task queue
+Starting to add task 422
+Starting to add task 424
+output for task:421
+read request to task queue
+Starting to add task 421
+output for task:424
+read request to task queue
+Starting to add task 415
+output for task:415
+output for task:422
+read request to task queue
+output for task:421
+read request to task queue
+Starting to add task 422
+Starting to add task 424
+output for task:424
+output for task:422
+read request to task queue
+Starting to add task 416
+Starting to add task 417
+Starting to add task 418
+Starting to add task 419
+Starting to add task 420
+Starting to add task 423
+Starting to add task 431
+Starting to add task 421
+output for task:418
+read request to task queue
+output for task:431
+read request to task queue
+output for task:421
+Starting to add task 422
+output for task:417
+read request to task queue
+output for task:419
+read request to task queue
+output for task:420
+read request to task queue
+Starting to add task 419
+Starting to add task 420
+Starting to add task 417
+Starting to add task 431
+output for task:431
+output for task:416
+read request to task queue
+output for task:423
+read request to task queue
+output for task:422
+output for task:419
+read request to task queue
+output for task:420
+read request to task queue
+output for task:417
+read request to task queue
+Starting to add task 420
+Starting to add task 417
+Starting to add task 419
+Starting to add task 425
+output for task:425
+read request to task queue
+output for task:420
+read request to task queue
+output for task:417
+read request to task queue
+output for task:419
+read request to task queue
+Starting to add task 419
+Starting to add task 417
+Starting to add task 420
+Starting to add task 426
+output for task:426
+read request to task queue
+output for task:419
+read request to task queue
+output for task:417
+read request to task queue
+output for task:420
+read request to task queue
+Starting to add task 420
+Starting to add task 417
+Starting to add task 419
+Starting to add task 427
+output for task:420
+output for task:417
+output for task:419
+Starting to add task 428
+Starting to add task 429
+Starting to add task 430
+output for task:427
+read request to task queue
+Starting to add task 427
+Starting to add task 432
+output for task:430
+read request to task queue
+output for task:428
+read request to task queue
+output for task:429
+read request to task queue
+output for task:427
+read request to task queue
+Starting to add task 433
+Starting to add task 427
+Starting to add task 429
+Starting to add task 428
+Starting to add task 416
+output for task:432
+read request to task queue
+output for task:433
+read request to task queue
+output for task:416
+read request to task queue
+output for task:427
+read request to task queue
+output for task:429
+read request to task queue
+output for task:428
+read request to task queue
+Starting to add task 428
+Starting to add task 429
+Starting to add task 427
+Starting to add task 423
+output for task:423
+read request to task queue
+output for task:428
+read request to task queue
+output for task:429
+read request to task queue
+output for task:427
+read request to task queue
+Starting to add task 427
+Starting to add task 429
+Starting to add task 428
+Starting to add task 414
+output for task:427
+output for task:429
+read request to task queue
+output for task:428
+read request to task queue
+output for task:414
+read request to task queue
+Starting to add task 428
+Starting to add task 429
+Starting to add task 414
+output for task:428
+output for task:429
+Starting to add task 432
+output for task:414
+read request to task queue
+Starting to add task 418
+Starting to add task 425
+Starting to add task 426
+Starting to add task 430
+Starting to add task 438
+Starting to add task 439
+output for task:439
+read request to task queue
+output for task:432
+read request to task queue
+output for task:418
+read request to task queue
+output for task:425
+read request to task queue
+output for task:426
+read request to task queue
+output for task:430
+read request to task queue
+output for task:438
+read request to task queue
+Starting to add task 440
+Starting to add task 438
+Starting to add task 439
+output for task:439
+output for task:438
+read request to task queue
+output for task:440
+read request to task queue
+Starting to add task 440
+Starting to add task 434
+output for task:440
+read request to task queue
+output for task:434
+read request to task queue
+Starting to add task 435
+Starting to add task 436
+Starting to add task 437
+Starting to add task 441
+Starting to add task 442
+Starting to add task 438
+Starting to add task 440
+output for task:435
+read request to task queue
+output for task:436
+read request to task queue
+output for task:442
+read request to task queue
+output for task:438
+output for task:440
+Starting to add task 418
+output for task:437
+read request to task queue
+Starting to add task 437
+Starting to add task 425
+output for task:441
+read request to task queue
+output for task:418
+read request to task queue
+output for task:425
+read request to task queue
+output for task:437
+read request to task queue
+Starting to add task 437
+Starting to add task 426
+output for task:426
+read request to task queue
+output for task:437
+read request to task queue
+Starting to add task 437
+Starting to add task 430
+output for task:430
+read request to task queue
+output for task:437
+read request to task queue
+Starting to add task 437
+Starting to add task 433
+output for task:437
+Starting to add task 441
+Starting to add task 434
+Starting to add task 416
+Starting to add task 423
+Starting to add task 435
+Starting to add task 436
+Starting to add task 442
+Starting to add task 414
+Starting to add task 432
+output for task:416
+output for task:423
+Starting to add task 418
+Starting to add task 425
+Starting to add task 426
+Starting to add task 430
+output for task:433
+read request to task queue
+output for task:441
+read request to task queue
+output for task:414
+output for task:432
+Starting to add task 433
+Starting to add task 441
+output for task:418
+output for task:425
+output for task:426
+output for task:430
+output for task:434
+read request to task queue
+output for task:435
+read request to task queue
+output for task:436
+read request to task queue
+output for task:442
+read request to task queue
+output for task:441
+Starting to add task 434
+Starting to add task 435
+Starting to add task 436
+Starting to add task 442
+output for task:433
+read request to task queue
+output for task:435
+read request to task queue
+Starting to add task 435
+Starting to add task 433
+output for task:434
+read request to task queue
+output for task:436
+read request to task queue
+output for task:442
+read request to task queue
+Starting to add task 434
+output for task:435
+output for task:433
+Starting to add task 436
+Starting to add task 442
+output for task:434
+output for task:436
+output for task:442
+Starting to add task 443
+INFO 08-26 00:53:45 metrics.py:406] Avg prompt throughput: 40401.5 tokens/s, Avg generation throughput: 62.7 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+output for task:443
+read request to task queue
+Starting to add task 443
+output for task:443
+read request to task queue
+Starting to add task 443
+output for task:443
+Starting to add task 444
+INFO 08-26 00:53:51 metrics.py:406] Avg prompt throughput: 1379.9 tokens/s, Avg generation throughput: 2.4 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 445
+output for task:444
+read request to task queue
+Starting to add task 446
+Starting to add task 448
+output for task:445
+read request to task queue
+Starting to add task 447
+output for task:448
+read request to task queue
+Starting to add task 445
+Starting to add task 444
+output for task:444
+output for task:446
+read request to task queue
+output for task:445
+read request to task queue
+Starting to add task 446
+output for task:447
+read request to task queue
+Starting to add task 447
+output for task:446
+read request to task queue
+Starting to add task 449
+output for task:447
+read request to task queue
+output for task:449
+read request to task queue
+Starting to add task 452
+Starting to add task 450
+output for task:452
+read request to task queue
+Starting to add task 453
+Starting to add task 454
+output for task:450
+read request to task queue
+output for task:453
+read request to task queue
+output for task:454
+read request to task queue
+Starting to add task 455
+Starting to add task 448
+output for task:448
+output for task:455
+read request to task queue
+Starting to add task 445
+Starting to add task 446
+Starting to add task 455
+Starting to add task 447
+output for task:455
+Starting to add task 452
+Starting to add task 451
+output for task:452
+Starting to add task 453
+Starting to add task 454
+output for task:453
+Starting to add task 456
+output for task:454
+output for task:445
+output for task:446
+output for task:447
+output for task:451
+read request to task queue
+Starting to add task 450
+Starting to add task 449
+Starting to add task 451
+Starting to add task 460
+Starting to add task 461
+output for task:456
+read request to task queue
+output for task:460
+read request to task queue
+Starting to add task 466
+output for task:450
+read request to task queue
+Starting to add task 460
+Starting to add task 457
+output for task:460
+output for task:449
+read request to task queue
+output for task:451
+read request to task queue
+output for task:461
+read request to task queue
+output for task:466
+read request to task queue
+Starting to add task 461
+output for task:457
+read request to task queue
+Starting to add task 457
+output for task:461
+read request to task queue
+output for task:457
+read request to task queue
+Starting to add task 457
+Starting to add task 466
+output for task:466
+output for task:457
+read request to task queue
+Starting to add task 457
+Starting to add task 458
+output for task:457
+read request to task queue
+output for task:458
+read request to task queue
+Starting to add task 457
+Starting to add task 459
+output for task:457
+Starting to add task 462
+Starting to add task 463
+Starting to add task 464
+Starting to add task 465
+Starting to add task 467
+Starting to add task 468
+Starting to add task 469
+Starting to add task 461
+Starting to add task 456
+output for task:459
+read request to task queue
+output for task:464
+read request to task queue
+output for task:465
+read request to task queue
+output for task:467
+read request to task queue
+output for task:469
+read request to task queue
+Starting to add task 458
+output for task:462
+read request to task queue
+output for task:463
+read request to task queue
+output for task:468
+read request to task queue
+output for task:461
+Starting to add task 449
+Starting to add task 459
+Starting to add task 462
+Starting to add task 463
+Starting to add task 468
+Starting to add task 451
+Starting to add task 464
+Starting to add task 465
+output for task:456
+read request to task queue
+output for task:458
+read request to task queue
+output for task:451
+read request to task queue
+Starting to add task 451
+Starting to add task 469
+Starting to add task 467
+Starting to add task 450
+Starting to add task 456
+output for task:449
+read request to task queue
+output for task:459
+read request to task queue
+output for task:462
+read request to task queue
+output for task:463
+read request to task queue
+output for task:468
+read request to task queue
+output for task:451
+Starting to add task 458
+Starting to add task 449
+Starting to add task 459
+Starting to add task 462
+Starting to add task 463
+Starting to add task 468
+output for task:450
+output for task:456
+output for task:458
+output for task:449
+output for task:459
+output for task:462
+output for task:463
+output for task:468
+output for task:464
+read request to task queue
+output for task:465
+read request to task queue
+Starting to add task 464
+Starting to add task 465
+output for task:469
+read request to task queue
+output for task:467
+read request to task queue
+Starting to add task 469
+Starting to add task 467
+output for task:464
+read request to task queue
+output for task:465
+read request to task queue
+output for task:469
+read request to task queue
+output for task:467
+read request to task queue
+Starting to add task 467
+Starting to add task 469
+Starting to add task 464
+Starting to add task 465
+output for task:467
+output for task:469
+output for task:464
+output for task:465
+Starting to add task 470
+Starting to add task 471
+Starting to add task 473
+output for task:471
+read request to task queue
+output for task:470
+read request to task queue
+Starting to add task 476
+output for task:473
+read request to task queue
+Starting to add task 475
+Starting to add task 473
+Starting to add task 471
+output for task:471
+output for task:476
+read request to task queue
+output for task:475
+read request to task queue
+output for task:473
+read request to task queue
+Starting to add task 476
+Starting to add task 472
+output for task:476
+Starting to add task 474
+Starting to add task 477
+INFO 08-26 00:53:56 metrics.py:406] Avg prompt throughput: 51158.9 tokens/s, Avg generation throughput: 70.3 tokens/s, Running: 3 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+Starting to add task 478
+Starting to add task 479
+Starting to add task 475
+Starting to add task 473
+output for task:475
+output for task:472
+read request to task queue
+output for task:477
+read request to task queue
+output for task:478
+read request to task queue
+output for task:473
+Starting to add task 470
+output for task:474
+read request to task queue
+Starting to add task 474
+Starting to add task 477
+output for task:479
+read request to task queue
+output for task:470
+read request to task queue
+output for task:474
+read request to task queue
+Starting to add task 474
+Starting to add task 479
+output for task:477
+read request to task queue
+output for task:474
+read request to task queue
+output for task:479
+read request to task queue
+Starting to add task 474
+Starting to add task 472
+output for task:474
+read request to task queue
+output for task:472
+read request to task queue
+Starting to add task 474
+Starting to add task 472
+output for task:472
+read request to task queue
+output for task:474
+Starting to add task 478
+Starting to add task 477
+Starting to add task 472
+Starting to add task 470
+Starting to add task 479
+output for task:477
+read request to task queue
+output for task:470
+Starting to add task 477
+output for task:472
+output for task:479
+output for task:477
+output for task:478
+read request to task queue
+Starting to add task 478
+output for task:478
+read request to task queue
+Starting to add task 478
+output for task:478
+Starting to add task 480
+Starting to add task 482
+Starting to add task 481
+output for task:480
+read request to task queue
+output for task:482
+read request to task queue
+output for task:481
+read request to task queue
+Starting to add task 482
+Starting to add task 483
+output for task:482
+Starting to add task 480
+Starting to add task 481
+output for task:483
+read request to task queue
+Starting to add task 483
+output for task:480
+read request to task queue
+output for task:481
+read request to task queue
+Starting to add task 480
+Starting to add task 481
+output for task:480
+read request to task queue
+Starting to add task 480
+output for task:483
+read request to task queue
+output for task:481
+read request to task queue
+Starting to add task 483
+output for task:480
+Starting to add task 481
+output for task:481
+output for task:483
+read request to task queue
+Starting to add task 483
+output for task:483
+Starting to add task 484
+INFO 08-26 00:54:02 metrics.py:406] Avg prompt throughput: 18496.9 tokens/s, Avg generation throughput: 27.5 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+Starting to add task 487
+output for task:484
+read request to task queue
+output for task:487
+read request to task queue
+Starting to add task 487
+Starting to add task 484
+output for task:487
+Starting to add task 485
+output for task:484
+Starting to add task 486
+Starting to add task 488
+Starting to add task 489
+output for task:485
+read request to task queue
+Starting to add task 485
+output for task:486
+read request to task queue
+output for task:489
+read request to task queue
+Starting to add task 486
+output for task:488
+read request to task queue
+Starting to add task 489
+Starting to add task 488
+output for task:486
+read request to task queue
+output for task:489
+read request to task queue
+Starting to add task 486
+output for task:485
+read request to task queue
+output for task:488
+read request to task queue
+Starting to add task 485
+Starting to add task 489
+Starting to add task 488
+output for task:486
+output for task:489
+output for task:488
+output for task:485
+read request to task queue
+Starting to add task 485
+output for task:485
+Starting to add task 490
+Starting to add task 492
+Starting to add task 491
+output for task:490
+read request to task queue
+output for task:492
+read request to task queue
+Starting to add task 492
+output for task:491
+read request to task queue
+Starting to add task 491
+output for task:492
+Starting to add task 490
+output for task:491
+read request to task queue
+Starting to add task 491
+output for task:490
+read request to task queue
+output for task:491
+read request to task queue
+Starting to add task 491
+Starting to add task 490
+output for task:490
+read request to task queue
+output for task:491
+read request to task queue
+Starting to add task 491
+Starting to add task 490
+output for task:491
+output for task:490
+Starting to add task 493
+INFO 08-26 00:54:18 metrics.py:406] Avg prompt throughput: 5072.1 tokens/s, Avg generation throughput: 7.2 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+init_priority for task 338: -0.4115070193194298
+init_priority for task 339: -1.8310370069291306
+init_priority for task 340: -1.8296571457694935
+init_priority for task 341: -0.41074344456752593
+init_priority for task 342: -1.8267790230777938
+init_priority for task 343: -0.4100817830633711
+init_priority for task 344: -0.40974363449523055
+init_priority for task 345: -1.8156874479374376
+init_priority for task 346: -1.8148179729004568
+init_priority for task 347: -1.8133971547998562
+init_priority for task 348: -1.811921720740027
+init_priority for task 349: -0.4067496667974308
+init_priority for task 350: -1.8089735904291993
+init_priority for task 351: -1.8074500432131186
+init_priority for task 352: -0.40578192586785333
+init_priority for task 353: -0.40578066817244995
+init_priority for task 354: -0.40578066817244995
+init_priority for task 355: -1.8061641757618838
+init_priority for task 356: -0.40578047468119544
+init_priority for task 357: -1.8061615920251535
+init_priority for task 358: -1.8127457240428546
+init_priority for task 359: -1.812034475152538
+init_priority for task 360: -0.4067874894601076
+init_priority for task 361: -0.4064569026423283
+init_priority for task 362: -1.807647419778623
+init_priority for task 363: -1.8061073344075969
+init_priority for task 364: -1.8061689126221558
+init_priority for task 365: -0.40578095840950473
+init_priority for task 366: -1.8061633145158964
+init_priority for task 367: -1.8061615920251535
+init_priority for task 368: -0.4057805714268112
+init_priority for task 369: -0.4057803779356027
+init_priority for task 370: -1.8107155581030407
+init_priority for task 371: -0.4066237135984389
+init_priority for task 372: -1.808454819454652
+init_priority for task 373: -1.8069571268941094
+init_priority for task 374: -0.40578221610580767
+init_priority for task 375: -0.4057842477773009
+init_priority for task 376: -0.4057831835671549
+init_priority for task 377: -0.40578337705970113
+init_priority for task 378: -1.8061727882443457
+init_priority for task 379: -0.40578211935979985
+init_priority for task 380: -1.8061684819979813
+init_priority for task 381: -0.4057847315101082
+init_priority for task 382: -1.8061805395136745
+init_priority for task 383: -1.8061805395136745
+init_priority for task 384: -1.8061801088867278
+init_priority for task 385: -1.8061801088867278
+init_priority for task 386: -0.4064854911764542
+init_priority for task 387: -0.4062787299580869
+init_priority for task 388: -1.8069773751786395
+init_priority for task 389: -0.4057818291219147
+init_priority for task 390: -0.4057805714268112
+init_priority for task 391: -0.4057803779356027
+init_priority for task 392: -0.40578066817244995
+init_priority for task 393: -0.4057805714268112
+init_priority for task 394: -0.4057812486467672
+init_priority for task 395: -0.4057803779356027
+init_priority for task 396: -0.4057810551552358
+init_priority for task 397: -0.40578047468119544
+init_priority for task 398: -0.4057803779356027
+init_priority for task 399: -0.4057800876989631
+Progress: 400/532 tasks sent to queue
+init_priority for task 400: -0.4057802811900332
+init_priority for task 401: -1.819343881043987
+init_priority for task 402: -0.40858432380263243
+init_priority for task 403: -1.817255632560851
+init_priority for task 404: -0.4079389785478101
+init_priority for task 405: -1.8142936328388457
+init_priority for task 406: -0.40726959985874744
+init_priority for task 407: -0.40692959832029973
+init_priority for task 408: -0.40658677860310766
+init_priority for task 409: -0.40624792824733996
+init_priority for task 410: -0.40590326342705196
+init_priority for task 411: -0.40578221610580767
+init_priority for task 412: -0.40578115190098996
+init_priority for task 413: -1.8061633145158964
+init_priority for task 414: -0.406750636565363
+init_priority for task 415: -1.8107190117721785
+init_priority for task 416: -0.4066012225981264
+init_priority for task 417: -0.40635884471277267
+init_priority for task 418: -0.40609434199974553
+init_priority for task 419: -0.40582033582784344
+init_priority for task 420: -0.4057861827119898
+init_priority for task 421: -1.8061835539051747
+init_priority for task 422: -1.8062115449236391
+init_priority for task 423: -0.40578976236548736
+init_priority for task 424: -1.8061977646757235
+init_priority for task 425: -0.40586039441945354
+init_priority for task 426: -0.4058343655609875
+init_priority for task 427: -0.40578724693000134
+init_priority for task 428: -0.4057856989774526
+init_priority for task 429: -0.4057845380169161
+init_priority for task 430: -0.4057842477773009
+init_priority for task 431: -1.806177525127205
+init_priority for task 432: -0.4057841510308088
+init_priority for task 433: -0.4057839575378934
+init_priority for task 434: -0.4059430398512669
+init_priority for task 435: -0.40578163563010655
+init_priority for task 436: -0.40578086166379673
+init_priority for task 437: -0.40578047468119544
+init_priority for task 438: -1.8061646063850316
+init_priority for task 439: -1.80617063511988
+init_priority for task 440: -1.8061628838930566
+init_priority for task 441: -0.4057805714268112
+init_priority for task 442: -0.4057810551552358
+init_priority for task 443: -1.8158627783188894
+init_priority for task 444: -1.8173275563900833
+init_priority for task 445: -1.8164443036887072
+init_priority for task 446: -1.81942976861705
+init_priority for task 447: -1.8179992717115563
+init_priority for task 448: -1.816600217044852
+init_priority for task 449: -0.40780925402938173
+init_priority for task 450: -0.4074782254484174
+init_priority for task 451: -0.40589977954634765
+init_priority for task 452: -1.8061641757618838
+init_priority for task 453: -1.806253316942499
+init_priority for task 454: -1.8061637451388388
+init_priority for task 455: -1.8061646063850316
+init_priority for task 456: -0.40578095840950473
+init_priority for task 457: -0.40594245914550564
+init_priority for task 458: -0.4057817323759991
+init_priority for task 459: -0.4057813453925674
+init_priority for task 460: -1.8061680513739096
+init_priority for task 461: -1.806171065744568
+init_priority for task 462: -0.4057829900747009
+init_priority for task 463: -0.40578095840950473
+init_priority for task 464: -0.4057815388842371
+init_priority for task 465: -0.40578163563010655
+init_priority for task 466: -1.8061663288786491
+init_priority for task 467: -0.40578066817244995
+init_priority for task 468: -0.4057815388842371
+init_priority for task 469: -0.4057812486467672
+init_priority for task 470: -0.40691135904866377
+init_priority for task 471: -1.8103495065287691
+init_priority for task 472: -0.40639430562033124
+init_priority for task 473: -1.8073599811557501
+init_priority for task 474: -0.40578163563010655
+init_priority for task 475: -1.8061633145158964
+init_priority for task 476: -1.8061615920251535
+init_priority for task 477: -0.40578066817244995
+init_priority for task 478: -0.4057803779356027
+init_priority for task 479: -0.4057803779356027
+init_priority for task 480: -0.40753477089232293
+init_priority for task 481: -0.4073627300182386
+init_priority for task 482: -1.8118029257888935
+init_priority for task 483: -0.4067067083979113
+init_priority for task 484: -1.8077801654851526
+init_priority for task 485: -0.4059381038787754
+init_priority for task 486: -0.4057815388842371
+init_priority for task 487: -1.8061658982550908
+init_priority for task 488: -0.4057812486467672
+init_priority for task 489: -0.40578066817244995
+init_priority for task 490: -0.4063316213616659
+init_priority for task 491: -0.4061005385549254
+init_priority for task 492: -1.8061361854775033
+init_priority for task 493: -1.8324449956436772
+init_priority for task 494: -1.8317456699409658
+init_priority for task 495: -0.4111988702458133
+init_priority for task 496: -0.4108667555190142
+init_priority for task 497: -0.41051934654289596
+init_priority for task 498: -0.41016968871712295
+init_priority for task 499: -1.8241289558938574
+Progress: 500/532 tasks sent to queue
+init_priority for task 500: -1.8096236656271596
+init_priority for task 501: -0.40631864004998464
+init_priority for task 502: -0.40651282175670794
+init_priority for task 503: -0.406313796383214
+init_priority for task 504: -0.40599482278783067
+init_priority for task 505: -0.40578192586785333
+Starting to add task 494
+output for task:493
+read request to task queue
+output for task:494
+read request to task queue
+Starting to add task 499
+Starting to add task 494
+output for task:494
+output for task:499
+read request to task queue
+Starting to add task 499
+Starting to add task 493
+output for task:499
+Starting to add task 495
+output for task:493
+Starting to add task 496
+Starting to add task 497
+Starting to add task 498
+output for task:495
+read request to task queue
+output for task:496
+read request to task queue
+output for task:497
+read request to task queue
+output for task:498
+read request to task queue
+Starting to add task 496
+Starting to add task 495
+Starting to add task 497
+Starting to add task 498
+output for task:496
+read request to task queue
+output for task:495
+read request to task queue
+output for task:497
+read request to task queue
+output for task:498
+read request to task queue
+Starting to add task 496
+Starting to add task 495
+Starting to add task 498
+Starting to add task 497
+output for task:496
+read request to task queue
+output for task:498
+read request to task queue
+Starting to add task 496
+Starting to add task 498
+output for task:495
+read request to task queue
+output for task:497
+read request to task queue
+Starting to add task 495
+output for task:496
+output for task:498
+Starting to add task 497
+output for task:495
+output for task:497
+Starting to add task 500
+Starting to add task 501
+output for task:500
+read request to task queue
+output for task:501
+read request to task queue
+Starting to add task 500
+Starting to add task 501
+output for task:500
+output for task:501
+read request to task queue
+Starting to add task 501
+output for task:501
+read request to task queue
+Starting to add task 501
+output for task:501
+Starting to add task 502
+Starting to add task 503
+Starting to add task 504
+Starting to add task 505
+Starting to add task 506
+output for task:504
+read request to task queue
+output for task:505
+read request to task queue
+output for task:506
+read request to task queue
+Starting to add task 504
+Starting to add task 505
+Starting to add task 506
+output for task:503
+read request to task queue
+Starting to add task 503
+output for task:502
+read request to task queue
+Starting to add task 502
+output for task:503
+read request to task queue
+Starting to add task 503
+output for task:504
+read request to task queue
+output for task:505
+read request to task queue
+output for task:506
+read request to task queue
+output for task:502
+read request to task queue
+Starting to add task 504
+Starting to add task 505
+Starting to add task 506
+Starting to add task 502
+INFO 08-26 00:54:23 metrics.py:406] Avg prompt throughput: 24441.1 tokens/s, Avg generation throughput: 32.5 tokens/s, Running: 5 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.8%, CPU KV cache usage: 0.0%.
+output for task:503
+output for task:504
+read request to task queue
+output for task:506
+read request to task queue
+Starting to add task 504
+output for task:502
+Starting to add task 506
+output for task:505
+read request to task queue
+Starting to add task 505
+output for task:504
+output for task:506
+output for task:505
+Starting to add task 507
+Starting to add task 510
+output for task:507
+read request to task queue
+output for task:510
+read request to task queue
+Starting to add task 517
+Starting to add task 520
+output for task:517
+read request to task queue
+output for task:520
+read request to task queue
+Starting to add task 521
+Starting to add task 520
+Starting to add task 507
+output for task:507
+output for task:520
+read request to task queue
+output for task:521
+read request to task queue
+Starting to add task 521
+Starting to add task 510
+output for task:510
+output for task:521
+read request to task queue
+Starting to add task 517
+Starting to add task 508
+output for task:517
+Starting to add task 509
+Starting to add task 511
+Starting to add task 512
+Starting to add task 513
+Starting to add task 514
+Starting to add task 515
+Starting to add task 516
+Starting to add task 518
+Starting to add task 519
+Starting to add task 520
+output for task:508
+read request to task queue
+output for task:515
+read request to task queue
+Starting to add task 521
+Starting to add task 508
+output for task:513
+read request to task queue
+output for task:516
+read request to task queue
+Starting to add task 516
+Starting to add task 513
+Starting to add task 515
+output for task:509
+read request to task queue
+output for task:511
+read request to task queue
+Starting to add task 509
+Starting to add task 511
+output for task:512
+read request to task queue
+output for task:514
+read request to task queue
+Starting to add task 512
+output for task:520
+output for task:521
+output for task:518
+read request to task queue
+output for task:519
+read request to task queue
+output for task:516
+read request to task queue
+output for task:513
+read request to task queue
+output for task:509
+read request to task queue
+output for task:511
+read request to task queue
+Starting to add task 513
+output for task:508
+read request to task queue
+Starting to add task 516
+Starting to add task 514
+output for task:515
+read request to task queue
+output for task:512
+read request to task queue
+output for task:513
+read request to task queue
+output for task:516
+read request to task queue
+output for task:514
+read request to task queue
+Starting to add task 516
+Starting to add task 513
+Starting to add task 518
+output for task:518
+read request to task queue
+output for task:516
+read request to task queue
+output for task:513
+read request to task queue
+Starting to add task 513
+Starting to add task 516
+Starting to add task 519
+output for task:513
+output for task:516
+Starting to add task 515
+Starting to add task 508
+Starting to add task 511
+Starting to add task 509
+Starting to add task 512
+Starting to add task 514
+Starting to add task 518
+output for task:519
+read request to task queue
+output for task:508
+read request to task queue
+output for task:511
+output for task:509
+output for task:518
+Starting to add task 508
+output for task:512
+output for task:514
+Starting to add task 519
+output for task:515
+read request to task queue
+Starting to add task 515
+output for task:508
+output for task:519
+output for task:515
+Starting to add task 522
+INFO 08-26 00:54:32 metrics.py:406] Avg prompt throughput: 17520.8 tokens/s, Avg generation throughput: 26.3 tokens/s, Running: 1 reqs, Swapped: 0 reqs, Pending: 0 reqs, GPU KV cache usage: 0.7%, CPU KV cache usage: 0.0%.
+init_priority for task 506: -0.40578144213839074
+init_priority for task 507: -1.806393281778619
+init_priority for task 508: -0.4057830868209164
+init_priority for task 509: -0.4057817323759991
+init_priority for task 510: -1.8061736494948504
+init_priority for task 511: -0.4057817323759991
+init_priority for task 512: -0.4057813453925674
+init_priority for task 513: -0.4057812486467672
+init_priority for task 514: -0.40578560223061433
+init_priority for task 515: -0.4057832803134165
+init_priority for task 516: -0.40578115190098996
+init_priority for task 517: -1.8061676207499404
+init_priority for task 518: -0.4057850217500693
+init_priority for task 519: -0.40578492500339247
+init_priority for task 520: -1.8061792476331429
+init_priority for task 521: -1.8061805395136745
+init_priority for task 522: -1.8190545825370004
+init_priority for task 523: -1.8182545886270944
+init_priority for task 524: -0.4081792820696183
+init_priority for task 525: -0.40785680193016716
+init_priority for task 526: -1.8139233981386742
+init_priority for task 527: -0.4071866843542543
+init_priority for task 528: -1.810903792674917
+init_priority for task 529: -1.8093790512003898
+init_priority for task 530: -0.4061635745123268
+init_priority for task 531: -0.40586629710654815
+All tasks sent (532/532). Request generator finishing.
+Request generator shutting down. Total tasks sent: 532/532
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task execution thread shutting down.
+Task executor process shutting down.
+All requests sent. Waiting for scheduler & executor to finish...
+All queues drained. Experiment complete.
+Process Process-3:
+Traceback (most recent call last):
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/mm562/TimelyLLM-v0/timelyllm/rtengine/vllm_llm_scheduler.py", line 1264, in infer_start
+    scheduler.schedule_timely(task_queue, result_queues,robot_system)
+  File "/home/mm562/TimelyLLM-v0/timelyllm/rtengine/vllm_llm_scheduler.py", line 426, in schedule_timely
+    task_info = self.get_task()
+  File "/home/mm562/TimelyLLM-v0/timelyllm/rtengine/vllm_llm_scheduler.py", line 284, in get_task
+    self._update_queue_priority()
+  File "/home/mm562/TimelyLLM-v0/timelyllm/rtengine/vllm_llm_scheduler.py", line 244, in _update_queue_priority
+    while not self.task_queue.empty():
+  File "<string>", line 2, in empty
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/managers.py", line 818, in _callmethod
+    kind, result = conn.recv()
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/mm562/.local/share/uv/python/cpython-3.10-linux-x86_64-gnu/lib/python3.10/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+ConnectionResetError: [Errno 104] Connection reset by peer
+Starting to add task 523
+output for task:523
+read request to task queue
+output for task:522
+read request to task queue
+Starting to add task 529
+Starting to add task 528
+Starting to add task 526
+Starting to add task 522
+Starting to add task 523
+output for task:523
+output for task:529
+read request to task queue
+output for task:528
+read request to task queue
+output for task:522
+read request to task queue
+output for task:526
+read request to task queue
+Starting to add task 526
+Starting to add task 524
+output for task:526
+read request to task queue
+Starting to add task 525
+Starting to add task 527
+Starting to add task 530
+Starting to add task 529
+Starting to add task 528
+output for task:529
+output for task:528
+output for task:524
+read request to task queue
+Starting to add task 522
+output for task:525
+read request to task queue
+output for task:527
+read request to task queue
+Starting to add task 526
+Starting to add task 524
+Starting to add task 525
+Starting to add task 527
+output for task:530
+read request to task queue
+Starting to add task 530
+output for task:522
+output for task:526
+output for task:524
+read request to task queue
+output for task:525
+read request to task queue
+output for task:527
+read request to task queue
+output for task:530
+read request to task queue
+Starting to add task 530
+Starting to add task 525
+output for task:525
+read request to task queue
+output for task:530
+read request to task queue
+Starting to add task 530
+Starting to add task 527
+output for task:527
+read request to task queue
+output for task:530
+read request to task queue
+Starting to add task 530
+Starting to add task 525
+output for task:530
+output for task:525
+Starting to add task 527
+Starting to add task 524
+output for task:527
+output for task:524
+Starting to add task 531
+output for task:531
+read request to task queue
+Starting to add task 531
+output for task:531
+read request to task queue
+Starting to add task 531
+output for task:531
+read request to task queue
+Starting to add task 531
+output for task:531
