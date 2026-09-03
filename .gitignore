@@ -37,3 +37,8 @@ __pycache__
 *.wav
 *.onnx
 CLAUDE.md
+
+# Experiment results are part of the record, so the blanket output-file rules
+# above do not apply inside results/. Negations must come after the patterns
+# they undo, so this block stays at the end.
+!/results/**

@@ -12,7 +12,8 @@ import numpy as np
 from pathlib import Path
     
 class RequestGenerator:
-    def __init__(self, task_queue, agent_num, request_list_path, stop_signal, run_mode, seg_exe, comm_time, robot_type, robot_system, real_audio_task_ids=None, whisper_device="cpu"):
+    def __init__(self, task_queue, agent_num, request_list_path, stop_signal, run_mode, seg_exe, comm_time, robot_type, robot_system, real_audio_task_ids=None, whisper_device="cpu", engine_ready=None):
+        self.engine_ready = engine_ready
         self.task_queue = task_queue
         self.stop_signal = stop_signal
         self.agent_num = agent_num
@@ -119,7 +120,23 @@ class RequestGenerator:
         # disable CUDA for whisper in this process to avoid issues with forked processes and GPU memory
         if self.whisper_device == "cpu":
             os.environ['CUDA_VISIBLE_DEVICES'] = ''
-        
+
+        # The trace is replayed against wall-clock: task N is sent at init_time +
+        # its trigger time. Without this wait, init_time is set while the engine
+        # is still loading the model, so the early part of the trace queues up
+        # behind startup rather than being served. That is invisible when loading
+        # takes ~25s, but under an MPS thread-percentage cap loading is several
+        # times slower, and the measured latency becomes mostly load time.
+        if self.engine_ready is not None:
+            print("Waiting for engine before starting the trace clock...")
+            wait_start = time.time()
+            while not self.engine_ready.is_set():
+                if self.stop_signal.is_set():
+                    print("Stopped while waiting for the engine.")
+                    return
+                self.engine_ready.wait(timeout=1.0)
+            print(f"Engine ready after {time.time() - wait_start:.1f}s; starting trace.")
+
         init_time = time.time()
         total_tasks = len(self.tasks)
         print(f"Init time for sending request: {init_time}")

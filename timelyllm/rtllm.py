@@ -79,10 +79,14 @@ if __name__ == "__main__":
         print(f"Memory monitoring enabled for {cfg.agent_num} agents with pooled executor")
 
     # Start the processes
+    # Set once the engine has loaded; the generator waits on it so the trace is
+    # not replayed against a still-loading engine. None keeps the old behaviour.
+    engine_ready = multiprocessing.Event() if cfg.wait_for_engine else None
+
     request_gen = RequestGenerator(
         task_queue, cfg.agent_num, cfg.request_list_path, global_stop_signal,
         cfg.run_mode, cfg.seg_exe, cfg.comm_time, cfg.robot_type, cfg.robot_system,
-        cfg.real_audio_task_ids, cfg.whisper_device
+        cfg.real_audio_task_ids, cfg.whisper_device, engine_ready
     )
     p1 = multiprocessing.Process(target=request_gen.generate_requests, args=())
 
@@ -92,7 +96,8 @@ if __name__ == "__main__":
               global_stop_signal, cfg.run_mode, cfg.robot_system, cfg.batchsize,
               cfg.seg_exe, cfg.lmax, cfg.comm_time, cfg.real_audio_task_ids,
               cfg.prompt_speech_path, cfg.model_path,
-              cfg.gpu_memory_utilization, cfg.max_model_len, cfg.max_num_seqs)
+              cfg.gpu_memory_utilization, cfg.max_model_len, cfg.max_num_seqs,
+              engine_ready)
     )
 
     if cfg.executor_mode == 'virtual':

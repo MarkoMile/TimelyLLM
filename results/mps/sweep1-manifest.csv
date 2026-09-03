@@ -1,0 +1,4 @@
+arm,pct,repeat,log,started,ended,load_s,others_before,others_after
+rtllm,100,1,/home/mm562/TimelyLLM/timelyllm/logs/sweep1-rtllm-p100-r1.log,2026-08-28T10:20:15+06:00,2026-08-28T10:26:42+06:00,15.0,"",""
+rtllm,90,1,/home/mm562/TimelyLLM/timelyllm/logs/sweep1-rtllm-p90-r1.log,2026-08-28T10:26:42+06:00,2026-08-28T10:33:16+06:00,21.9,"",""
+rtllm,80,1,/home/mm562/TimelyLLM/timelyllm/logs/sweep1-rtllm-p80-r1.log,2026-08-28T10:33:16+06:00,2026-08-28T10:39:33+06:00,14.4,"",""

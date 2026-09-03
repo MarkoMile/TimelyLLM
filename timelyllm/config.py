@@ -54,6 +54,13 @@ class ExperimentConfig:
     # Runtime
     run_duration: int = 10000  # seconds
 
+    # Hold the request generator until the engine has finished loading, so the
+    # trace is replayed against a ready engine rather than against model load.
+    # Off by default: it changes when the trace starts, so runs made with it on
+    # are not directly comparable to runs made without it. Needed whenever load
+    # time varies between arms -- e.g. an MPS thread-percentage sweep.
+    wait_for_engine: bool = False
+
     def __post_init__(self):
         # Derive seg_exe and lmax from robot_system if not explicitly set
         if self.robot_system in ROBOT_DEFAULTS:
@@ -166,6 +173,8 @@ def build_config() -> ExperimentConfig:
     parser.add_argument('--gpu-memory-utilization', type=float)
     parser.add_argument('--max-model-len', type=int)
     parser.add_argument('--max-num-seqs', type=int)
+    parser.add_argument('--wait-for-engine', action='store_true',
+                        help='Delay the trace until the engine has loaded (see ExperimentConfig)')
     parser.add_argument('--log-name', type=str, help='Custom log filename (without .log extension)')
 
     args = parser.parse_args()
@@ -218,6 +227,8 @@ def build_config() -> ExperimentConfig:
         kwargs['use_async_executor'] = False
     if args.enable_memory_monitor:
         kwargs['enable_memory_monitor'] = True
+    if args.wait_for_engine:
+        kwargs['wait_for_engine'] = True
 
     cfg = ExperimentConfig(**kwargs)
     print(f"Config: {cfg}")

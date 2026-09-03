@@ -1231,7 +1231,8 @@ class RequestScheduler:
 
 
 def infer_start(task_queue, result_queues, prompt_path, agent_num, global_stop_signal, run_mode, robot_system='typefly', batchsize=1, seg_exe=0.09, lmax =10, comm_time=0, real_audio_task_ids=None, prompt_speech_path=None, model_path_override=None,
-                gpu_memory_utilization=0.8, max_model_len=4000, max_num_seqs=8):
+                gpu_memory_utilization=0.8, max_model_len=4000, max_num_seqs=8,
+                engine_ready=None):
     # llm_device = torch.device("cuda:2" if torch.cuda.is_available() else "cpu")
     # for normal generation
     # plan_gen = SerialPlanner(plan_rec_path, global_stop_signal, agent_num,
@@ -1247,6 +1248,12 @@ def infer_start(task_queue, result_queues, prompt_path, agent_num, global_stop_s
                               model_path=effective_model_path,
                               gpu_memory_utilization=gpu_memory_utilization,
                               max_model_len=max_model_len, max_num_seqs=max_num_seqs)
+    # Weights are loaded, the KV cache is allocated and CUDA graphs are captured
+    # by the time the scheduler is constructed, so this is the point where the
+    # request generator can start its clock. See read_request.generate_requests.
+    if engine_ready is not None:
+        engine_ready.set()
+        print("Engine ready; released the request generator.")
     if run_mode =='vllm' or run_mode =='vllm-edf':
         scheduler.vllm_schedule(task_queue, result_queues)
     elif run_mode =='vllm-fixed':

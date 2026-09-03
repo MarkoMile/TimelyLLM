@@ -1,0 +1,12 @@
+arm,pct,repeat,log,started,ended,load_s,others_before,others_after
+rtllm,100,1,/home/mm562/TimelyLLM/timelyllm/logs/sweep2-rtllm-p100-r1.log,2026-08-28T10:54:11+06:00,2026-08-28T11:00:39+06:00,13.9,"",""
+rtllm,95,1,/home/mm562/TimelyLLM/timelyllm/logs/sweep2-rtllm-p95-r1.log,2026-08-28T11:00:40+06:00,2026-08-28T11:07:08+06:00,13.6,"",""
+rtllm,90,1,/home/mm562/TimelyLLM/timelyllm/logs/sweep2-rtllm-p90-r1.log,2026-08-28T11:07:08+06:00,2026-08-28T11:13:36+06:00,13.6,"",""
+rtllm,85,1,,2026-08-28T11:13:37+06:00,2026-08-28T11:13:39+06:00,SKIPPED_NUMCHECK,"",""
+rtllm,80,1,,2026-08-28T11:13:39+06:00,2026-08-28T11:13:41+06:00,SKIPPED_NUMCHECK,"",""
+rtllm,75,1,,2026-08-28T11:13:42+06:00,2026-08-28T11:13:44+06:00,SKIPPED_NUMCHECK,"",""
+rtllm,70,1,,2026-08-28T11:13:44+06:00,2026-08-28T11:13:46+06:00,SKIPPED_NUMCHECK,"",""
+rtllm,66,1,/home/mm562/TimelyLLM/timelyllm/logs/sweep2-rtllm-p66-r1.log,2026-08-28T11:13:46+06:00,2026-08-28T11:34:05+06:00,13.8,"",""
+rtllm,65,1,,2026-08-28T11:34:06+06:00,2026-08-28T11:34:08+06:00,SKIPPED_NUMCHECK,"",""
+rtllm,60,1,,2026-08-28T11:34:08+06:00,2026-08-28T11:34:10+06:00,SKIPPED_NUMCHECK,"",""
+rtllm,55,1,,2026-08-28T11:34:11+06:00,2026-08-28T11:34:13+06:00,SKIPPED_NUMCHECK,"",""
