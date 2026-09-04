@@ -1,0 +1,15 @@
+  green-context SM sweep
+  GPU 0, 132 SMs total
+  arms: rtllm    SM counts: 8 32 48 64 88 120 132    repeats: 1
+  gpu_memory_utilization=0.67   run-duration=1200s
+  baseline occupants of GPU 0: 387317(110 MiB)
+
+  rtllm      8 SM (  6%)  rep 1  NO LOG (rc=0) -- see /space/mm562/TimelyLLM/results/mps/gh200-gctx-rtllm-sm8-r1.console.txt
+  rtllm     32 SM ( 24%)  rep 1  NO LOG (rc=0) -- see /space/mm562/TimelyLLM/results/mps/gh200-gctx-rtllm-sm32-r1.console.txt
+  rtllm     48 SM ( 36%)  rep 1  NO LOG (rc=0) -- see /space/mm562/TimelyLLM/results/mps/gh200-gctx-rtllm-sm48-r1.console.txt
+  rtllm     64 SM ( 48%)  rep 1  NO LOG (rc=0) -- see /space/mm562/TimelyLLM/results/mps/gh200-gctx-rtllm-sm64-r1.console.txt
+  rtllm     88 SM ( 67%)  rep 1  NO LOG (rc=0) -- see /space/mm562/TimelyLLM/results/mps/gh200-gctx-rtllm-sm88-r1.console.txt
+  rtllm    120 SM ( 91%)  rep 1  NO LOG (rc=0) -- see /space/mm562/TimelyLLM/results/mps/gh200-gctx-rtllm-sm120-r1.console.txt
+  rtllm    132 SM (100%)  rep 1  NO LOG (rc=0) -- see /space/mm562/TimelyLLM/results/mps/gh200-gctx-rtllm-sm132-r1.console.txt
+
+  manifest: /space/mm562/TimelyLLM/results/mps/gh200-gctx-manifest.csv

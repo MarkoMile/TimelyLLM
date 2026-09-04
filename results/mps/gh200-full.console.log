@@ -1,0 +1,50 @@
+
+  MPS thread-percentage sweep
+  GPU 0  (GPU-c4706c6f-7303-5d6b-487b-d3e11cbdc7c7)
+  arms: rtllm    percentages: 5 8 10 12 20 25 30 33 40 50 60 66 70 75 80 90 95 100    repeats: 2
+  gpu_memory_utilization=0.67   run-duration=1200s
+
+  sharing allowed. Baseline occupants of GPU 0: root:275636(110 MiB)
+  Points are flagged if this changes while the sweep runs.
+  MPS daemon up on GPU 0 (default thread percentage 100.0)
+  rtllm                    5%  rep 1  load 8.9s, 1670 segments
+  rtllm                    8%  rep 1  load 9.0s, 1695 segments
+  rtllm                   10%  rep 1  load 8.8s, 1705 segments
+  rtllm                   12%  rep 1  load 8.7s, 1699 segments
+  rtllm                   20%  rep 1  SKIPPED -- on pass 1/3: pct=20 sm=26 worst_rel_err=1.51e+00 (M=8 o_proj float16)  CORRUPT
+  rtllm                   25%  rep 1  load 9.2s, 1711 segments
+  rtllm                   30%  rep 1  load 8.4s, 1908 segments
+  rtllm                   33%  rep 1  load 8.4s, 417 segments
+  rtllm                   40%  rep 1  SKIPPED -- on pass 1/3: pct=40 sm=52 worst_rel_err=inf (M=512 qkv float16)  CORRUPT
+  rtllm                   50%  rep 1  load 8.3s, 1713 segments
+  rtllm                   60%  rep 1  SKIPPED -- on pass 1/3: pct=60 sm=78 worst_rel_err=inf (M=512 gate_up float16)  CORRUPT
+  rtllm                   66%  rep 1  SKIPPED -- on pass 1/3: pct=66 sm=86 worst_rel_err=inf (M=512 qkv float16)  CORRUPT
+  rtllm                   70%  rep 1  SKIPPED -- on pass 1/3: pct=70 sm=92 worst_rel_err=inf (M=512 qkv float16)  CORRUPT
+  rtllm                   75%  rep 1  SKIPPED -- on pass 1/3: pct=75 sm=98 worst_rel_err=inf (M=1 gate_up float16)  CORRUPT
+  rtllm                   80%  rep 1  SKIPPED -- on pass 1/3: pct=80 sm=104 worst_rel_err=inf (M=1 gate_up float16)  CORRUPT
+  rtllm                   90%  rep 1  load 14.3s, 1713 segments
+  rtllm                   95%  rep 1  load 8.3s, 1713 segments
+  rtllm                  100%  rep 1  load 8.4s, 1713 segments
+  rtllm                    5%  rep 2  load 8.9s, 1670 segments
+  rtllm                    8%  rep 2  load 8.7s, 1695 segments
+  rtllm                   10%  rep 2  load 8.7s, 1705 segments
+  rtllm                   12%  rep 2  load 8.7s, 1699 segments
+  rtllm                   20%  rep 2  SKIPPED -- on pass 1/3: pct=20 sm=26 worst_rel_err=1.51e+00 (M=8 o_proj float16)  CORRUPT
+  rtllm                   25%  rep 2  load 8.5s, 1711 segments
+  rtllm                   30%  rep 2  load 8.4s, 1908 segments
+  rtllm                   33%  rep 2  load 8.4s, 421 segments
+  rtllm                   40%  rep 2  SKIPPED -- on pass 1/3: pct=40 sm=52 worst_rel_err=inf (M=512 qkv float16)  CORRUPT
+  rtllm                   50%  rep 2  load 8.4s, 1713 segments
+  rtllm                   60%  rep 2  SKIPPED -- on pass 1/3: pct=60 sm=78 worst_rel_err=inf (M=512 gate_up float16)  CORRUPT
+  rtllm                   66%  rep 2  SKIPPED -- on pass 1/3: pct=66 sm=86 worst_rel_err=inf (M=512 qkv float16)  CORRUPT
+  rtllm                   70%  rep 2  SKIPPED -- on pass 1/3: pct=70 sm=92 worst_rel_err=inf (M=512 qkv float16)  CORRUPT
+  rtllm                   75%  rep 2  SKIPPED -- on pass 1/3: pct=75 sm=98 worst_rel_err=inf (M=1 gate_up float16)  CORRUPT
+  rtllm                   80%  rep 2  SKIPPED -- on pass 1/3: pct=80 sm=104 worst_rel_err=inf (M=1 gate_up float16)  CORRUPT
+  rtllm                   90%  rep 2  load 8.3s, 1713 segments
+  rtllm                   95%  rep 2  load 8.4s, 1713 segments
+  rtllm                  100%  rep 2  load 8.3s, 1713 segments
+
+  manifest: /space/mm562/TimelyLLM/results/mps/gh200-full-manifest.csv
+  plot with: /space/mm562/TimelyLLM/.venv/bin/python /space/mm562/TimelyLLM/scripts/plot-mps-latency.py --manifest /space/mm562/TimelyLLM/results/mps/gh200-full-manifest.csv
+
+  shutting down the MPS daemon on GPU 0

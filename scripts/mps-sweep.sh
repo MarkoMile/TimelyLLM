@@ -3,7 +3,7 @@
 # Sweep NVIDIA MPS active-thread-percentage and record TimelyLLM's latency at
 # each point, so latency can be plotted against the compute the engine is given.
 #
-#   ./scripts/mps-sweep.sh                          # TimelyLLM, 10..100%, GPU 3
+#   ./scripts/mps-sweep.sh                          # TimelyLLM, 10..100%, GPU 0
 #   ./scripts/mps-sweep.sh --arms "rtllm vllm"      # both arms at every point
 #   ./scripts/mps-sweep.sh --pct "25 50 100" --repeats 2
 #
@@ -41,13 +41,19 @@ set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-GPU=3
+GPU=0
 PCTS="10 20 30 40 50 60 70 80 90 100"
 ARMS="rtllm"
 REPEATS=1
 RUN_DURATION=1200
 UTIL=0.8
 TAG="mps"
+ALLOW_SHARED=0
+NUMCHECK_REPEATS=3
+POINT_TIMEOUT=""
+# Cores 4-64 are isolcpus, reserved for the Aerial cuBB RAN L1 workload that
+# shares this GPU. Every process we launch must stay off them.
+CORES="${TIMELYLLM_CORES:-0-3,65-71}"
 OUTDIR="$REPO/results/mps"
 
 while [ $# -gt 0 ]; do
@@ -59,11 +65,18 @@ while [ $# -gt 0 ]; do
         --run-duration) RUN_DURATION="$2"; shift 2 ;;
         --util)         UTIL="$2"; shift 2 ;;
         --tag)          TAG="$2"; shift 2 ;;
+        --allow-shared) ALLOW_SHARED=1; shift ;;
+        --numcheck-repeats) NUMCHECK_REPEATS="$2"; shift 2 ;;
+        --point-timeout)    POINT_TIMEOUT="$2"; shift 2 ;;
         --outdir)       OUTDIR="$2"; shift 2 ;;
         -h|--help)      sed -n '2,32p' "$0"; exit 0 ;;
         *) echo "unknown option: $1" >&2; exit 2 ;;
     esac
 done
+
+# A hung point must cost one run, not the whole night. run-duration caps the
+# trace inside rtllm.py; this caps everything around it (load, capture, exit).
+POINT_TIMEOUT="${POINT_TIMEOUT:-$((RUN_DURATION + 900))}"
 
 PY="${TIMELYLLM_PYTHON:-$REPO/.venv/bin/python}"
 [ -x "$PY" ] || { echo "no interpreter at $PY" >&2; exit 2; }
@@ -117,7 +130,7 @@ cleanup() {
     fi
     exit $rc
 }
-trap cleanup EXIT INT TERM
+trap cleanup EXIT INT TERM HUP
 
 # ---------------------------------------------------------------- preflight
 
@@ -128,19 +141,41 @@ echo "  arms: $ARMS    percentages: $PCTS    repeats: $REPEATS"
 echo "  gpu_memory_utilization=$UTIL   run-duration=${RUN_DURATION}s"
 echo
 
-BUSY="$(others)"
-if [ -n "$BUSY" ]; then
-    echo "  refusing: GPU $GPU already has processes on it: $BUSY" >&2
-    echo "  Pick an idle GPU with --gpu, or wait. Sharing the card would both" >&2
-    echo "  corrupt the measurement and slow the other job down." >&2
-    exit 1
+# Baseline of other users' processes on this GPU. Where a root-owned MPS server
+# runs as a permanent systemd service, "is anyone else here?" is always true, so
+# presence cannot mark a point as contaminated -- CHANGE against this baseline
+# can. Anything that arrives or leaves mid-sweep flags the affected points.
+BASELINE="$(others)"
+if [ -n "$BASELINE" ]; then
+    if [ "$ALLOW_SHARED" = 1 ]; then
+        echo "  sharing allowed. Baseline occupants of GPU $GPU: $BASELINE"
+        echo "  Points are flagged if this changes while the sweep runs."
+    else
+        echo "  refusing: GPU $GPU already has processes on it: $BASELINE" >&2
+        echo "  Pass --allow-shared to accept them as a baseline, pick an idle GPU" >&2
+        echo "  with --gpu, or wait. Sharing the card would both corrupt the" >&2
+        echo "  measurement and slow the other job down." >&2
+        exit 1
+    fi
 fi
 
+# kill -9 defeats the exit trap, so a killed run can leave a daemon behind that
+# would block every later sweep. Quit ours, then refuse if anything survives --
+# a survivor is not at our pipe directory and is not ours to reap.
 if [ -n "$(mps_procs)" ]; then
-    echo "  refusing: you already have an MPS control daemon running." >&2
-    echo "  Stop it first, or its pipe directory will be used instead of ours." >&2
-    exit 1
+    echo "  an MPS control daemon of yours is already running; quitting it first"
+    CUDA_MPS_PIPE_DIRECTORY="$PIPE" CUDA_MPS_LOG_DIRECTORY="$MPSLOG" \
+        bash -c 'echo quit | nvidia-cuda-mps-control' >/dev/null 2>&1 || true
+    sleep 2
+    if [ -n "$(mps_procs)" ]; then
+        echo "  refusing: an MPS daemon of yours survives the quit:" >&2
+        mps_procs >&2
+        echo "  It is not at our pipe directory ($PIPE). Stop it by hand." >&2
+        exit 1
+    fi
 fi
+
+FLAGGED=""
 
 rm -rf "$MPSDIR"; mkdir -p "$PIPE" "$MPSLOG"
 CUDA_VISIBLE_DEVICES="$GPU" CUDA_MPS_PIPE_DIRECTORY="$PIPE" CUDA_MPS_LOG_DIRECTORY="$MPSLOG" \
@@ -178,13 +213,24 @@ for arm in $ARMS; do
 
         # Refuse to spend six minutes measuring a GPU that is computing the
         # wrong answer. Cheap: a few matmuls, about two seconds.
-        if ! numcheck="$(env -u CUDA_HOME \
-                CUDA_MPS_PIPE_DIRECTORY="$PIPE" \
-                CUDA_MPS_LOG_DIRECTORY="$MPSLOG" \
-                CUDA_MPS_ACTIVE_THREAD_PERCENTAGE="$pct" \
-                CUDA_VISIBLE_DEVICES=0 \
-                "$PY" "$REPO/scripts/mps-numcheck.py" 2>&1)"; then
-            echo "SKIPPED -- ${numcheck##*: }"
+        # The corruption needs a GPU that is already busy, and on a shared box a
+        # neighbour can supply that without us -- so one pass is a sample, not a
+        # verdict. Every repeat must pass for the point to run.
+        nc_fail=""
+        for nc in $(seq 1 "$NUMCHECK_REPEATS"); do
+            if ! numcheck="$(env -u CUDA_HOME \
+                    CUDA_MPS_PIPE_DIRECTORY="$PIPE" \
+                    CUDA_MPS_LOG_DIRECTORY="$MPSLOG" \
+                    CUDA_MPS_ACTIVE_THREAD_PERCENTAGE="$pct" \
+                    CUDA_VISIBLE_DEVICES=0 \
+                    taskset -c "$CORES" \
+                    "$PY" "$REPO/scripts/mps-numcheck.py" 2>&1)"; then
+                nc_fail="on pass $nc/$NUMCHECK_REPEATS: ${numcheck##*: }"
+                break
+            fi
+        done
+        if [ -n "$nc_fail" ]; then
+            echo "SKIPPED -- $nc_fail"
             echo "$arm,$pct,$rep,,$started,$(date -Is),SKIPPED_NUMCHECK,\"$before\",\"\"" >> "$MANIFEST"
             continue
         fi
@@ -197,6 +243,8 @@ for arm in $ARMS; do
             CUDA_VISIBLE_DEVICES=0 \
             VLLM_USE_FLASHINFER_SAMPLER=0 \
             VLLM_ENABLE_V1_MULTIPROCESSING=0 \
+            timeout --signal=TERM --kill-after=60 "$POINT_TIMEOUT" \
+            taskset -c "$CORES" \
             "$PY" rtllm.py --preset "$preset" --log-name "$name" \
                 --wait-for-engine \
                 --gpu-memory-utilization "$UTIL" \
@@ -216,7 +264,13 @@ for arm in $ARMS; do
         else
             echo "NO LOG (rc=$rc) -- see $console"
         fi
-        [ -n "$before$after" ] && echo "      note: GPU $GPU was shared during this run (before='$before' after='$after')"
+        if [ "$before" != "$BASELINE" ] || [ "$after" != "$BASELINE" ]; then
+            echo "      *** FLAGGED: neighbours on GPU $GPU changed during this run"
+            echo "      ***   baseline='$BASELINE'"
+            echo "      ***   before='$before'  after='$after'"
+            echo "      ***   contaminated measurement -- re-run this point"
+            FLAGGED="$FLAGGED $arm/p$pct/r$rep"
+        fi
 
         echo "$arm,$pct,$rep,$LOGDIR/$name.log,$started,$ended,$load_s,\"$before\",\"$after\"" >> "$MANIFEST"
     done
@@ -224,5 +278,8 @@ done
 done
 
 echo
+if [ -n "$FLAGGED" ]; then
+    echo "  *** FLAGGED POINTS (neighbours changed; re-run these):$FLAGGED"
+fi
 echo "  manifest: $MANIFEST"
 echo "  plot with: $PY $REPO/scripts/plot-mps-latency.py --manifest $MANIFEST"

@@ -21,6 +21,7 @@ propagates unchanged into RequestOutput.outputs[0].stop_reason.
 from vllm.engine.arg_utils import EngineArgs  # noqa: F401  (re-exported)
 from vllm.v1.engine.llm_engine import LLMEngine
 
+from rtengine import sm_budget
 from rtengine.backend.base import STOP_MARKER, EngineBackend
 from rtengine.backend.segment_rules import rule_factory
 
@@ -129,6 +130,11 @@ class V1Backend(EngineBackend):
     def __init__(self, engine_args, robot_system, segment_stop):
         if segment_stop:
             _install_segment_rule(rule_factory(robot_system))
+
+        # Enter the SM partition before the engine is built, so weight
+        # loading, memory profiling and CUDA-graph capture all happen
+        # inside it.  No-op unless TIMELYLLM_SM_COUNT is set.
+        sm_budget.apply()
 
         self.engine = LLMEngine.from_engine_args(engine_args)
 

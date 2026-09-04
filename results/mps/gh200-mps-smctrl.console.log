@@ -1,0 +1,18 @@
+
+  libsmctrl under MPS -- does the TPC mask survive the MPS server?
+  GPU 0 (GPU-c4706c6f-7303-5d6b-487b-d3e11cbdc7c7)
+  baseline occupants (not ours): root:404459(110 MiB)
+
+  --- without MPS (the reference) ---
+smctrl-numcheck: tpcs=22 sm=44 reported=132 209.7 TFLOP/s worst_rel_err=3.51e-03 (M=1 qkv bfloat16)  CLEAN
+
+  --- as an MPS client, no thread percentage set (default 100.0) ---
+smctrl-numcheck: tpcs=22 sm=44 reported=132 209.9 TFLOP/s worst_rel_err=3.51e-03 (M=1 qkv bfloat16)  CLEAN
+
+  Read the TFLOP/s column: matching the non-MPS numbers means the mask
+  survives MPS; jumping to ~810 at every budget means it is a no-op.
+
+  --- TimelyLLM as an MPS client, masked to 22 TPCs ---
+  1709 segments -> /space/mm562/TimelyLLM/timelyllm/logs/gh200-mps-smctrl-tpc22.log
+
+  shutting down our MPS daemon

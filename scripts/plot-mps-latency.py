@@ -27,7 +27,7 @@ import csv
 import re
 import statistics
 import sys
-from collections import defaultdict
+from collections import defaultdict, Counter
 from pathlib import Path
 
 OUT = re.compile(r"^Output for task (\d+): (.*), time: ([\d.]+)$")
@@ -138,7 +138,20 @@ def collect(manifest, reference=None):
                  "insane_runs": 0, "median_len": 0,
                  "fid_ok": 0, "fid_n": 0}))
     with open(manifest) as fh:
-        for row in csv.DictReader(fh):
+        rows = list(csv.DictReader(fh))
+
+    # A GPU can have a permanent occupant that is not a neighbour workload -- a
+    # root-owned parked MPS server, say. Flagging on presence would then mark
+    # every row and mean nothing, so the baseline is the occupancy the sweep saw
+    # most often, and only departures from it are contamination.
+    occ = Counter()
+    for r in rows:
+        for k in ("others_before", "others_after"):
+            occ[(r.get(k) or "").strip()] += 1
+    baseline = occ.most_common(1)[0][0] if occ else ""
+
+    for row in rows:
+        if True:
             if row.get("load_s") == "SKIPPED_NUMCHECK":
                 print(f"  {row['arm']} {row['pct']}%: skipped -- the GPU fails "
                       f"the numerics check at that thread percentage",
@@ -169,7 +182,8 @@ def collect(manifest, reference=None):
                     e["insane_runs"] += 1
             if row.get("load_s") not in (None, "", "NA"):
                 e["loads"].append(float(row["load_s"]))
-            if (row.get("others_before") or row.get("others_after") or "").strip():
+            if any((row.get(k) or "").strip() != baseline
+                   for k in ("others_before", "others_after")):
                 e["shared"] = True
     for arm in pooled:
         for pct, e in pooled[arm].items():
@@ -195,7 +209,7 @@ def table(pooled):
             out = "plans" if not e["insane_runs"] else \
                 f"GARBAGE (median segment {e['median_len']} chars)"
             fid = f"{100 * e['fid_ok'] / e['fid_n']:.0f}%" if e["fid_n"] else "-"
-            flag = "  <- shared GPU" if e["shared"] else ""
+            flag = "  <- NEIGHBOUR CHANGED, re-run" if e["shared"] else ""
             print(f"  {pct:>8}%{e['runs']:>6}{e['submitted']:>11}{e['acted']:>8}"
                   f"{served:>9}{e['segments']:>7}{med:>10}{p90:>10}{p99:>10}"
                   f"{load:>9}{fid:>10}  {out}{flag}")
@@ -212,7 +226,7 @@ def table(pooled):
                   "  tokens. Their latencies are excluded from the plot.")
 
 
-def plot(pooled, arm, out_path, title_suffix=""):
+def plot(pooled, arm, out_path, title_suffix="", x_label=None):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -286,7 +300,7 @@ def plot(pooled, arm, out_path, title_suffix=""):
              markeredgecolor="#fcfcfb", markeredgewidth=1.5)
     ax2.set_ylim(0, 105)
     ax2.set_ylabel("trace served (%)", color=INK, fontsize=10)
-    ax2.set_xlabel("MPS active thread percentage  (share of the GPU's SMs)",
+    ax2.set_xlabel(x_label or "MPS active thread percentage  (share of the GPU's SMs)",
                    color=INK, fontsize=10)
     # Label every measured point, but drop a label whose neighbour is within a
     # few percent on the log axis -- otherwise 8/10/12 overprint into mush.
@@ -322,6 +336,9 @@ def main():
                     help="log of an uncapped (100%%) run; every other run's plans "
                          "must match it exactly, since decoding is greedy")
     ap.add_argument("--out", default=None, help="output PNG (default: beside the manifest)")
+    ap.add_argument("--x-label", default=None,
+                    help="x-axis label; the default names MPS, so pass this for a "
+                         "manifest produced by another partitioning mechanism")
     args = ap.parse_args()
 
     reference = None
@@ -344,7 +361,8 @@ def main():
     for arm in arms:
         out = Path(args.out) if args.out else \
             manifest.with_name(f"{manifest.stem.replace('-manifest', '')}-{arm}-latency.png")
-        plot(pooled, arm, out, title_suffix="" if arm == "rtllm" else f"  ({arm})")
+        plot(pooled, arm, out, title_suffix="" if arm == "rtllm" else f"  ({arm})",
+             x_label=args.x_label)
     return 0
 
 

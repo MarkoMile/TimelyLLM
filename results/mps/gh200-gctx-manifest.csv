@@ -1,0 +1,8 @@
+arm,pct,repeat,log,started,ended,load_s,others_before,others_after
+rtllm,6,1,/space/mm562/TimelyLLM/timelyllm/logs/gh200-gctx-rtllm-sm8-r1.log,2026-09-04T01:50:35+00:00,2026-09-04T01:56:53+00:00,8.5,387317(110 MiB),387317(110 MiB)
+rtllm,24,1,/space/mm562/TimelyLLM/timelyllm/logs/gh200-gctx-rtllm-sm32-r1.log,2026-09-04T01:56:53+00:00,2026-09-04T02:03:18+00:00,15.4,387317(110 MiB),387317(110 MiB)
+rtllm,36,1,/space/mm562/TimelyLLM/timelyllm/logs/gh200-gctx-rtllm-sm48-r1.log,2026-09-04T02:03:18+00:00,2026-09-04T02:09:37+00:00,8.5,387317(110 MiB),387317(110 MiB)
+rtllm,48,1,/space/mm562/TimelyLLM/timelyllm/logs/gh200-gctx-rtllm-sm64-r1.log,2026-09-04T02:09:37+00:00,2026-09-04T02:15:55+00:00,8.4,387317(110 MiB),387317(110 MiB)
+rtllm,67,1,/space/mm562/TimelyLLM/timelyllm/logs/gh200-gctx-rtllm-sm88-r1.log,2026-09-04T02:15:55+00:00,2026-09-04T02:22:13+00:00,8.4,387317(110 MiB),387317(110 MiB)
+rtllm,91,1,/space/mm562/TimelyLLM/timelyllm/logs/gh200-gctx-rtllm-sm120-r1.log,2026-09-04T02:22:13+00:00,2026-09-04T02:28:31+00:00,8.4,387317(110 MiB),387317(110 MiB)
+rtllm,100,1,/space/mm562/TimelyLLM/timelyllm/logs/gh200-gctx-rtllm-sm132-r1.log,2026-09-04T02:28:31+00:00,2026-09-04T02:34:49+00:00,8.4,387317(110 MiB),387317(110 MiB)
